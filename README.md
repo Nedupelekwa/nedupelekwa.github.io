@@ -300,7 +300,7 @@
 
     <!-- ======== NAVIGATION ======== -->
     <nav>
-        <a href="#" class="logo">CHINEDU ELEKWA</a>
+        
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
