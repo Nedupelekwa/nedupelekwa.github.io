@@ -393,10 +393,10 @@
                 </ul>
             </div>
             <div class="toolkit-category">
-                <h4>Data Tools</h4>
+                <h4>Data Analysis Tools</h4>
                 <ul>
-                    <li>pandas</li>
-                    <li>Excel</li>
+                    <li>Pandas, Numpy</li>
+                    <li>Excel, Google Sheets</li>
                     <li>Jupyter Notebooks</li>
                 </ul>
             </div>
