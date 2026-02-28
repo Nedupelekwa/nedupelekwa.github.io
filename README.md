@@ -316,12 +316,11 @@
             Upload a photo to your repo and use: src="photo.jpeg"
         -->
         <img src="photo.jpeg" alt="photo.jpg">
-        <h1>Hi, I'm Chinedu Elekwa </h1>
-        <p class="tagline">Data Analyst |I turn messy business data into clear, actionable insights</p>
+        <h1> Data Analyst, Business Analyst </h1>
+        <p class="tagline">I turn messy business data into clear, actionable insights</p>
         <div class="toolkit-preview">
             <span>SQL</span>
-            <span>Python for visualization</span>
-            <span>pandas, numpy</span>
+            <span>Python</span>
             <span>PowerBi/Looker Studio</span>
             <span>Excel/Google Sheets</span>
         </div>
@@ -386,10 +385,8 @@
             <div class="toolkit-category">
                 <h4>Visualization</h4>
                 <ul>
-                    <li>PowerBi</li>
-                    <li>Looker Studio</li>
-                    <li>Matplotlib</li>
-                    <li>Seaborn</li>
+                    <li>PowerBi, Looker Studio</li>
+                    <li>Matplotlib, Seaborn</li>
                 </ul>
             </div>
             <div class="toolkit-category">
@@ -397,7 +394,6 @@
                 <ul>
                     <li>Pandas, Numpy</li>
                     <li>Excel, Google Sheets</li>
-                    <li>Jupyter Notebooks</li>
                 </ul>
             </div>
             <div class="toolkit-category">
@@ -436,6 +432,3 @@
 
 
 <!-- ================ -->
-git add .
-git commit -m https-nedupelekwa.github.io
-git push
