@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portfolio — Analytics Engineer</title>
+<title>Chinedu Elekwa — Data Analyst</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -609,7 +609,7 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">[ your.name ]</a>
+  <a href="#" class="nav-logo">[ chinedu.elekwa ]</a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -623,12 +623,13 @@
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
-  <div class="hero-badge">Available for new opportunities</div>
-  <h1 class="hero-name">Your<br><span class="accent">Name</span></h1>
-  <p class="hero-title">Data Analyst & Analytics Engineer</p>
+  <div class="hero-badge">Open to new opportunities · Lagos, Nigeria</div>
+  <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
+  <p class="hero-title">Data Analyst · FMCG & EdTech</p>
   <p class="hero-desc">
-    I turn raw data into decisions. Specializing in building scalable analytics pipelines, 
-    crafting executive-level dashboards, and finding signals in complex datasets.
+    I bring the precision of a mathematician, the clarity of an educator, and the impact-focus 
+    of a business analyst to every problem I solve. From production floors to executive dashboards — 
+    I transform raw data into decisions that move organisations forward.
   </p>
   <div class="hero-actions">
     <a href="#projects" class="btn-primary">View Projects →</a>
@@ -637,19 +638,19 @@
   <div class="hero-stats">
     <div>
       <span class="stat-val">5+</span>
-      <span class="stat-label">Years Experience</span>
+      <span class="stat-label">Years in Data & Analytics</span>
     </div>
     <div>
-      <span class="stat-val">30+</span>
-      <span class="stat-label">Dashboards Built</span>
+      <span class="stat-val">95%</span>
+      <span class="stat-label">Data Collection Efficiency Gained</span>
     </div>
     <div>
-      <span class="stat-val">10M+</span>
-      <span class="stat-label">Rows Processed Daily</span>
+      <span class="stat-val">4+</span>
+      <span class="stat-label">Certifications Earned</span>
     </div>
     <div>
-      <span class="stat-val">4</span>
-      <span class="stat-label">Industries Served</span>
+      <span class="stat-val">100+</span>
+      <span class="stat-label">Analysts Mentored via ALX</span>
     </div>
   </div>
 </section>
@@ -863,7 +864,7 @@
     <p class="section-subtitle reveal" style="margin: 0 auto 1rem; text-align: center;">
       Whether it's a full-time role, a freelance project, or just a conversation about data — reach out.
     </p>
-    <a href="mailto:your@email.com" class="contact-email reveal">your@email.com</a>
+    <a href="/cdn-cgi/l/email-protection#40392f353200252d21292c6e232f2d" class="contact-email reveal"><span class="__cf_email__" data-cfemail="fc8593898ebc99919d9590d29f9391">[email&#160;protected]</span></a>
     <div class="socials reveal">
       <a href="#" class="social-link">↗ LinkedIn</a>
       <a href="#" class="social-link">↗ GitHub</a>
@@ -878,17 +879,8 @@
   <p>Built with precision · Lagos, NG</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
+      if (e.isInter
