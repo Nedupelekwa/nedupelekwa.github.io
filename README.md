@@ -614,6 +614,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certs</a></li>
     <li><a href="#contact" class="nav-cta">Hire Me</a></li>
   </ul>
 </nav>
@@ -664,70 +665,64 @@
   <div class="skills-grid reveal">
     <div class="skill-block">
       <div class="skill-block-icon">⬡</div>
-      <div class="skill-block-title">Data Modeling & Transformation</div>
+      <div class="skill-block-title">Languages & Querying</div>
       <div class="skill-tags">
-        <span class="tag accent-tag">dbt</span>
         <span class="tag accent-tag">SQL</span>
-        <span class="tag">Data Vault 2.0</span>
-        <span class="tag">Dimensional Modeling</span>
-        <span class="tag">Star Schema</span>
-      </div>
-    </div>
-    <div class="skill-block">
-      <div class="skill-block-icon">◈</div>
-      <div class="skill-block-title">Warehouses & Databases</div>
-      <div class="skill-tags">
-        <span class="tag accent-tag">BigQuery</span>
-        <span class="tag accent-tag">Snowflake</span>
-        <span class="tag">Redshift</span>
-        <span class="tag">PostgreSQL</span>
-        <span class="tag">DuckDB</span>
-      </div>
-    </div>
-    <div class="skill-block">
-      <div class="skill-block-icon">▣</div>
-      <div class="skill-block-title">Orchestration & Pipelines</div>
-      <div class="skill-tags">
-        <span class="tag accent-tag">Apache Airflow</span>
-        <span class="tag">Prefect</span>
-        <span class="tag">Fivetran</span>
-        <span class="tag">Airbyte</span>
-        <span class="tag">dlt</span>
+        <span class="tag accent-tag">Python</span>
+        <span class="tag">Data Cleaning</span>
+        <span class="tag">Statistical Analysis</span>
+        <span class="tag">Mathematics</span>
       </div>
     </div>
     <div class="skill-block">
       <div class="skill-block-icon">◎</div>
       <div class="skill-block-title">Visualization & BI</div>
       <div class="skill-tags">
-        <span class="tag accent-tag">Looker</span>
-        <span class="tag accent-tag">Tableau</span>
-        <span class="tag">Power BI</span>
-        <span class="tag">Metabase</span>
-        <span class="tag">Evidence</span>
+        <span class="tag accent-tag">Power BI</span>
+        <span class="tag accent-tag">Looker Studio</span>
+        <span class="tag">MS PowerPoint</span>
+        <span class="tag">Dashboard Design</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-icon">▣</div>
+      <div class="skill-block-title">Spreadsheets & Productivity</div>
+      <div class="skill-tags">
+        <span class="tag accent-tag">MS Excel</span>
+        <span class="tag accent-tag">Google Sheets</span>
+        <span class="tag">Google Forms</span>
+        <span class="tag">Google Workspace</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-icon">◈</div>
+      <div class="skill-block-title">ERP & Operations</div>
+      <div class="skill-tags">
+        <span class="tag accent-tag">SAP</span>
+        <span class="tag">Production Planning</span>
+        <span class="tag">Inventory Management</span>
+        <span class="tag">FMCG Supply Chain</span>
       </div>
     </div>
     <div class="skill-block">
       <div class="skill-block-icon">◯</div>
-      <div class="skill-block-title">Programming & Analytics</div>
+      <div class="skill-block-title">Cloud & Platforms</div>
       <div class="skill-tags">
-        <span class="tag accent-tag">Python</span>
-        <span class="tag accent-tag">pandas</span>
-        <span class="tag">PySpark</span>
-        <span class="tag">R</span>
-        <span class="tag">Jupyter</span>
-        <span class="tag">Polars</span>
+        <span class="tag accent-tag">Google Cloud</span>
+        <span class="tag">BigQuery</span>
+        <span class="tag">Google Drive</span>
+        <span class="tag">Looker Studio</span>
       </div>
     </div>
     <div class="skill-block">
       <div class="skill-block-icon">◫</div>
-      <div class="skill-block-title">Infrastructure & DevOps</div>
+      <div class="skill-block-title">Soft Skills & Leadership</div>
       <div class="skill-tags">
-        <span class="tag">Git</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">GitHub Actions</span>
-        <span class="tag">GCP</span>
-        <span class="tag">AWS</span>
+        <span class="tag">Data Mentorship</span>
+        <span class="tag">Report Writing</span>
+        <span class="tag">Stakeholder Comms</span>
+        <span class="tag">Teaching</span>
+        <span class="tag">Growth Mindset</span>
       </div>
     </div>
   </div>
@@ -737,79 +732,78 @@
 <section id="projects">
   <div class="section-label">Selected Work</div>
   <h2 class="section-title">Projects</h2>
-  <p class="section-subtitle reveal">A selection of analytics engineering and data analysis projects.</p>
+  <p class="section-subtitle reveal">Real analytics work across FMCG, education, and edtech.</p>
 
   <div class="projects-grid">
     <div class="project-card reveal">
       <div class="project-number">
         <span>01</span>
-        <span class="project-type">Analytics Engineering</span>
+        <span class="project-type">Production Analytics</span>
       </div>
-      <div class="project-title">Revenue Attribution Pipeline</div>
+      <div class="project-title">FMCG Production Data Pipeline</div>
       <div class="project-desc">
-        Built a multi-touch attribution model processing 5M+ daily events. Reduced reporting lag from 24 hours to 15 minutes, enabling real-time campaign optimization for a $50M annual ad budget.
+        Designed and deployed a data collection and analytics system at Frutta Juice & Services Ltd tracking output, downtime, waste, and material usage — boosting analytics efficiency to 95% and enabling real-time production decisions.
       </div>
       <div class="project-stack">
-        <span class="tag accent-tag">dbt</span>
-        <span class="tag accent-tag">BigQuery</span>
-        <span class="tag">Airflow</span>
-        <span class="tag">Looker</span>
+        <span class="tag accent-tag">Google Sheets</span>
+        <span class="tag accent-tag">Google Forms</span>
+        <span class="tag">SAP</span>
+        <span class="tag">MS PowerPoint</span>
       </div>
-      <a href="#" class="project-link">View Case Study →</a>
+      <a href="https://nedupelekwa.github.io" target="_blank" class="project-link">View Portfolio ↗</a>
     </div>
 
     <div class="project-card reveal">
       <div class="project-number">
         <span>02</span>
-        <span class="project-type">Data Analysis</span>
+        <span class="project-type">Business Intelligence</span>
       </div>
-      <div class="project-title">Customer Churn Prediction Dashboard</div>
+      <div class="project-title">Production & Material Planning Dashboard</div>
       <div class="project-desc">
-        Designed an end-to-end analytics layer on top of an ML churn model. Created executive dashboards that visualized at-risk cohorts and resulted in a 12% reduction in monthly churn.
+        Built executive-level production reports and inventory tracking dashboards for FMCG stakeholders, streamlining SAP inventory flows from raw materials through to warehouse transfer and reducing planning gaps.
       </div>
       <div class="project-stack">
-        <span class="tag accent-tag">Python</span>
-        <span class="tag accent-tag">Snowflake</span>
-        <span class="tag">Tableau</span>
-        <span class="tag">scikit-learn</span>
+        <span class="tag accent-tag">Power BI</span>
+        <span class="tag accent-tag">SAP</span>
+        <span class="tag">MS Excel</span>
+        <span class="tag">PowerPoint</span>
       </div>
-      <a href="#" class="project-link">View Case Study →</a>
+      <a href="https://nedupelekwa.github.io" target="_blank" class="project-link">View Portfolio ↗</a>
     </div>
 
     <div class="project-card reveal">
       <div class="project-number">
         <span>03</span>
-        <span class="project-type">Data Engineering</span>
+        <span class="project-type">Education Analytics</span>
       </div>
-      <div class="project-title">ELT Data Platform Migration</div>
+      <div class="project-title">Student Performance Analysis System</div>
       <div class="project-desc">
-        Led migration of a legacy ETL system to a modern ELT stack. Re-modeled 200+ tables in dbt, introduced CI/CD for data, and cut infrastructure costs by 40%.
+        Built and maintained a student performance database at Cedec International Secondary School. Used Excel to run general performance analysis, identify at-risk students, and produce data-backed reports for school leadership.
       </div>
       <div class="project-stack">
-        <span class="tag accent-tag">dbt</span>
-        <span class="tag accent-tag">Fivetran</span>
-        <span class="tag">Redshift → Snowflake</span>
-        <span class="tag">GitHub Actions</span>
+        <span class="tag accent-tag">MS Excel</span>
+        <span class="tag">Google Sheets</span>
+        <span class="tag">Data Reporting</span>
       </div>
-      <a href="#" class="project-link">View Case Study →</a>
+      <a href="https://nedupelekwa.github.io" target="_blank" class="project-link">View Portfolio ↗</a>
     </div>
 
     <div class="project-card reveal">
       <div class="project-number">
         <span>04</span>
-        <span class="project-type">Business Intelligence</span>
+        <span class="project-type">Mentorship & Community</span>
       </div>
-      <div class="project-title">Self-Serve Analytics Platform</div>
+      <div class="project-title">ALX Africa Data Mentorship Program</div>
       <div class="project-desc">
-        Built a governed self-serve layer in Looker allowing 150+ non-technical stakeholders to run their own analyses, reducing ad-hoc SQL requests to the data team by 70%.
+        Volunteer Data Mentor at ALX Africa since Sept 2025, supporting the next generation of data professionals across Africa. Also served as Session Moderator at the Virtual Global Data & AI Tech Conference (GDAI) 2025.
       </div>
       <div class="project-stack">
-        <span class="tag accent-tag">Looker</span>
-        <span class="tag accent-tag">LookML</span>
-        <span class="tag">BigQuery</span>
-        <span class="tag">dbt</span>
+        <span class="tag accent-tag">Data Analytics</span>
+        <span class="tag accent-tag">Python</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Mentorship</span>
       </div>
-      <a href="#" class="project-link">View Case Study →</a>
+      <a href="https://www.linkedin.com/in/chinedu-elekwa/" target="_blank" class="project-link">View LinkedIn ↗</a>
     </div>
   </div>
 </section>
@@ -823,35 +817,104 @@
   <div class="timeline reveal">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-date">2022 — Present</div>
-      <div class="timeline-role">Senior Analytics Engineer</div>
-      <div class="timeline-company">Acme Corp · Full-time</div>
+      <div class="timeline-date">Sept 2025 — Present</div>
+      <div class="timeline-role">Data Analyst Intern</div>
+      <div class="timeline-company">edMotion Technologies · Remote</div>
       <ul class="timeline-bullets">
-        <li>Owns and maintains the core dbt project with 300+ models powering company-wide reporting</li>
-        <li>Reduced data freshness SLA from 6 hours to 45 minutes for critical revenue metrics</li>
-        <li>Mentors 3 junior analysts on SQL, dbt, and data modeling best practices</li>
+        <li>Working on data analytics projects in the edtech space, applying SQL and Python to derive insights</li>
+        <li>Contributing to data-driven product decisions and reporting workflows</li>
       </ul>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-date">2020 — 2022</div>
-      <div class="timeline-role">Data Analyst</div>
-      <div class="timeline-company">Nexus Analytics · Full-time</div>
+      <div class="timeline-date">Active · Sept 2025 — Present</div>
+      <div class="timeline-role">DATA Volunteer Mentor</div>
+      <div class="timeline-company">ALX Africa Data Programs · Remote</div>
       <ul class="timeline-bullets">
-        <li>Built weekly executive reporting suite covering KPIs across marketing, product, and finance</li>
-        <li>Collaborated with product team on A/B test analysis that drove 8% uplift in activation</li>
-        <li>Introduced dbt to the team, replacing a tangle of unversioned SQL scripts</li>
+        <li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li>
+        <li>Served as Session Moderator at the Virtual Global Data & AI Tech Conference (GDAI) 2025</li>
+        <li>Recognised as Ambassador by DataGlobal Hub for contributions to the data community</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">~2023 — 2025</div>
+      <div class="timeline-role">Production Planner / Production Data Analyst</div>
+      <div class="timeline-company">Frutta Juice and Services Limited · Lagos, Nigeria</div>
+      <ul class="timeline-bullets">
+        <li>Built a Google Forms & Sheets data pipeline tracking output, downtime, waste and material usage — increasing analytics efficiency to 95%</li>
+        <li>Managed production inventory end-to-end on SAP from raw materials to finished goods warehouse transfer</li>
+        <li>Developed production and material plans to ensure continuous operations</li>
+        <li>Produced professional stakeholder reports using PowerPoint</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Jan 2023 — Sept 2024</div>
+      <div class="timeline-role">Mathematics Educator / Data Analyst</div>
+      <div class="timeline-company">Cedec International Secondary School · Lagos, Nigeria</div>
+      <ul class="timeline-bullets">
+        <li>Built and maintained a student performance database, analysing results with Excel to track progress</li>
+        <li>Produced data-backed performance reports for school leadership and parents</li>
+        <li>Managed customer relationships with parents, staff, and students; provided mentorship and tutoring</li>
       </ul>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot" style="background: var(--text-muted); box-shadow: none;"></div>
-      <div class="timeline-date">2018 — 2020</div>
-      <div class="timeline-role">Business Intelligence Analyst</div>
-      <div class="timeline-company">DataFlow Ltd · Full-time</div>
+      <div class="timeline-date">2020 — 2021 · 2013 — 2014</div>
+      <div class="timeline-role">Mathematics Educator</div>
+      <div class="timeline-company">Great Divine College & Divine Victory Schools · Lagos, Nigeria</div>
       <ul class="timeline-bullets">
-        <li>Maintained Tableau dashboards and ad-hoc SQL analyses for sales leadership</li>
-        <li>Automated monthly reporting workflows, saving 20+ analyst-hours per month</li>
+        <li>Taught Mathematics at secondary school level, building the analytical and logical foundations that underpin my data career</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label">Credentials</div>
+  <h2 class="section-title">Certifications</h2>
+  <p class="section-subtitle reveal">Verified expertise across cloud, analytics, and data science.</p>
+
+  <div class="skills-grid reveal">
+    <div class="skill-block">
+      <div class="skill-block-icon">☁</div>
+      <div class="skill-block-title">Google Cloud Data Analyst Certificate</div>
+      <div class="skill-tags">
+        <span class="tag accent-tag">Google Cloud</span>
+        <span class="tag">BigQuery</span>
+        <span class="tag">Looker Studio</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-icon">◈</div>
+      <div class="skill-block-title">ALX Africa Certificates</div>
+      <div class="skill-tags">
+        <span class="tag accent-tag">Professional Foundations</span>
+        <span class="tag accent-tag">Data Analytics</span>
+        <span class="tag">Python Programming</span>
+        <span class="tag">Data Science</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-icon">◎</div>
+      <div class="skill-block-title">DataCamp Certifications</div>
+      <div class="skill-tags">
+        <span class="tag accent-tag">Associate Data Analyst</span>
+        <span class="tag">Data Literacy</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <div class="skill-block-icon">◯</div>
+      <div class="skill-block-title">Google Workspace via Coursera</div>
+      <div class="skill-tags">
+        <span class="tag accent-tag">Calendar</span>
+        <span class="tag">Drive</span>
+        <span class="tag">Docs</span>
+        <span class="tag">Sheets</span>
+        <span class="tag">Slides</span>
+      </div>
     </div>
   </div>
 </section>
@@ -864,19 +927,19 @@
     <p class="section-subtitle reveal" style="margin: 0 auto 1rem; text-align: center;">
       Whether it's a full-time role, a freelance project, or just a conversation about data — reach out.
     </p>
-    <a href="/cdn-cgi/l/email-protection#40392f353200252d21292c6e232f2d" class="contact-email reveal"><span class="__cf_email__" data-cfemail="fc8593898ebc99919d9590d29f9391">[email&#160;protected]</span></a>
+    <a href="mailto:chinedupelekwa@gmail.com" class="contact-email reveal">chinedupelekwa@gmail.com</a>
     <div class="socials reveal">
-      <a href="#" class="social-link">↗ LinkedIn</a>
-      <a href="#" class="social-link">↗ GitHub</a>
-      <a href="#" class="social-link">↗ Resume PDF</a>
+      <a href="https://www.linkedin.com/in/chinedu-elekwa/" target="_blank" class="social-link">↗ LinkedIn</a>
+      <a href="https://nedupelekwa.github.io" target="_blank" class="social-link">↗ GitHub Portfolio</a>
+      <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="social-link">↗ Website</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Your Name. All rights reserved.</p>
-  <p>Built with precision · Lagos, NG</p>
+  <p>© 2025 Chinedu Elekwa Promise. All rights reserved.</p>
+  <p>Built with precision · Lagos, Nigeria</p>
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
