@@ -150,9 +150,9 @@ footer{text-align:center;padding:2rem;color:var(--muted)}
 <nav>
 <div class="logo">Chinedu Elekwa Promise</div>
 <ul class="nav-links">
-<li><a href="projects.html">Projects</a></li>
-<li><a href="experience.html">Experience</a></li>
-<li><a href="certifications.html">Certifications</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#certifications">Certifications</a></li>
 <li><a href="#recognitions">Recognitions</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#contact">Contact</a></li>
@@ -167,14 +167,115 @@ footer{text-align:center;padding:2rem;color:var(--muted)}
 <span>SQL</span><span>Python</span><span>dbt</span><span>Power BI</span><span>Data Modeling</span>
 </div>
 
-<a href="projects.html" class="cta">Explore My Work</a>
+<a href="#projects" class="cta">Explore My Work</a>
 </section>
 
+<section id="projects">
+<h2>Projects</h2>
 
+<div class="grid">
 
+<div class="card project-card">
+<img src="https://via.placeholder.com/800x400" class="project-image">
+<div class="project-content">
+<h3>End-to-End Data Pipeline</h3>
+<p>Designed ETL pipelines transforming raw datasets into analytics-ready models.</p>
+<div class="project-tools"><span>dbt</span><span>SQL</span><span>Snowflake</span></div>
+<a href="#" class="project-btn">View Case Study</a>
+</div>
+</div>
 
+<div class="card project-card">
+<img src="https://via.placeholder.com/800x400" class="project-image">
+<div class="project-content">
+<h3>Executive Sales Dashboard</h3>
+<p>Delivered real-time KPIs improving executive decision-making.</p>
+<div class="project-tools"><span>Power BI</span><span>DAX</span></div>
+<a href="#" class="project-btn">View Dashboard</a>
+</div>
+</div>
 
+</div>
+</section>
 
+<section id="experience">
+<h2>Experience</h2>
+<div class="timeline">
+<div class="timeline-item">
+<h3>Data Analyst</h3>
+<span>Company • 2024 - Present</span>
+<p>Built dashboards, automated reports, and optimized SQL queries.</p>
+</div>
+</div>
+</section>
+
+<section id="certifications">
+<h2>Certifications</h2>
+
+<h3 style="margin-bottom:1rem;color:var(--primary)">Career Certifications</h3>
+<div class="grid">
+<div class="card cert-item">
+<img src="https://via.placeholder.com/400x200" class="cert-image" alt="certificate">
+<div class="cert-content">
+<h3>Google Cloud Data Analyst Certificate</h3>
+<span>Google Cloud</span>
+</div>
+</div>
+
+<div class="card cert-item">
+<img src="https://via.placeholder.com/400x200" class="cert-image">
+<div class="cert-content">
+<h3>ALX Africa Data Analytics, Python Programming & Data Science</h3>
+<span>ALX Africa</span>
+</div>
+</div>
+
+<div class="card cert-item">
+<img src="https://via.placeholder.com/400x200" class="cert-image">
+<div class="cert-content">
+<h3>DataCamp Associate Data Analyst</h3>
+<span>DataCamp</span>
+</div>
+</div>
+
+<div class="card cert-item">
+<img src="https://via.placeholder.com/400x200" class="cert-image">
+<div class="cert-content">
+<h3>Data Literacy Certificate</h3>
+<span>Professional Certification</span>
+</div>
+</div>
+
+<div class="card cert-item">
+<img src="https://via.placeholder.com/400x200" class="cert-image">
+<div class="cert-content">
+<h3>Google Workspace (Calendar, Drive, Docs, Sheets, Slides)</h3>
+<span>Google via Coursera</span>
+</div>
+</div>
+</div>
+
+<h3 style="margin:3rem 0 1rem;color:var(--accent)">AI & Soft Skills Certifications</h3>
+<div class="grid">
+
+<div class="card cert-item">
+<img src="https://via.placeholder.com/400x200" class="cert-image">
+<div class="cert-content">
+<h3>ALX Professional Foundations</h3>
+<span>ALX Africa</span>
+</div>
+</div>
+
+<div class="card cert-item">
+<img src="https://via.placeholder.com/400x200" class="cert-image">
+<div class="cert-content">
+<h3>Jobberman Soft Skills Training</h3>
+<span>Jobberman • 2021</span>
+</div>
+</div>
+
+</div>
+</section>
 
 <section id="recognitions">
 <h2>Recognitions</h2>
