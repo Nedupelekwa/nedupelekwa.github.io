@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -60,36 +61,6 @@
   .nav-cta { color: var(--accent) !important; border: 1px solid var(--border-accent); padding: 0.45rem 1rem; border-radius: 4px; transition: background 0.2s !important; }
   .nav-cta:hover { background: var(--accent-dim) !important; }
 
-  .hero-photo-full {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  border: 6px solid var(--accent);
-  object-fit: cover;
-  box-shadow: 0 0 50px rgba(34,197,94,0.5), 0 0 80px rgba(56,189,248,0.3);
-  transition: transform 0.4s, box-shadow 0.4s;
-}
-
-.hero-photo-full:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 70px rgba(34,197,94,0.7), 0 0 100px rgba(56,189,248,0.5);
-}
-
-@media (max-width: 768px) {
-  .hero-photo-full {
-    width: 220px;
-    height: 220px;
-  }
-
-  .hero-name {
-    font-size: 2rem;
-  }
-
-  .hero-title {
-    font-size: 1rem;
-  }
-}
-
   /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 10rem 4rem 6rem; position: relative; overflow: hidden; }
   .hero-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 80%); pointer-events: none; }
@@ -117,21 +88,6 @@
   .hero-stats { display: flex; gap: 3.5rem; margin-top: 5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); position: relative; z-index: 1; }
   .stat-val { font-family: var(--display); font-size: 2.2rem; font-weight: 700; color: var(--text-primary); display: block; }
   .stat-label { font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
-
-.hero-name-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* space between photo and name */
-  margin-bottom: 0.5rem;
-}
-
-.hero-photo {
-  width: 80px;         /* adjust size as needed */
-  height: 80px;
-  border-radius: 50%;  /* makes it circular */
-  object-fit: cover;   /* ensures it fills the circle */
-  border: 2px solid var(--accent); /* optional accent border */
-}
 
   /* SECTIONS */
   section { padding: 7rem 4rem; position: relative; z-index: 1; }
@@ -252,46 +208,34 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="hero" style="position: relative; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; text-align: center; color: white;">
-
-  <!-- BACKGROUND EFFECTS -->
-  <div class="hero-glow" style="position: absolute; width: 100%; height: 100%; background: radial-gradient(circle, rgba(34,197,94,0.2) 0%, transparent 70%); top:0; left:0; z-index:1;"></div>
-  <div class="hero-glow-2" style="position: absolute; width: 100%; height: 100%; background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%); top:0; left:0; z-index:2;"></div>
-
-  <!-- HERO CONTENT -->
-  <div style="position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
-
-    <!-- BIG PHOTO -->
-    <div style="position: relative;">
-      <img src="images/My-photo.jpeg" alt="Chinedu Elekwa" class="hero-photo-full">
-    </div>
-
-    <!-- NAME + TITLE OVER PHOTO -->
-    <h1 class="hero-name" style="font-size: 3rem; margin-top: 1rem;">
-      Chinedu <span class="accent">Elekwa</span>
-    </h1>
-    <p class="hero-title" style="font-size: 1.3rem; max-width: 600px; line-height: 1.5;">
-      Data Analyst & Aspiring Analytics Engineer  
-      <br>Turning raw data into insights that drive impact.
-    </p>
-
-    <!-- BADGES -->
-    <div class="hero-badges" style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1rem;">
-      <span class="hero-pill">SQL</span>
-      <span class="hero-pill">Python</span>
-      <span class="hero-pill">Power BI</span>
-      <span class="hero-pill">Looker Studio</span>
-      <span class="hero-pill">Data Modeling</span>
-      <span class="hero-pill">SAP</span>
-      <span class="hero-pill">Power Point</span>
-    </div>
-
-    <!-- ACTION BUTTONS -->
-    <div class="hero-actions" style="display: flex; gap: 1rem; margin-top: 2rem;">
-      <a href="#projects" class="btn-primary">Explore My Work →</a>
-      <a href="#contact" class="btn-secondary">Get in Touch ↗</a>
-    </div>
-
+<section class="hero" id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-badge">Open to new opportunities · Lagos, Nigeria</div>
+  <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
+  <p class="hero-title">Data Analyst & Aspiring Analytics Engineer</p>
+  <p class="hero-desc">
+    Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.
+  </p>
+  <div class="hero-badges">
+    <span class="hero-pill">SQL</span>
+    <span class="hero-pill">Python</span>
+    <span class="hero-pill">Power BI</span>
+    <span class="hero-pill">Looker Studio</span>
+    <span class="hero-pill">Data Modeling</span>
+    <span class="hero-pill">SAP</span>
+    <span class="hero-pill">Power Point</span>
+  </div>
+  <div class="hero-actions">
+    <a href="#projects" class="btn-primary">Explore My Work →</a>
+    <a href="#contact" class="btn-secondary">Get in touch ↗</a>
+  </div>
+  <div class="hero-stats">
+    <div><span class="stat-val">5+</span><span class="stat-label">Years in Data</span></div>
+    <div><span class="stat-val">95%</span><span class="stat-label">Analytics Efficiency Gained</span></div>
+    <div><span class="stat-val">4+</span><span class="stat-label">Certifications</span></div>
+    <div><span class="stat-val">100+</span><span class="stat-label">Analysts Mentored</span></div>
   </div>
 </section>
 
