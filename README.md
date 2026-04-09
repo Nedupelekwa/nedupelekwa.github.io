@@ -318,7 +318,7 @@
     </div>
 
     <div class="project-card reveal">
-  <img src="Business-dashboard.jpg" alt="Business Dashboard" class="project-img">
+  <img src="images/Business-dashboard.jpg" alt="Business Dashboard" class="project-img">
       <div class="project-body">
         <div class="project-number"><span>02</span><span class="project-type">Business Intelligence</span></div>
         <div class="project-title">POWERBI-BUSINESS-DASHBOARD</div>
