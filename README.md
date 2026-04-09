@@ -345,20 +345,6 @@
       </div>
     </div>
 
-    <div class="project-card reveal">
-      <div class="project-img-placeholder">[ ALX Africa Mentorship ]</div>
-      <div class="project-body">
-        <div class="project-number"><span>04</span><span class="project-type">Community & Mentorship</span></div>
-        <div class="project-title">ALX Africa Data Mentorship Program</div>
-        <div class="project-desc">Volunteer Data Mentor at ALX Africa since Sept 2025, supporting the next generation of data professionals across Africa. Also served as Session Moderator at the GDAI 2025 global conference.</div>
-        <div class="project-stack">
-          <span class="tag accent-tag">Data Analytics</span><span class="tag accent-tag">Python</span>
-          <span class="tag">SQL</span><span class="tag">Mentorship</span>
-        </div>
-        <a href="https://www.linkedin.com/in/chinedu-elekwa/" target="_blank" class="project-link">View LinkedIn ↗</a>
-      </div>
-    </div>
-
   </div>
 </section>
 
