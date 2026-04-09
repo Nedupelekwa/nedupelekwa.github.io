@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -268,11 +267,13 @@
     </div>
 
     <!-- NAME + TITLE OVER PHOTO -->
-    <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
-    <p class="hero-title">Data Analyst & Aspiring Analytics Engineer</p>
-    <p class="hero-desc">
-  Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.
-</p>
+    <h1 class="hero-name" style="font-size: 3rem; margin-top: 1rem;">
+      Chinedu <span class="accent">Elekwa</span>
+    </h1>
+    <p class="hero-title" style="font-size: 1.3rem; max-width: 600px; line-height: 1.5;">
+      Data Analyst & Aspiring Analytics Engineer  
+      <br>Turning raw data into insights that drive impact.
+    </p>
 
     <!-- BADGES -->
     <div class="hero-badges" style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1rem;">
