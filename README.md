@@ -232,7 +232,7 @@
 
   <!-- NAME + PHOTO WRAPPER -->
   <div class="hero-name-wrapper" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem;">
-    <img src="images/your-photo.jpg" alt="Chinedu Elekwa" class="hero-photo">
+    <img src="images/My-photo.jpeg" alt="Chinedu Elekwa" class="hero-photo">
     <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
   </div>
 
