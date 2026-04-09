@@ -325,7 +325,7 @@
         <div class="project-desc">Key finding: +24.5 % YoY Sales from 2021 to 2022</div>
         <div class="project-stack">
           <span class="tag accent-tag">Power BI</span><span class="tag accent-tag">DAX</span>
-          <span class="tag">SAP</span><span class="tag">MS Excel</span>
+          <span class="tag">Power Query</span><span class="tag">MS Excel</span>
         </div>
         <a href="https://github.com/Nedupelekwa/POWERBI-BUSINESS-DASHBOARD" target="_blank" class="project-link">View Portfolio ↗</a>
       </div>
