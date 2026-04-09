@@ -263,7 +263,7 @@
 
     <!-- BIG PHOTO -->
     <div style="position: relative;">
-      <img src="images/your-photo.jpg" alt="Chinedu Elekwa" class="hero-photo-full">
+      <img src="images/My-photo.jpg" alt="Chinedu Elekwa" class="hero-photo-full">
     </div>
 
     <!-- NAME + TITLE OVER PHOTO -->
