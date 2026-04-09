@@ -85,10 +85,11 @@
 
   /* Hero layout: text left, photo right */
   .hero-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* change */
+  gap: 3rem; /* slightly tighter */
+};
     position: relative; z-index: 1;
     width: 100%;
   }
