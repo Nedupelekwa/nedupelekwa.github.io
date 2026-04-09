@@ -364,13 +364,13 @@
         Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.
       </p>
       <div class="hero-badges">
-        <span class="hero-pill">SQL</span>
-        <span class="hero-pill">Python</span>
-        <span class="hero-pill">Power BI</span>
-        <span class="hero-pill">Looker Studio</span>
+        <span class="hero-pill">Statistical Analytics</span>
+        <span class="hero-pill">Professional Dashboard Designer</span>
+        <span class="hero-pill">Digital Marketing Analytics</span>
+        <span class="hero-pill">FMCG</span>
         <span class="hero-pill">Data Modeling</span>
-        <span class="hero-pill">SAP</span>
-        <span class="hero-pill">MS PowerPoint</span>
+        <span class="hero-pill">Executive-style PowerPoint Reports Designer</span>
+        <span class="hero-pill">Adanced Data Analytics & Visualisation with Python</span>
       </div>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Explore My Work →</a>
