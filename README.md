@@ -356,8 +356,8 @@
   <div class="hero-inner">
     <!-- TEXT -->
     <div class="hero-content">
-      <div class="hero-badge">Open to new opportunities · Lagos, Nigeria</div>
       <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
+      <div class="hero-badge">Open to new opportunities · Lagos, Nigeria</div>
       <p class="hero-title">Data Analyst & Aspiring Analytics Engineer</p>
       <p class="hero-desc">
         Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.
