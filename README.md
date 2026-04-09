@@ -387,7 +387,7 @@
     <div class="hero-photo-col">
       <div class="hero-photo-wrap">
         <div class="hero-photo-glow"></div>
-        <div class="hero-photo-placeholder"><span>Add<br>Photo</span></div>
+        <img src="images/My-photo.jpeg" alt="Chinedu Elekwa" class="hero-photo">
       </div>
     </div>
   </div>
