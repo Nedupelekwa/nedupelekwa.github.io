@@ -83,7 +83,7 @@
   .hero-glow { position: absolute; top: 15%; left: 5%; width: 600px; height: 500px; background: radial-gradient(ellipse, rgba(0,210,140,0.07) 0%, transparent 70%); pointer-events: none; }
   .hero-glow-2 { position: absolute; bottom: 10%; right: 5%; width: 500px; height: 400px; background: radial-gradient(ellipse, rgba(59,130,246,0.06) 0%, transparent 70%); pointer-events: none; }
 
-  /* Hero layout: text left, photo right */
+  /* Hero layout: photo right, text left */
   .hero-inner {
   display: flex;
   align-items: center;
