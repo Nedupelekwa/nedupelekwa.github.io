@@ -225,7 +225,7 @@
     <span class="hero-pill">Looker Studio</span>
     <span class="hero-pill">Data Modeling</span>
     <span class="hero-pill">SAP</span>
-    <span class="hero-pill">Google Cloud</span>
+    <span class="hero-pill">Power Point</span>
   </div>
   <div class="hero-actions">
     <a href="#projects" class="btn-primary">Explore My Work →</a>
@@ -318,11 +318,11 @@
     </div>
 
     <div class="project-card reveal">
-      <div class="project-img-placeholder">[ Executive KPI Dashboard ]</div>
+      <div class="project-img-placeholder">"Business dashboard.jpg"</div>
       <div class="project-body">
         <div class="project-number"><span>02</span><span class="project-type">Business Intelligence</span></div>
-        <div class="project-title">Executive Production & KPI Dashboard</div>
-        <div class="project-desc">Built executive-level production reports and inventory tracking dashboards delivering real-time KPIs for FMCG stakeholders, streamlining decision-making across the supply chain.</div>
+        <div class="project-title">POWERBI-BUSINESS-DASHBOARD</div>
+        <div class="project-desc">Key finding: +24.5 % YoY Sales from 2021 to 2022</div>
         <div class="project-stack">
           <span class="tag accent-tag">Power BI</span><span class="tag accent-tag">DAX</span>
           <span class="tag">SAP</span><span class="tag">MS Excel</span>
