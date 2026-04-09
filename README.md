@@ -89,6 +89,21 @@
   .stat-val { font-family: var(--display); font-size: 2.2rem; font-weight: 700; color: var(--text-primary); display: block; }
   .stat-label { font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
 
+.hero-name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between photo and name */
+  margin-bottom: 0.5rem;
+}
+
+.hero-photo {
+  width: 80px;         /* adjust size as needed */
+  height: 80px;
+  border-radius: 50%;  /* makes it circular */
+  object-fit: cover;   /* ensures it fills the circle */
+  border: 2px solid var(--accent); /* optional accent border */
+}
+
   /* SECTIONS */
   section { padding: 7rem 4rem; position: relative; z-index: 1; }
   .section-label { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
@@ -212,12 +227,20 @@
   <div class="hero-grid-bg"></div>
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
+
   <div class="hero-badge">Open to new opportunities · Lagos, Nigeria</div>
-  <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
+
+  <!-- NAME + PHOTO WRAPPER -->
+  <div class="hero-name-wrapper" style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem;">
+    <img src="images/your-photo.jpg" alt="Chinedu Elekwa" class="hero-photo">
+    <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
+  </div>
+
   <p class="hero-title">Data Analyst & Aspiring Analytics Engineer</p>
   <p class="hero-desc">
     Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.
   </p>
+
   <div class="hero-badges">
     <span class="hero-pill">SQL</span>
     <span class="hero-pill">Python</span>
@@ -227,10 +250,12 @@
     <span class="hero-pill">SAP</span>
     <span class="hero-pill">Power Point</span>
   </div>
+
   <div class="hero-actions">
     <a href="#projects" class="btn-primary">Explore My Work →</a>
     <a href="#contact" class="btn-secondary">Get in touch ↗</a>
   </div>
+
   <div class="hero-stats">
     <div><span class="stat-val">5+</span><span class="stat-label">Years in Data</span></div>
     <div><span class="stat-val">95%</span><span class="stat-label">Analytics Efficiency Gained</span></div>
@@ -238,7 +263,6 @@
     <div><span class="stat-val">100+</span><span class="stat-label">Analysts Mentored</span></div>
   </div>
 </section>
-
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-label">Technical Arsenal</div>
