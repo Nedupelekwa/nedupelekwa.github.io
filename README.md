@@ -327,7 +327,7 @@
           <span class="tag accent-tag">Power BI</span><span class="tag accent-tag">DAX</span>
           <span class="tag">SAP</span><span class="tag">MS Excel</span>
         </div>
-        <a href="https://nedupelekwa.github.io" target="_blank" class="project-link">View Portfolio ↗</a>
+        <a href="https://github.com/Nedupelekwa/POWERBI-BUSINESS-DASHBOARD" target="_blank" class="project-link">View Portfolio ↗</a>
       </div>
     </div>
 
