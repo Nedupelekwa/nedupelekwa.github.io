@@ -428,11 +428,11 @@
 
   <div class="expertise-grid reveal">
     <div class="expertise-card">Statistical Analytics</div>
-    <div class="expertise-card">Professional Dashboard Designer</div>
+    <div class="expertise-card">Professional Dashboard Designe</div>
     <div class="expertise-card">Digital Marketing Analytics</div>
     <div class="expertise-card">FMCG Analytics</div>
     <div class="expertise-card">Data Modeling</div>
-    <div class="expertise-card">Executive-style PowerPoint Reports Designer</div>
+    <div class="expertise-card">Executive-style PowerPoint Reports Designe</div>
     <div class="expertise-card">Advanced Data Analytics & Visualisation with Python</div>
   </div>
 </section>
