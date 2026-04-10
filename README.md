@@ -409,10 +409,35 @@
   border: 1px solid var(--border);
   color: var(--text-secondary);
 }
-</style>
+
+/* ── LIGHT MODE ── */
+body.light {
+  --bg: #f7f8fc;
+  --bg-card: #ffffff;
+  --text-primary: #0b1220;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border: rgba(0,0,0,0.08);
+}
+
+/* toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 999;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.8rem;
+  border-radius: 30px;
+  font-family: var(--mono);
+  font-size: 11px;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
+<button class="theme-toggle" id="themeToggle">Toggle Theme</button>
 
 <!-- NAV -->
 <nav>
@@ -565,19 +590,32 @@
   <p class="section-subtitle reveal">Real analytics work across FMCG, education, and edtech.</p>
   <div class="projects-grid">
 
-    <div class="project-card reveal">
-      <div class="project-img-placeholder">[ FMCG Production Analytics ]</div>
-      <div class="project-body">
-        <div class="project-number"><span>01</span><span class="project-type">Production Analytics</span></div>
-        <div class="project-title">FMCG Production Data Pipeline</div>
-        <div class="project-desc">Designed and deployed a data collection and analytics system at Frutta Juice & Services Ltd tracking output, downtime, waste, and material usage — boosting analytics efficiency to 95%.</div>
-        <div class="project-stack">
-          <span class="tag accent-tag">Google Sheets</span><span class="tag accent-tag">Google Forms</span>
-          <span class="tag">SAP</span><span class="tag">MS PowerPoint</span>
-        </div>
-        <a href="https://nedupelekwa.github.io" target="_blank" class="project-link">View Portfolio ↗</a>
-      </div>
-    </div>
+    <div class="project-body">
+
+  <div class="project-number">
+    <span>01</span>
+    <span class="project-type">Case Study</span>
+  </div>
+
+  <div class="project-title">FMCG Production Analytics System</div>
+
+  <div class="project-desc">
+    <strong>Problem:</strong> Lack of visibility into production inefficiencies.  
+    <br><br>
+    <strong>Approach:</strong> Built a Google Forms + Sheets pipeline to track output, downtime, and waste.  
+    <br><br>
+    <strong>Insight:</strong> Identified recurring downtime patterns affecting throughput.  
+    <br><br>
+    <strong>Impact:</strong> Improved analytics efficiency to 95% and enabled faster operational decisions.
+  </div>
+
+  <div class="project-stack">
+    <span class="tag accent-tag">Google Sheets</span>
+    <span class="tag accent-tag">SAP</span>
+    <span class="tag">Reporting</span>
+  </div>
+
+</div>
 
     <div class="project-card reveal">
       <img src="images/Business-dashboard.jpg" alt="Power BI Business Dashboard" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -725,6 +763,34 @@
   </div>
 </section>
 
+<section id="recruiter" style="background: var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-label">Why Hire Me</div>
+  <h2 class="section-title">I Don’t Just Analyze Data — I Drive Decisions</h2>
+  <p class="section-subtitle">
+    Recruiters don’t hire tools. They hire thinkers, communicators, and impact-makers.
+  </p>
+
+  <div class="rec-grid reveal">
+    <div class="rec-card">
+      <div class="rec-icon">📊</div>
+      <div class="rec-title">Business-First Analyst</div>
+      <div class="rec-desc">I translate raw data into decisions executives can act on immediately.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-icon">⚙️</div>
+      <div class="rec-title">End-to-End Problem Solver</div>
+      <div class="rec-desc">From data collection → cleaning → modeling → visualization → insight delivery.</div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-icon">🚀</div>
+      <div class="rec-title">Impact-Oriented Work</div>
+      <div class="rec-desc">Every project is tied to measurable business improvement or operational efficiency.</div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-wrapper">
@@ -803,6 +869,18 @@
       sticky.classList.remove('show');
     }
   });
+    // ── DARK / LIGHT MODE ──
+const toggle = document.getElementById('themeToggle');
+
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+
+  if (document.body.classList.contains('light')) {
+    toggle.innerText = "Dark Mode";
+  } else {
+    toggle.innerText = "Light Mode";
+  }
+});
 </script>
 <div class="sticky-cta" id="stickyCTA">
   <a href="#projects" class="secondary">View Work</a>
