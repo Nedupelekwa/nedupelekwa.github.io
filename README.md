@@ -346,6 +346,70 @@
     .stat-val { font-size: 1.8rem; }
     .hero-name { font-size: clamp(2.5rem, 13vw, 4rem); }
   }
+@media (max-width: 480px) {
+  .hero-stats { flex-direction: column; }
+}
+
+/* ── ELITE MICRO INTERACTIONS ── */
+.project-card {
+  transition: all 0.35s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+/* Smooth button feel */
+.btn-primary, .social-link {
+  transition: all 0.25s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* ── STICKY CTA BAR ── */
+.sticky-cta {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(14,17,23,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  z-index: 300;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.sticky-cta.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sticky-cta a {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.sticky-cta .primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.sticky-cta .secondary {
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+</style>
 </style>
 </head>
 <body>
@@ -409,11 +473,11 @@
       </div>
 
       <div class="hero-stats">
-        <div><span class="stat-val">5+</span><span class="stat-label">Years in Data</span></div>
-        <div><span class="stat-val">95%</span><span class="stat-label">Analytics Efficiency</span></div>
-        <div><span class="stat-val">4+</span><span class="stat-label">Certifications</span></div>
-        <div><span class="stat-val">100+</span><span class="stat-label">Analysts Mentored</span></div>
-      </div>
+  <div><span class="stat-val" data-target="5">0</span><span class="stat-label">Years in Data</span></div>
+  <div><span class="stat-val" data-target="95">0</span><span class="stat-label">Analytics Efficiency</span></div>
+  <div><span class="stat-val" data-target="4">0</span><span class="stat-label">Certifications</span></div>
+  <div><span class="stat-val" data-target="100">0</span><span class="stat-label">Analysts Mentored</span></div>
+</div>
     </div>
     
   </div>
@@ -685,7 +749,8 @@
   <p>Built like a Data Product · Lagos, Nigeria</p>
 </footer>
 
-<script>
+  <script>
+  /* ── REVEAL ANIMATION ── */
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -696,6 +761,52 @@
     });
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
+
+  /* ── COUNT-UP STATS ── */
+  const counters = document.querySelectorAll('.stat-val');
+
+  const runCounter = (el) => {
+    const target = +el.getAttribute('data-target');
+    let count = 0;
+    const step = target / 60;
+
+    const update = () => {
+      count += step;
+      if (count < target) {
+        el.innerText = Math.floor(count);
+        requestAnimationFrame(update);
+      } else {
+        el.innerText = target + (target === 95 ? "%" : "+");
+      }
+    };
+    update();
+  };
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        runCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.7 });
+
+  counters.forEach(counter => counterObserver.observe(counter));
+
+  /* ── STICKY CTA VISIBILITY ── */
+  const sticky = document.getElementById('stickyCTA');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      sticky.classList.add('show');
+    } else {
+      sticky.classList.remove('show');
+    }
+  });
 </script>
+<div class="sticky-cta" id="stickyCTA">
+  <a href="#projects" class="secondary">View Work</a>
+  <a href="#contact" class="primary">Hire Me</a>
+</div>
 </body>
 </html>
