@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Chinedu Elekwa Promise | Data Analyst</title>
 <meta name="referrer" content="no-referrer" />
 <script>
   // Prevent this page from being framed by another page (fixes GitHub Pages iframe bleed)
@@ -436,7 +435,7 @@ body.light {
     <li><a href="#contact" class="nav-cta">Hire Me</a></li>
   </ul>
   <div class="nav-hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')">
-    <span></span><span></span><span></span>
+    <span></span>
   </div>
 </nav>
 
