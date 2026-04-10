@@ -420,24 +420,9 @@ body.light {
   --border: rgba(0,0,0,0.08);
 }
 
-/* toggle button */
-.theme-toggle {
-  position: fixed;
-  top: 90px;
-  right: 20px;
-  z-index: 999;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  padding: 0.5rem 0.8rem;
-  border-radius: 30px;
-  font-family: var(--mono);
-  font-size: 11px;
-  cursor: pointer;
-}
 </style>
 </head>
 <body>
-<div class="theme-toggle" onclick="toggleTheme()">☀ / ☾</div>
 
 <!-- NAV -->
 <nav>
