@@ -87,12 +87,12 @@
   .hero-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* change */
-  gap: 3rem; /* slightly tighter */
-};
-    position: relative; z-index: 1;
-    width: 100%;
-  }
+  justify-content: flex-start;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
   .hero-content { flex: 1; min-width: 0; }
   .hero-photo-col { flex-shrink: 0; }
 
@@ -187,6 +187,35 @@
   .skill-block-icon { font-size: 20px; margin-bottom: 0.85rem; }
   .skill-block-title { font-family: var(--display); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; color: #FFFFFF; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+/* ── EXPERTISE ── */
+#expertise {
+  background: var(--bg);
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.expertise-card {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 1.4rem;
+  border-radius: 8px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  transition: all 0.25s ease;
+}
+
+.expertise-card:hover {
+  border-color: var(--border-accent);
+  color: var(--accent);
+  transform: translateY(-3px);
+}
 
   /* ── PROJECTS ── */
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -355,6 +384,15 @@
   <div class="hero-glow-2"></div>
 
   <div class="hero-inner">
+
+    <!-- PHOTO (LEFT NOW) -->
+    <div class="hero-photo-col">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-glow"></div>
+        <img src="images/My-photo.jpeg" alt="Chinedu Elekwa" class="hero-photo">
+      </div>
+    </div>
+
     <!-- TEXT -->
     <div class="hero-content">
       <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
@@ -363,19 +401,13 @@
       <p class="hero-desc">
         Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.
       </p>
-      <div class="hero-badges">
-        <span class="hero-pill">Statistical Analytics</span>
-        <span class="hero-pill">Professional Dashboard Designer</span>
-        <span class="hero-pill">Digital Marketing Analytics</span>
-        <span class="hero-pill">FMCG</span>
-        <span class="hero-pill">Data Modeling</span>
-        <span class="hero-pill">Executive-style PowerPoint Reports Designer</span>
-        <span class="hero-pill">Adanced Data Analytics & Visualisation with Python</span>
-      </div>
+
+      <!-- NEW BUTTON POSITION -->
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Explore My Work →</a>
         <a href="#contact" class="btn-secondary">Get in touch ↗</a>
       </div>
+
       <div class="hero-stats">
         <div><span class="stat-val">5+</span><span class="stat-label">Years in Data</span></div>
         <div><span class="stat-val">95%</span><span class="stat-label">Analytics Efficiency</span></div>
@@ -383,14 +415,25 @@
         <div><span class="stat-val">100+</span><span class="stat-label">Analysts Mentored</span></div>
       </div>
     </div>
+    
+  </div>
+</section>
 
-    <!-- PHOTO -->
-    <div class="hero-photo-col">
-      <div class="hero-photo-wrap">
-        <div class="hero-photo-glow"></div>
-        <img src="images/My-photo.jpeg" alt="Chinedu Elekwa" class="hero-photo">
-      </div>
-    </div>
+<section id="expertise">
+  <div class="section-label">Core Strengths</div>
+  <h2 class="section-title">My Technical Expertise</h2>
+  <p class="section-subtitle reveal">
+    Specialized capabilities that define my impact across data, analytics, and business intelligence.
+  </p>
+
+  <div class="expertise-grid reveal">
+    <div class="expertise-card">Statistical Analytics</div>
+    <div class="expertise-card">Professional Dashboard Designer</div>
+    <div class="expertise-card">Digital Marketing Analytics</div>
+    <div class="expertise-card">FMCG Analytics</div>
+    <div class="expertise-card">Data Modeling</div>
+    <div class="expertise-card">Executive-style PowerPoint Reports Designer</div>
+    <div class="expertise-card">Advanced Data Analytics & Visualisation with Python</div>
   </div>
 </section>
 
