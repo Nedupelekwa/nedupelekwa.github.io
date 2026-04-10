@@ -310,14 +310,7 @@
     .social-link { font-size: 10px; padding: 0.55rem 0.9rem; }
 
     .contact-email { font-size: clamp(1.1rem, 5vw, 1.5rem); }
-  .hero-expertise-grid {
-  grid-template-columns: 1fr;
-}
-.expertise-item.full {
-  grid-column: span 1;
-}
-
-}
+  }
 
   @media (max-width: 480px) {
     .hero-stats { flex-direction: column; align-items: center; gap: 1.25rem; }
@@ -355,95 +348,6 @@
   <a href="#contact" onclick="document.querySelector('.mobile-nav').classList.remove('open')" style="color:var(--accent)">Hire Me</a>
 </div>
 
-.hero-expertise {
-  margin-bottom: 2rem;
-}
-
-.hero-expertise-title {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
-}
-
-.hero-expertise-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.expertise-pill {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-  padding: 0.35rem 0.8rem;
-  border-radius: 20px;
-  letter-spacing: 0.05em;
-  background: rgba(255,255,255,0.03);
-  transition: all 0.2s ease;
-}
-
-.expertise-pill:hover {
-  color: var(--accent);
-  border-color: var(--border-accent);
-  background: var(--accent-dim);
-}
-.hero-expertise {
-  margin-bottom: 2.5rem;
-  padding: 1.2rem 1.4rem;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: rgba(255,255,255,0.02);
-}
-
-.hero-expertise-header {
-  margin-bottom: 1rem;
-}
-
-.hero-expertise-title {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-}
-
-.hero-expertise-sub {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.hero-expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.6rem 1.2rem;
-}
-
-.expertise-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
-
-.expertise-item.full {
-  grid-column: span 2;
-}
-
-.expertise-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(0,210,140,0.6);
-  flex-shrink: 0;
-}
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-grid-bg"></div>
@@ -468,51 +372,6 @@
         <span class="hero-pill">Executive-style PowerPoint Reports Designer</span>
         <span class="hero-pill">Adanced Data Analytics & Visualisation with Python</span>
       </div>
-      <div class="hero-expertise">
-  <div class="hero-expertise-header">
-    <div class="hero-expertise-title">My Technical Expertise</div>
-    <div class="hero-expertise-sub">What I bring beyond tools — real business impact capabilities</div>
-  </div>
-
-  <div class="hero-expertise-grid">
-
-    <div class="expertise-item">
-      <span class="expertise-dot"></span>
-      <span>Statistical Analytics</span>
-    </div>
-
-    <div class="expertise-item">
-      <span class="expertise-dot"></span>
-      <span>Professional Dashboard Designer</span>
-    </div>
-
-    <div class="expertise-item">
-      <span class="expertise-dot"></span>
-      <span>Digital Marketing Analytics</span>
-    </div>
-
-    <div class="expertise-item">
-      <span class="expertise-dot"></span>
-      <span>FMCG Analytics</span>
-    </div>
-
-    <div class="expertise-item">
-      <span class="expertise-dot"></span>
-      <span>Data Modeling</span>
-    </div>
-
-    <div class="expertise-item">
-      <span class="expertise-dot"></span>
-      <span>Executive-style PowerPoint Reporting</span>
-    </div>
-
-    <div class="expertise-item full">
-      <span class="expertise-dot"></span>
-      <span>Advanced Data Analytics & Visualisation with Python</span>
-    </div>
-
-  </div>
-</div>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Explore My Work →</a>
         <a href="#contact" class="btn-secondary">Get in touch ↗</a>
