@@ -1,8 +1,8 @@
 
 <html lang="en">
-<head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chinedu Elekwa Promise | Data Analyst</title>
 <meta name="referrer" content="no-referrer" />
 <script>
   // Prevent this page from being framed by another page (fixes GitHub Pages iframe bleed)
@@ -419,9 +419,24 @@ body.light {
   --border: rgba(0,0,0,0.08);
 }
 
+/* toggle button */
+.theme-toggle {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 999;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.8rem;
+  border-radius: 30px;
+  font-family: var(--mono);
+  font-size: 11px;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
+<button class="theme-toggle" id="themeToggle">Toggle Theme</button>
 
 <!-- NAV -->
 <nav>
@@ -435,7 +450,7 @@ body.light {
     <li><a href="#contact" class="nav-cta">Hire Me</a></li>
   </ul>
   <div class="nav-hamburger" onclick="document.querySelector('.mobile-nav').classList.add('open')">
-    <span></span>
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
@@ -470,7 +485,7 @@ body.light {
     <div class="hero-content">
       <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
       <div class="hero-badge">Open to new opportunities · Lagos, Nigeria</div>
-      <p class="hero-title">Data Analyst | Business Intelligence</p>
+      <p class="hero-title">Data Analyst & Aspiring Analytics Engineer</p>
       <p class="hero-desc">
         Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.
       </p>
