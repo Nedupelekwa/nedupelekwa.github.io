@@ -552,7 +552,8 @@ body.light nav { background: rgba(244,246,251,0.93); }
     <div class="socials reveal">
       <a href="https://www.linkedin.com/in/chinedu-elekwa/" target="_blank" class="social-link">↗ LinkedIn</a>
       <a href="https://nedupelekwa.github.io" target="_blank" class="social-link">↗ GitHub</a>
-      <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="social-link">↗ Website</a>
+      <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="social-link">↗ View My Certificates</a>
+      <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing" target="_blank" class="social-link">↗ Download My CV</a>
       <a href="tel:+2347033130747" class="social-link">↗ Call me</a>
     </div>
   </div>
