@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -6,7 +5,6 @@
 <title>Chinedu Elekwa Promise | Data Analyst</title>
 <meta name="referrer" content="no-referrer" />
 <script>
-  // Prevent this page from being framed by another page (fixes GitHub Pages iframe bleed)
   if (window.top !== window.self) { window.top.location = window.self.location; }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -69,9 +67,11 @@
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
+    display: flex;
+    align-items: center;
     padding: 9rem 4rem 5rem;
-    position: relative; overflow: hidden;
+    position: relative;
+    overflow: hidden;
   }
   .hero-grid-bg {
     position: absolute; inset: 0;
@@ -83,23 +83,28 @@
   .hero-glow { position: absolute; top: 15%; left: 5%; width: 600px; height: 500px; background: radial-gradient(ellipse, rgba(0,210,140,0.07) 0%, transparent 70%); pointer-events: none; }
   .hero-glow-2 { position: absolute; bottom: 10%; right: 5%; width: 500px; height: 400px; background: radial-gradient(ellipse, rgba(59,130,246,0.06) 0%, transparent 70%); pointer-events: none; }
 
-  /* Hero layout: photo right, text left */
+  /* ── HERO INNER LAYOUT ── */
   .hero-inner {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 2.5rem;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-}
-  .hero-content { flex: 1; min-width: 0; }
-  .hero-photo-col { flex-shrink: 0; }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 
-  /* Photo */
+  .hero-content { flex: 1; min-width: 0; }
+  .hero-photo-col { flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+
+  /* ── PHOTO ── */
   .hero-photo-wrap {
     position: relative;
-    width: 280px; height: 280px;
+    width: 300px;
+    height: 300px;
   }
   .hero-photo-wrap::before {
     content: '';
@@ -115,7 +120,6 @@
     background: var(--bg);
     z-index: 1;
   }
-  /* Glow ring behind photo */
   .hero-photo-glow {
     position: absolute;
     inset: -20px;
@@ -123,20 +127,6 @@
     background: radial-gradient(ellipse, rgba(0,210,140,0.15) 0%, transparent 70%);
     z-index: -1;
   }
-  /* Photo placeholder — swap this div for <img class="hero-photo" src="YOUR_IMAGE"> when ready */
-  .hero-photo-placeholder {
-    position: absolute; inset: 6px;
-    border-radius: 50%;
-    background: rgba(0,210,140,0.05);
-    border: 2px dashed rgba(0,210,140,0.25);
-    display: flex; align-items: center; justify-content: center;
-    z-index: 2;
-  }
-  .hero-photo-placeholder span {
-    font-family: var(--mono); font-size: 11px; color: var(--accent);
-    letter-spacing: 0.08em; text-align: center; line-height: 1.7; opacity: 0.55;
-  }
-  /* Real photo class (use this when you have your image ready) */
   .hero-photo {
     position: absolute; inset: 6px; border-radius: 50%;
     object-fit: cover; object-position: center top;
@@ -188,34 +178,11 @@
   .skill-block-title { font-family: var(--display); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; color: #FFFFFF; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
-/* ── EXPERTISE ── */
-#expertise {
-  background: var(--bg);
-}
-
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-}
-
-.expertise-card {
-  border: 1px solid var(--border);
-  background: var(--bg-card);
-  padding: 1.4rem;
-  border-radius: 8px;
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--text-secondary);
-  transition: all 0.25s ease;
-}
-
-.expertise-card:hover {
-  border-color: var(--border-accent);
-  color: var(--accent);
-  transform: translateY(-3px);
-}
+  /* ── EXPERTISE ── */
+  #expertise { background: var(--bg); }
+  .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .expertise-card { border: 1px solid var(--border); background: var(--bg-card); padding: 1.4rem; border-radius: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--text-secondary); transition: all 0.25s ease; }
+  .expertise-card:hover { border-color: var(--border-accent); color: var(--accent); transform: translateY(-3px); }
 
   /* ── PROJECTS ── */
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
@@ -290,19 +257,37 @@
   .reveal.visible { opacity: 1; transform: none; }
 
   /* ── MOBILE NAV OVERLAY ── */
-  .mobile-nav {
-    display: none;
-    position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200;
-    background: rgba(8,10,14,0.98);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
-  }
+  .mobile-nav { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200; background: rgba(8,10,14,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
   .mobile-nav.open { display: flex; }
   .mobile-nav a { font-family: var(--mono); font-size: 18px; color: var(--text-secondary); text-decoration: none; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.2s; font-weight: 400; }
   .mobile-nav a:hover { color: var(--accent); }
   .mobile-nav-close { position: absolute; top: 1.25rem; right: 1.5rem; font-family: var(--mono); font-size: 22px; color: var(--text-muted); cursor: pointer; background: none; border: none; line-height: 1; }
+
+  /* ── STICKY CTA ── */
+  .sticky-cta { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(14,17,23,0.85); backdrop-filter: blur(12px); border: 1px solid var(--border); padding: 0.6rem 1rem; border-radius: 50px; display: flex; gap: 1rem; align-items: center; z-index: 300; opacity: 0; pointer-events: none; transition: all 0.4s ease; }
+  .sticky-cta.show { opacity: 1; pointer-events: auto; }
+  .sticky-cta a { font-family: var(--mono); font-size: 11px; text-decoration: none; padding: 0.5rem 1rem; border-radius: 20px; }
+  .sticky-cta .primary { background: var(--accent); color: #000; }
+  .sticky-cta .secondary { border: 1px solid var(--border); color: var(--text-secondary); }
+
+  /* ── THEME TOGGLE ── */
+  .theme-toggle { position: fixed; top: 90px; right: 20px; z-index: 999; background: var(--bg-card); border: 1px solid var(--border); padding: 0.5rem 0.8rem; border-radius: 30px; font-family: var(--mono); font-size: 11px; cursor: pointer; color: var(--text-secondary); }
+
+  /* ── LIGHT MODE ── */
+  body.light {
+    --bg: #f7f8fc;
+    --bg-card: #ffffff;
+    --text-primary: #0b1220;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --border: rgba(0,0,0,0.08);
+  }
+
+  /* ── MICRO INTERACTIONS ── */
+  .project-card { transition: all 0.35s ease; }
+  .project-card:hover { transform: translateY(-6px) scale(1.01); box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+  .btn-primary, .social-link { transition: all 0.25s ease; }
+  .btn-primary:hover { transform: translateY(-2px) scale(1.02); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -310,16 +295,27 @@
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
 
-    .hero { padding: 7rem 1.5rem 4rem; }
+    .hero {
+      min-height: 100vh;
+      padding: 7rem 1.5rem 4rem;
+      align-items: flex-start;
+    }
+
+    /* MOBILE: photo on top, then text below */
     .hero-inner {
-      flex-direction: column-reverse;
+      flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 2.5rem;
+      gap: 2rem;
     }
-    .hero-content { width: 100%; }
-    .hero-photo-col { width: 100%; display: flex; justify-content: center; }
+
+    /* Photo comes first in DOM order so it appears on top */
+    .hero-photo-col {
+      order: -1;
+    }
+
     .hero-photo-wrap { width: 200px; height: 200px; }
+    .hero-content { width: 100%; order: 1; }
     .hero-badge { justify-content: center; }
     .hero-badges { justify-content: center; }
     .hero-actions { justify-content: center; }
@@ -327,17 +323,14 @@
     .hero-stats { justify-content: center; gap: 2rem; }
 
     section { padding: 4rem 1.5rem; }
-
     .skills-grid { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr; }
     .cert-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
     .rec-grid { grid-template-columns: 1fr; }
 
     footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.5rem; }
-
     .socials { gap: 0.5rem; }
     .social-link { font-size: 10px; padding: 0.55rem 0.9rem; }
-
     .contact-email { font-size: clamp(1.1rem, 5vw, 1.5rem); }
   }
 
@@ -346,94 +339,6 @@
     .stat-val { font-size: 1.8rem; }
     .hero-name { font-size: clamp(2.5rem, 13vw, 4rem); }
   }
-@media (max-width: 480px) {
-  .hero-stats { flex-direction: column; }
-}
-
-/* ── ELITE MICRO INTERACTIONS ── */
-.project-card {
-  transition: all 0.35s ease;
-}
-.project-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-}
-
-/* Smooth button feel */
-.btn-primary, .social-link {
-  transition: all 0.25s ease;
-}
-.btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-}
-
-/* ── STICKY CTA BAR ── */
-.sticky-cta {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(14,17,23,0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  padding: 0.6rem 1rem;
-  border-radius: 50px;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  z-index: 300;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.4s ease;
-}
-
-.sticky-cta.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.sticky-cta a {
-  font-family: var(--mono);
-  font-size: 11px;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-}
-
-.sticky-cta .primary {
-  background: var(--accent);
-  color: #000;
-}
-
-.sticky-cta .secondary {
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
-}
-
-/* ── LIGHT MODE ── */
-body.light {
-  --bg: #f7f8fc;
-  --bg-card: #ffffff;
-  --text-primary: #0b1220;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --border: rgba(0,0,0,0.08);
-}
-
-/* toggle button */
-.theme-toggle {
-  position: fixed;
-  top: 90px;
-  right: 20px;
-  z-index: 999;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  padding: 0.5rem 0.8rem;
-  border-radius: 30px;
-  font-family: var(--mono);
-  font-size: 11px;
-  cursor: pointer;
-}
 </style>
 </head>
 <body>
@@ -474,7 +379,7 @@ body.light {
 
   <div class="hero-inner">
 
-    <!-- PHOTO (LEFT NOW) -->
+    <!-- PHOTO — comes first in DOM so `order: -1` on mobile puts it above text -->
     <div class="hero-photo-col">
       <div class="hero-photo-wrap">
         <div class="hero-photo-glow"></div>
@@ -484,44 +389,41 @@ body.light {
 
     <!-- TEXT -->
     <div class="hero-content">
-      <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
       <div class="hero-badge">Open to new opportunities · Lagos, Nigeria</div>
+      <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
       <p class="hero-title">Data Analyst & Aspiring Analytics Engineer</p>
       <p class="hero-desc">
         Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.
       </p>
 
-      <!-- NEW BUTTON POSITION -->
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Explore My Work →</a>
         <a href="#contact" class="btn-secondary">Get in touch ↗</a>
       </div>
 
       <div class="hero-stats">
-  <div><span class="stat-val" data-target="5">0</span><span class="stat-label">Years in Data</span></div>
-  <div><span class="stat-val" data-target="95">0</span><span class="stat-label">Analytics Efficiency</span></div>
-  <div><span class="stat-val" data-target="4">0</span><span class="stat-label">Certifications</span></div>
-  <div><span class="stat-val" data-target="100">0</span><span class="stat-label">Analysts Mentored</span></div>
-</div>
+        <div><span class="stat-val" data-target="5">0</span><span class="stat-label">Years in Data</span></div>
+        <div><span class="stat-val" data-target="95">0</span><span class="stat-label">Analytics Efficiency</span></div>
+        <div><span class="stat-val" data-target="4">0</span><span class="stat-label">Certifications</span></div>
+        <div><span class="stat-val" data-target="100">0</span><span class="stat-label">Analysts Mentored</span></div>
+      </div>
     </div>
-    
+
   </div>
 </section>
 
+<!-- EXPERTISE -->
 <section id="expertise">
   <div class="section-label">Core Strengths</div>
   <h2 class="section-title">My Technical Expertise</h2>
-  <p class="section-subtitle reveal">
-    Specialized capabilities that define my impact across data, analytics, and business intelligence.
-  </p>
-
+  <p class="section-subtitle reveal">Specialized capabilities that define my impact across data, analytics, and business intelligence.</p>
   <div class="expertise-grid reveal">
     <div class="expertise-card">Statistical Analytics</div>
-    <div class="expertise-card">Professional Dashboard Designe</div>
+    <div class="expertise-card">Professional Dashboard Design</div>
     <div class="expertise-card">Digital Marketing Analytics</div>
     <div class="expertise-card">FMCG Analytics</div>
     <div class="expertise-card">Data Modeling</div>
-    <div class="expertise-card">Executive-style PowerPoint Reports Designe</div>
+    <div class="expertise-card">Executive-style PowerPoint Reports Design</div>
     <div class="expertise-card">Advanced Data Analytics & Visualisation with Python</div>
   </div>
 </section>
@@ -590,32 +492,24 @@ body.light {
   <p class="section-subtitle reveal">Real analytics work across FMCG, education, and edtech.</p>
   <div class="projects-grid">
 
-    <div class="project-body">
-
-  <div class="project-number">
-    <span>01</span>
-    <span class="project-type">Case Study</span>
-  </div>
-
-  <div class="project-title">FMCG Production Analytics System</div>
-
-  <div class="project-desc">
-    <strong>Problem:</strong> Lack of visibility into production inefficiencies.  
-    <br><br>
-    <strong>Approach:</strong> Built a Google Forms + Sheets pipeline to track output, downtime, and waste.  
-    <br><br>
-    <strong>Insight:</strong> Identified recurring downtime patterns affecting throughput.  
-    <br><br>
-    <strong>Impact:</strong> Improved analytics efficiency to 95% and enabled faster operational decisions.
-  </div>
-
-  <div class="project-stack">
-    <span class="tag accent-tag">Google Sheets</span>
-    <span class="tag accent-tag">SAP</span>
-    <span class="tag">Reporting</span>
-  </div>
-
-</div>
+    <div class="project-card reveal">
+      <div class="project-img-placeholder">[ FMCG Production Analytics ]</div>
+      <div class="project-body">
+        <div class="project-number"><span>01</span><span class="project-type">Case Study</span></div>
+        <div class="project-title">FMCG Production Analytics System</div>
+        <div class="project-desc">
+          <strong>Problem:</strong> Lack of visibility into production inefficiencies.<br><br>
+          <strong>Approach:</strong> Built a Google Forms + Sheets pipeline to track output, downtime, and waste.<br><br>
+          <strong>Insight:</strong> Identified recurring downtime patterns affecting throughput.<br><br>
+          <strong>Impact:</strong> Improved analytics efficiency to 95% and enabled faster operational decisions.
+        </div>
+        <div class="project-stack">
+          <span class="tag accent-tag">Google Sheets</span>
+          <span class="tag accent-tag">SAP</span>
+          <span class="tag">Reporting</span>
+        </div>
+      </div>
+    </div>
 
     <div class="project-card reveal">
       <img src="images/Business-dashboard.jpg" alt="Power BI Business Dashboard" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
@@ -763,26 +657,22 @@ body.light {
   </div>
 </section>
 
+<!-- WHY HIRE ME -->
 <section id="recruiter" style="background: var(--bg-card); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-label">Why Hire Me</div>
-  <h2 class="section-title">I Don’t Just Analyze Data — I Drive Decisions</h2>
-  <p class="section-subtitle">
-    Recruiters don’t hire tools. They hire thinkers, communicators, and impact-makers.
-  </p>
-
+  <h2 class="section-title">I Don't Just Analyze Data — I Drive Decisions</h2>
+  <p class="section-subtitle">Recruiters don't hire tools. They hire thinkers, communicators, and impact-makers.</p>
   <div class="rec-grid reveal">
     <div class="rec-card">
       <div class="rec-icon">📊</div>
       <div class="rec-title">Business-First Analyst</div>
       <div class="rec-desc">I translate raw data into decisions executives can act on immediately.</div>
     </div>
-
     <div class="rec-card">
       <div class="rec-icon">⚙️</div>
       <div class="rec-title">End-to-End Problem Solver</div>
       <div class="rec-desc">From data collection → cleaning → modeling → visualization → insight delivery.</div>
     </div>
-
     <div class="rec-card">
       <div class="rec-icon">🚀</div>
       <div class="rec-title">Impact-Oriented Work</div>
@@ -815,8 +705,12 @@ body.light {
   <p>Built like a Data Product · Lagos, Nigeria</p>
 </footer>
 
-  <script>
-  /* ── REVEAL ANIMATION ── */
+<div class="sticky-cta" id="stickyCTA">
+  <a href="#projects" class="secondary">View Work</a>
+  <a href="#contact" class="primary">Hire Me</a>
+</div>
+
+<script>
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -828,14 +722,11 @@ body.light {
   }, { threshold: 0.08 });
   reveals.forEach(el => observer.observe(el));
 
-  /* ── COUNT-UP STATS ── */
   const counters = document.querySelectorAll('.stat-val');
-
   const runCounter = (el) => {
     const target = +el.getAttribute('data-target');
     let count = 0;
     const step = target / 60;
-
     const update = () => {
       count += step;
       if (count < target) {
@@ -847,7 +738,6 @@ body.light {
     };
     update();
   };
-
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -856,35 +746,18 @@ body.light {
       }
     });
   }, { threshold: 0.7 });
-
   counters.forEach(counter => counterObserver.observe(counter));
 
-  /* ── STICKY CTA VISIBILITY ── */
   const sticky = document.getElementById('stickyCTA');
-
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      sticky.classList.add('show');
-    } else {
-      sticky.classList.remove('show');
-    }
+    sticky.classList.toggle('show', window.scrollY > 400);
   });
-    // ── DARK / LIGHT MODE ──
-const toggle = document.getElementById('themeToggle');
 
-toggle.addEventListener('click', () => {
-  document.body.classList.toggle('light');
-
-  if (document.body.classList.contains('light')) {
-    toggle.innerText = "Dark Mode";
-  } else {
-    toggle.innerText = "Light Mode";
-  }
-});
+  const toggle = document.getElementById('themeToggle');
+  toggle.addEventListener('click', () => {
+    document.body.classList.toggle('light');
+    toggle.innerText = document.body.classList.contains('light') ? "Dark Mode" : "Light Mode";
+  });
 </script>
-<div class="sticky-cta" id="stickyCTA">
-  <a href="#projects" class="secondary">View Work</a>
-  <a href="#contact" class="primary">Hire Me</a>
-</div>
 </body>
 </html>
