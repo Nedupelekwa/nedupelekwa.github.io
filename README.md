@@ -348,7 +348,7 @@ body.light nav { background: rgba(244,246,251,0.93); }
 </button>
 
 <nav>
-  <a href="#" class="nav-logo"><div class="nav-logo-dot"></div>[ chinedu.elekwa ]</a>
+  <a href="#" class="nav-logo"><div class="nav-logo-dot"></div>[ Welcome To My Portfolio Site ]</a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
