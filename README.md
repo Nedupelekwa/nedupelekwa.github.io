@@ -31,7 +31,16 @@
 }
 
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--text-primary); font-family: var(--sans); font-weight: 400; line-height: 1.7; overflow-x: hidden; cursor: none; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: none;
+  padding-top: 80px; /* THIS fixes the overlap */
+}
 
 body::before {
   content: ''; position: fixed; inset: 0;
@@ -47,7 +56,21 @@ body::before {
 .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; z-index: 200; background: linear-gradient(90deg, var(--accent), var(--accent2)); width: 0%; }
 
 /* ── NAV ── */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1rem 4rem; border-bottom: 1px solid var(--border); background: rgba(6,8,12,0.9); backdrop-filter: blur(24px); }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px; /* fixed height */
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem; /* remove top/bottom padding */
+  border-bottom: 1px solid var(--border);
+  background: rgba(6,8,12,0.9);
+  backdrop-filter: blur(24px);
+}
 .nav-logo { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: 0.1em; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; }
 .nav-logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
 .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
@@ -92,7 +115,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
   gap: 6rem;
   position: relative; z-index: 1;
   width: 100%; max-width: 1200px; margin: 0 auto;
-  padding-top: 5rem;
+  padding-top: 2rem;
 }
 .hero-content { min-width: 0; }
 .hero-photo-col { display: flex; align-items: center; justify-content: center; }
@@ -285,7 +308,7 @@ body.light nav { background: rgba(244,246,251,0.93); }
     display: flex; flex-direction: column;
     align-items: center; text-align: center;
     gap: 2.5rem;
-    padding-top: 6rem; padding-bottom: 4rem;
+    padding-top: 2rem; padding-bottom: 4rem;
   }
   .hero-photo-col { order: 0; }
   .hero-content { order: 1; width: 100%; }
