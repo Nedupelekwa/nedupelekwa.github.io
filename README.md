@@ -548,7 +548,7 @@ body.light nav { background: rgba(244,246,251,0.93); }
     <div class="section-label" style="justify-content:center">Let's Talk</div>
     <h2 class="section-title reveal">Open to the Right<br>Opportunity</h2>
     <p class="section-subtitle reveal" style="margin:0 auto 1rem;text-align:center;max-width:440px">Whether it's a full-time role, a freelance project, or just a conversation about data — I'd love to hear from you.</p>
-    <a href="mailto:chinedupelekwa@gmail.com" class="contact-email reveal">chinedupelekwa@gmail.com</a>
+    <a href="mailto:chinedupelekwa@gmail.com" class="contact-email reveal">SEND MAIL</a>
     <div class="socials reveal">
       <a href="https://www.linkedin.com/in/chinedu-elekwa/" target="_blank" class="social-link">↗ LinkedIn</a>
       <a href="https://nedupelekwa.github.io" target="_blank" class="social-link">↗ GitHub</a>
