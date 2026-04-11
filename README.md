@@ -370,13 +370,6 @@ body.light nav { background: rgba(244,246,251,0.93); }
 </div>
 
 <!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
-
-  <div class="hero-inner">
-
     <!-- PHOTO — right on desktop, top on mobile (via flex order) -->
     <div class="hero-photo-col">
       <div class="hero-photo-wrap">
