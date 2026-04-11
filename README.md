@@ -393,9 +393,9 @@ body.light nav { background: rgba(244,246,251,0.93); }
 
     <!-- TEXT -->
     <div class="hero-content">
-      <div class="hero-badge">Lagos, Nigeria · Data Analyst</div>
-      <h1 class="hero-name">Chinedu<br><span class="accent">Elekwa</span></h1>
-      <p class="hero-title">Data Analyst & Aspiring Analytics Engineer</p>
+      <div class="hero-badge">Lagos, Nigeria</div>
+      <h1 class="hero-name">CHINEDU<br><span class="accent">ELEKWA PROMISE</span></h1>
+      <p class="hero-title">Data Analyst | Business Intelligence</p>
       <p class="hero-desc">Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Explore My Work →</a>
