@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="no-referrer" />
 <script>if (window.top !== window.self) { window.top.location = window.self.location; }</script>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -135,56 +135,73 @@ nav {
 .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity:1; box-shadow:0 0 8px var(--accent); } 50% { opacity:0.5; box-shadow:0 0 3px var(--accent); } }
 
+/* ── HERO NAME ── */
 .hero-name {
-  font-family: var(--display);
-  font-size: clamp(3.5rem, 5.5vw, 6rem);
-  font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: 0.04em;
+  font-family: 'Bebas Neue', var(--display);
+  font-size: clamp(5rem, 9vw, 8.5rem);
+  font-weight: 400; /* Bebas Neue is inherently ultra-bold */
+  line-height: 0.88;
+  letter-spacing: 0.06em;
   margin-bottom: 0.2rem;
-  color: #FFFFFF;
   text-transform: uppercase;
   position: relative;
 }
 .hero-name .first-name {
   display: block;
   color: #FFFFFF;
-  text-shadow: 0 0 60px rgba(255,255,255,0.08);
-}
-.hero-name .last-name {
-  display: block;
-  background: linear-gradient(90deg, var(--accent) 0%, #00FFAA 40%, var(--accent2) 80%, var(--accent) 100%);
-  background-size: 200% auto;
+  /* Subtle vertical mask — top is brighter, fades just slightly at base */
+  background: linear-gradient(180deg, #FFFFFF 60%, rgba(200,220,255,0.75) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: nameShimmer 4s linear infinite;
+  /* Very faint green bloom behind the letters */
+  filter: drop-shadow(0 0 28px rgba(0,210,140,0.18));
+}
+.hero-name .last-name {
+  display: block;
+  /* Green → teal → blue shimmer, moves left-to-right on loop */
+  background: linear-gradient(90deg,
+    var(--accent)   0%,
+    #00FFAA        30%,
+    #5EEAD4        55%,
+    var(--accent2) 80%,
+    var(--accent)  100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nameShimmer 5s linear infinite;
+  /* Glow that reads as "electric" on dark bg */
+  filter: drop-shadow(0 0 22px rgba(0,210,140,0.35));
 }
 @keyframes nameShimmer {
-  0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  0%   { background-position:   0% center; }
+  100% { background-position: 220% center; }
 }
+
+/* Thin scanner line below name */
 .hero-name-rule {
   display: block;
   width: 100%;
   height: 1px;
-  margin: 0.55rem 0 0.85rem;
-  background: linear-gradient(90deg, var(--accent), var(--accent2), transparent);
+  margin: 0.6rem 0 1rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), transparent 85%);
   position: relative;
 }
 .hero-name-rule::after {
   content: '';
   position: absolute;
   left: 0; top: -2px;
-  width: 6px; height: 5px;
+  width: 7px; height: 5px;
   background: var(--accent);
   border-radius: 1px;
-  box-shadow: 0 0 8px var(--accent);
-  animation: ruleDot 3s ease-in-out infinite;
+  box-shadow: 0 0 10px var(--accent), 0 0 24px rgba(0,210,140,0.4);
+  animation: ruleDot 3.5s ease-in-out infinite;
 }
 @keyframes ruleDot {
-  0%,100% { left: 0; opacity:1; }
-  50% { left: calc(100% - 6px); opacity: 0.6; }
+  0%,100% { left: 0; opacity: 1; }
+  50%      { left: calc(70% - 7px); opacity: 0.5; }
 }
 
 /* ── JOB TITLE ── */
@@ -461,7 +478,7 @@ body.light nav { background: rgba(244,246,251,0.93); }
 @media (max-width: 480px) {
   .hero-stats { flex-direction: column; align-items: center; gap: 1.5rem; }
   .stat-val { font-size: 1.8rem; }
-  .hero-name { font-size: clamp(2.8rem, 14vw, 4rem); }
+  .hero-name { font-size: clamp(3.8rem, 18vw, 5.5rem); letter-spacing: 0.04em; }
   .cursor-dot, .cursor-ring { display: none; }
   body { cursor: auto; }
 }
@@ -697,7 +714,7 @@ body.light nav { background: rgba(244,246,251,0.93); }
     <div class="section-label" style="justify-content:center">Let's Talk</div>
     <h2 class="section-title reveal">Open to the Right<br>Opportunity</h2>
     <p class="section-subtitle reveal" style="margin:0 auto 1rem;text-align:center;max-width:440px">Whether it's a full-time role, a freelance project, or just a conversation about data — I'd love to hear from you.</p>
-    <a href="mailto:chinedupelekwa@gmail.com" class="contact-email reveal">
+    <a href="/cdn-cgi/l/email-protection#73101b1a1d16170603161f1618041233141e121a1f5d101c1e" class="contact-email reveal">
       <span class="mail-icon">✉</span>
       Send Me a Mail
     </a>
@@ -720,7 +737,7 @@ body.light nav { background: rgba(244,246,251,0.93); }
   <a href="#contact" class="primary">Hire Me →</a>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* CURSOR */
 const dot = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
@@ -772,7 +789,4 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 /* MOBILE NAV */
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileNav').classList.add('open'));
 document.getElementById('mobileNavClose').addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
-document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open')));
-</script>
-</body>
-</html>
+document.querySelectorAll('.m
