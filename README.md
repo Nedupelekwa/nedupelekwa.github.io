@@ -376,6 +376,7 @@ body.light nav { background: rgba(244,246,251,0.93); }
   <div class="hero-glow-2"></div>
 
   <div class="hero-inner">
+
     <!-- PHOTO — right on desktop, top on mobile (via flex order) -->
     <div class="hero-photo-col">
       <div class="hero-photo-wrap">
@@ -432,11 +433,11 @@ body.light nav { background: rgba(244,246,251,0.93); }
   <h2 class="section-title">What I Work With</h2>
   <p class="section-subtitle reveal">From spreadsheets to cloud — every layer of the data workflow.</p>
   <div class="skills-grid reveal">
-    <div class="skill-block"><div class="skill-block-icon">⬡</div><div class="skill-block-title">Languages & Querying</div><div class="skill-tags"><span class="tag accent-tag">SQL</span><span class="tag accent-tag">Python</span><span
-    <div class="skill-block"><div class="skill-block-icon">◎</div><div class="skill-block-title">Visualization & BI</div><div class="skill-tags"><span class="tag accent-tag">Power BI</span><span class="tag accent-tag">Looker Studio</span><span class="tag">MS PowerPoint</span></div></div>
-    <div class="skill-block"><div class="skill-block-icon">▣</div><div class="skill-block-title">Spreadsheets & Productivity</div><div class="skill-tags"><span class="tag accent-tag">MS Excel, Power Query</span><span class="tag accent-tag">Google Sheets</span><span class="tag">Google Forms</span><span class="tag">Google Workspace</span></div></div>
-    <div class="skill-block"><div class="skill-block-icon">◈</div><div class="skill-block-title">ERP & Operations</div><div class="skill-tags"><span class="tag accent-tag">SAP</span><span
-    <div class="skill-block"><div class="skill-block-icon">◯</div><div class="skill-block-title">Cloud & Platforms</div><div class="skill-tags"><span class="tag accent-tag">Google Cloud</span><span class="tag">BigQuery</span><span class="tag">Google Drive</span></div></div>
+    <div class="skill-block"><div class="skill-block-icon">⬡</div><div class="skill-block-title">Languages & Querying</div><div class="skill-tags"><span class="tag accent-tag">SQL</span><span class="tag accent-tag">Python</span><span class="tag">Data Cleaning</span><span class="tag">Statistical Analysis</span><span class="tag">Mathematics</span></div></div>
+    <div class="skill-block"><div class="skill-block-icon">◎</div><div class="skill-block-title">Visualization & BI</div><div class="skill-tags"><span class="tag accent-tag">Power BI</span><span class="tag accent-tag">Looker Studio</span><span class="tag">DAX</span><span class="tag">Dashboard Design</span><span class="tag">MS PowerPoint</span></div></div>
+    <div class="skill-block"><div class="skill-block-icon">▣</div><div class="skill-block-title">Spreadsheets & Productivity</div><div class="skill-tags"><span class="tag accent-tag">MS Excel</span><span class="tag accent-tag">Google Sheets</span><span class="tag">Google Forms</span><span class="tag">Google Workspace</span></div></div>
+    <div class="skill-block"><div class="skill-block-icon">◈</div><div class="skill-block-title">ERP & Operations</div><div class="skill-tags"><span class="tag accent-tag">SAP</span><span class="tag">Production Planning</span><span class="tag">Inventory Management</span><span class="tag">FMCG Supply Chain</span></div></div>
+    <div class="skill-block"><div class="skill-block-icon">◯</div><div class="skill-block-title">Cloud & Platforms</div><div class="skill-tags"><span class="tag accent-tag">Google Cloud</span><span class="tag">BigQuery</span><span class="tag">Looker Studio</span><span class="tag">Google Drive</span></div></div>
     <div class="skill-block"><div class="skill-block-icon">◫</div><div class="skill-block-title">Soft Skills & Leadership</div><div class="skill-tags"><span class="tag">Data Mentorship</span><span class="tag">Report Writing</span><span class="tag">Stakeholder Comms</span><span class="tag">Teaching</span><span class="tag">Growth Mindset</span></div></div>
   </div>
 </section>
