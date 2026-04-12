@@ -135,9 +135,99 @@ nav {
 .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity:1; box-shadow:0 0 8px var(--accent); } 50% { opacity:0.5; box-shadow:0 0 3px var(--accent); } }
 
-.hero-name { font-family: var(--display); font-size: clamp(3.5rem, 5.5vw, 6rem); font-weight: 800; line-height: 0.92; letter-spacing: -0.03em; margin-bottom: 0.75rem; color: #FFFFFF; }
-.hero-name .accent { color: var(--accent); }
-.hero-title { font-family: var(--display); font-size: clamp(1rem, 1.8vw, 1.5rem); font-weight: 500; color: var(--text-secondary); margin-bottom: 1.4rem; letter-spacing: -0.01em; }
+.hero-name {
+  font-family: var(--display);
+  font-size: clamp(3.5rem, 5.5vw, 6rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  position: relative;
+}
+.hero-name .first-name {
+  display: block;
+  color: #FFFFFF;
+  text-shadow: 0 0 60px rgba(255,255,255,0.08);
+}
+.hero-name .last-name {
+  display: block;
+  background: linear-gradient(90deg, var(--accent) 0%, #00FFAA 40%, var(--accent2) 80%, var(--accent) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: nameShimmer 4s linear infinite;
+}
+@keyframes nameShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+.hero-name-rule {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 0.55rem 0 0.85rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), transparent);
+  position: relative;
+}
+.hero-name-rule::after {
+  content: '';
+  position: absolute;
+  left: 0; top: -2px;
+  width: 6px; height: 5px;
+  background: var(--accent);
+  border-radius: 1px;
+  box-shadow: 0 0 8px var(--accent);
+  animation: ruleDot 3s ease-in-out infinite;
+}
+@keyframes ruleDot {
+  0%,100% { left: 0; opacity:1; }
+  50% { left: calc(100% - 6px); opacity: 0.6; }
+}
+
+/* ── JOB TITLE ── */
+.hero-title {
+  font-family: var(--mono);
+  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+  padding: 0.55rem 1.4rem 0.55rem 1rem;
+  border: 1px solid rgba(0,210,140,0.28);
+  border-radius: 4px;
+  background: linear-gradient(90deg, rgba(0,210,140,0.07) 0%, rgba(59,130,246,0.05) 100%);
+  backdrop-filter: blur(4px);
+}
+.hero-title::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,210,140,0.12) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: titleSweep 3.5s ease-in-out infinite;
+}
+@keyframes titleSweep {
+  0%,100% { background-position: -100% 0; }
+  50% { background-position: 100% 0; }
+}
+.hero-title .t-segment { color: var(--accent); }
+.hero-title .t-divider {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background: rgba(0,210,140,0.35);
+  margin: 0 0.9rem;
+  vertical-align: middle;
+}
+.hero-title .t-segment2 { color: var(--accent2); }
 .hero-desc { max-width: 480px; font-size: 15px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 2rem; border-left: 2px solid var(--border-accent); padding-left: 1rem; }
 
 .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 3rem; }
@@ -244,9 +334,53 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 /* ── CONTACT ── */
 #contact { text-align: center; background: var(--bg); }
 .contact-wrapper { max-width: 640px; margin: 0 auto; }
-.contact-email { font-family: var(--display); font-size: clamp(1.4rem, 3.5vw, 2.1rem); font-weight: 800; color: #FFFFFF; text-decoration: none; display: inline-block; margin: 2rem 0; padding-bottom: 0.3rem; transition: color 0.2s; word-break: break-all; position: relative; }
-.contact-email::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; }
-.contact-email:hover { color: var(--accent); }
+.contact-email {
+  font-family: var(--mono);
+  font-size: clamp(0.78rem, 1.1vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #060810;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 2rem 0;
+  padding: 1.1rem 2.6rem;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--accent) 0%, #00FFAA 50%, var(--accent) 100%);
+  background-size: 200% auto;
+  position: relative;
+  overflow: hidden;
+  transition: background-position 0.5s ease, transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 0 0 1px rgba(0,210,140,0.4), 0 4px 24px rgba(0,210,140,0.25);
+}
+.contact-email::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  transform: translateX(-100%) skewX(-12deg);
+  transition: transform 0.45s ease;
+}
+.contact-email:hover::before { transform: translateX(120%) skewX(-12deg); }
+.contact-email:hover {
+  background-position: right center;
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 1px rgba(0,255,170,0.6), 0 10px 40px rgba(0,210,140,0.45);
+  color: #060810;
+}
+.contact-email .mail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: rgba(0,0,0,0.15);
+  border-radius: 3px;
+  font-size: 12px;
+  flex-shrink: 0;
+}
 .socials { display: flex; justify-content: center; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
 .social-link { font-family: var(--mono); font-size: 11px; color: var(--text-secondary); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 0.4rem; border: 1px solid var(--border); padding: 0.65rem 1.1rem; border-radius: var(--radius-sm); transition: all 0.2s; }
 .social-link:hover { color: var(--accent); border-color: var(--border-accent); background: var(--accent-dim); transform: translateY(-2px); }
@@ -389,8 +523,16 @@ body.light nav { background: rgba(244,246,251,0.93); }
 
     <div class="hero-content">
       <div class="hero-badge">Lagos, Nigeria</div>
-      <h1 class="hero-name">CHINEDU<br><span class="accent">ELEKWA PROMISE</span></h1>
-      <p class="hero-title">Data Analyst | Business Intelligence</p>
+      <h1 class="hero-name">
+        <span class="first-name">CHINEDU</span>
+        <span class="last-name">ELEKWA PROMISE</span>
+        <span class="hero-name-rule"></span>
+      </h1>
+      <p class="hero-title">
+        <span class="t-segment">Data Analyst</span>
+        <span class="t-divider"></span>
+        <span class="t-segment2">Business Intelligence</span>
+      </p>
       <p class="hero-desc">Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Explore My Work →</a>
@@ -555,7 +697,10 @@ body.light nav { background: rgba(244,246,251,0.93); }
     <div class="section-label" style="justify-content:center">Let's Talk</div>
     <h2 class="section-title reveal">Open to the Right<br>Opportunity</h2>
     <p class="section-subtitle reveal" style="margin:0 auto 1rem;text-align:center;max-width:440px">Whether it's a full-time role, a freelance project, or just a conversation about data — I'd love to hear from you.</p>
-    <a href="mailto:chinedupelekwa@gmail.com" class="contact-email reveal">[SEND A MAIL]</a>
+    <a href="mailto:chinedupelekwa@gmail.com" class="contact-email reveal">
+      <span class="mail-icon">✉</span>
+      Send Me a Mail
+    </a>
     <div class="socials reveal">
       <a href="https://www.linkedin.com/in/chinedu-elekwa/" target="_blank" class="social-link">↗ LinkedIn</a>
       <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="social-link">↗ View My Credentials</a>
