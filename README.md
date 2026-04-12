@@ -806,8 +806,8 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
   <h2 class="section-title">Experience</h2>
   <p class="section-subtitle reveal">Where I've built things that matter.</p>
   <div class="timeline reveal">
-    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Sept 2025 — Present</div><div class="timeline-role">Data Analyst Intern</div><div class="timeline-company">edMotion Technologies · Remote</div><ul class="timeline-bullets"><li>Working on data analytics projects in the edtech space, applying SQL and Python to derive insights</li><li>Contributing to data-driven product decisions and reporting workflows</li></ul></div>
-    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Sept 2025 — Present</div><div class="timeline-role">DATA Volunteer Mentor</div><div class="timeline-company">ALX Africa Data Programs · Remote</div><ul class="timeline-bullets"><li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li></ul></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Sept 2025 — Present</div><div class="timeline-role">Data Analyst Intern</div><div class="timeline-company">edMotion Technologies · Remote</div><ul class="timeline-bullets"><li>Working on data analytics projects in the edtech space, applying SQL and spreadsheet skills to derive insights</li><li>Contributing to data-driven product decisions and reporting workflows</li></ul></div>
+    <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Sept 2025 — Present</div><div class="timeline-role">DATA Volunteer Mentor</div><div class="timeline-company">ALX Africa Data Programs · Remote</div><ul class="timeline-bullets"><li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li><li>Served as Session Moderator at the Virtual Global Data & AI Tech Conference (GDAI) 2025</li><li>Recognised as Ambassador by DataGlobal Hub for contributions to the data community</li></ul></div>
     <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">2023 — 2025</div><div class="timeline-role">Production Planner / Production Data Analyst</div><div class="timeline-company">Frutta Juice and Services Limited · Lagos, Nigeria</div><ul class="timeline-bullets"><li>Built a Google Forms & Sheets pipeline tracking output, downtime, waste and material usage — increasing analytics efficiency to 95%</li><li>Managed production inventory end-to-end on SAP from raw materials to warehouse transfer</li><li>Developed production and material plans to ensure continuous operations</li><li>Produced professional stakeholder production reports using PowerPoint</li></ul></div>
     <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">Jan 2023 — Sept 2024</div><div class="timeline-role">Mathematics Educator / Data Analyst</div><div class="timeline-company">Cedec International Secondary School · Lagos, Nigeria</div><ul class="timeline-bullets"><li>Built and maintained a student performance database; analysed results with Excel to track progress</li><li>Produced data-backed performance reports for school leadership and parents</li><li>Managed customer relationships and provided mentorship to students</li></ul></div>
     <div class="timeline-item"><div class="timeline-dot" style="background:var(--text-muted);box-shadow:none"></div><div class="timeline-date">2020 — 2021 · 2013 — 2014</div><div class="timeline-role">Mathematics Educator</div><div class="timeline-company">Great Divine College & Divine Victory Schools · Lagos, Nigeria</div><ul class="timeline-bullets"><li>Taught Mathematics at secondary school level — building the analytical foundations that underpin my data career</li></ul></div>
@@ -864,7 +864,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
     <div class="section-label" style="justify-content:center">Let's Talk</div>
     <h2 class="section-title reveal">Open to the Right<br>Opportunity</h2>
     <p class="section-subtitle reveal" style="margin:0 auto 1rem;text-align:center;max-width:440px">Whether it's a full-time role, a freelance project, or just a conversation about data — I'd love to hear from you.</p>
-    <a href="/cdn-cgi/l/email-protection#93f0fbfafdf6f7e6e3f6fff6f8e4f2d3f4fef2faffbdf0fcfe" class="contact-email reveal">
+    <a href="mailto:chinedupelekwa@gmail.com" class="contact-email reveal">
       <span class="mail-icon">✉</span>
       Send Me a Mail
     </a>
@@ -887,7 +887,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
   <a href="#contact" class="primary">Hire Me →</a>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* CURSOR */
 const dot = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
@@ -939,4 +939,7 @@ document.getElementById('themeToggle').addEventListener('click', () => {
 /* MOBILE NAV */
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileNav').classList.add('open'));
 document.getElementById('mobileNavClose').addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
-document.querySelectorAll('.m
+document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open')));
+</script>
+</body>
+</html>
