@@ -38,7 +38,7 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   cursor: none;
-  padding-top: 80px; /* THIS fixes the overlap */
+  padding-top: 80px;
 }
 
 body::before {
@@ -60,12 +60,12 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  height: 80px; /* fixed height */
+  height: 80px;
   z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4rem; /* remove top/bottom padding */
+  padding: 0 4rem;
   border-bottom: 1px solid var(--border);
   background: rgba(6,8,12,0.9);
   backdrop-filter: blur(24px);
@@ -106,7 +106,6 @@ nav {
 .hero-glow { position: absolute; top: 10%; left: 0; width: 700px; height: 600px; background: radial-gradient(ellipse, rgba(0,210,140,0.09) 0%, transparent 65%); pointer-events: none; }
 .hero-glow-2 { position: absolute; bottom: 5%; right: 0; width: 600px; height: 500px; background: radial-gradient(ellipse, rgba(59,130,246,0.07) 0%, transparent 65%); pointer-events: none; }
 
-/* DESKTOP: text left, photo right — perfectly centered via grid */
 .hero-inner {
   display: grid;
   grid-template-columns: 1fr 340px;
@@ -301,7 +300,6 @@ body.light nav { background: rgba(244,246,251,0.93); }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
 
-  /* MOBILE HERO — photo on top */
   .hero { padding: 0 1.5rem; align-items: flex-start; min-height: auto; }
   .hero-inner {
     display: flex; flex-direction: column;
@@ -377,7 +375,6 @@ body.light nav { background: rgba(244,246,251,0.93); }
 
   <div class="hero-inner">
 
-    <!-- PHOTO — right on desktop, top on mobile (via flex order) -->
     <div class="hero-photo-col">
       <div class="hero-photo-wrap">
         <div class="hero-photo-glow"></div>
@@ -390,7 +387,6 @@ body.light nav { background: rgba(244,246,251,0.93); }
       </div>
     </div>
 
-    <!-- TEXT -->
     <div class="hero-content">
       <div class="hero-badge">Lagos, Nigeria</div>
       <h1 class="hero-name">CHINEDU<br><span class="accent">ELEKWA PROMISE</span></h1>
@@ -433,11 +429,22 @@ body.light nav { background: rgba(244,246,251,0.93); }
   <h2 class="section-title">What I Work With</h2>
   <p class="section-subtitle reveal">From spreadsheets to cloud — every layer of the data workflow.</p>
   <div class="skills-grid reveal">
-    <div class="skill-block"><div class="skill-block-icon">⬡</div><div class="skill-block-title">Languages & Querying</div><div class="skill-tags"><span class="tag accent-tag">SQL</span><span class="tag accent-tag">Python</span><span class="tag">Data Cleaning</span><span class="tag">Statistical Analysis</span><span class="tag">Mathematics</span></div></div>
-    <div class="skill-block"><div class="skill-block-icon">◎</div><div class="skill-block-title">Visualization & BI</div><div class="skill-tags"><span class="tag accent-tag">Power BI</span><span class="tag accent-tag">Looker Studio</span><span class="tag">DAX</span><span class="tag">Dashboard Design</span><span class="tag">MS PowerPoint</span></div></div>
-    <div class="skill-block"><div class="skill-block-icon">▣</div><div class="skill-block-title">Spreadsheets & Productivity</div><div class="skill-tags"><span class="tag accent-tag">MS Excel</span><span class="tag accent-tag">Google Sheets</span><span class="tag">Google Forms</span><span class="tag">Google Workspace</span></div></div>
-    <div class="skill-block"><div class="skill-block-icon">◈</div><div class="skill-block-title">ERP & Operations</div><div class="skill-tags"><span class="tag accent-tag">SAP</span><span class="tag">Production Planning</span><span class="tag">Inventory Management</span><span class="tag">FMCG Supply Chain</span></div></div>
-    <div class="skill-block"><div class="skill-block-icon">◯</div><div class="skill-block-title">Cloud & Platforms</div><div class="skill-tags"><span class="tag accent-tag">Google Cloud</span><span class="tag">BigQuery</span><span class="tag">Looker Studio</span><span class="tag">Google Drive</span></div></div>
+
+    <!-- Languages & Querying: removed Data Cleaning, Statistical Analysis, Mathematics -->
+    <div class="skill-block"><div class="skill-block-icon">⬡</div><div class="skill-block-title">Languages & Querying</div><div class="skill-tags"><span class="tag accent-tag">SQL</span><span class="tag accent-tag">Python</span></div></div>
+
+    <!-- Visualization & BI: removed DAX, Dashboard Design -->
+    <div class="skill-block"><div class="skill-block-icon">◎</div><div class="skill-block-title">Visualization & BI</div><div class="skill-tags"><span class="tag accent-tag">Power BI</span><span class="tag accent-tag">Looker Studio</span><span class="tag">MS PowerPoint</span></div></div>
+
+    <!-- Spreadsheets & Productivity: added Power Query -->
+    <div class="skill-block"><div class="skill-block-icon">▣</div><div class="skill-block-title">Spreadsheets & Productivity</div><div class="skill-tags"><span class="tag accent-tag">MS Excel</span><span class="tag accent-tag">Google Sheets</span><span class="tag accent-tag">Power Query</span><span class="tag">Google Forms</span><span class="tag">Google Workspace</span></div></div>
+
+    <!-- ERP & Operations: removed Production Planning, Inventory Management, FMCG Supply Chain -->
+    <div class="skill-block"><div class="skill-block-icon">◈</div><div class="skill-block-title">ERP & Operations</div><div class="skill-tags"><span class="tag accent-tag">SAP</span></div></div>
+
+    <!-- Cloud & Platforms: removed Looker Studio, Google Drive -->
+    <div class="skill-block"><div class="skill-block-icon">◯</div><div class="skill-block-title">Cloud & Platforms</div><div class="skill-tags"><span class="tag accent-tag">Google Cloud</span><span class="tag">BigQuery</span></div></div>
+
     <div class="skill-block"><div class="skill-block-icon">◫</div><div class="skill-block-title">Soft Skills & Leadership</div><div class="skill-tags"><span class="tag">Data Mentorship</span><span class="tag">Report Writing</span><span class="tag">Stakeholder Comms</span><span class="tag">Teaching</span><span class="tag">Growth Mindset</span></div></div>
   </div>
 </section>
