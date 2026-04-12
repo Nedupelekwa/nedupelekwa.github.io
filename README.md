@@ -135,6 +135,7 @@ nav {
 .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity:1; box-shadow:0 0 8px var(--accent); } 50% { opacity:0.5; box-shadow:0 0 3px var(--accent); } }
 
+/* ── NAME — REDESIGNED ── */
 .hero-name {
   font-family: var(--display);
   font-size: clamp(3.5rem, 5.5vw, 6rem);
@@ -150,20 +151,80 @@ nav {
   display: block;
   color: #FFFFFF;
   text-shadow: 0 0 60px rgba(255,255,255,0.08);
+  position: relative;
 }
+
+/* Glitch effect on CHINEDU */
+.hero-name .first-name::before,
+.hero-name .first-name::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  font-family: var(--display);
+  font-size: inherit;
+  font-weight: 800;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+.hero-name .first-name::before {
+  color: var(--accent);
+  animation: glitch1 6s infinite;
+  opacity: 0;
+}
+.hero-name .first-name::after {
+  color: var(--accent2);
+  animation: glitch2 6s infinite;
+  opacity: 0;
+}
+@keyframes glitch1 {
+  0%,89%,100% { opacity:0; clip-path:inset(0 0 100% 0); transform:translate(0,0); }
+  90% { opacity:0.7; clip-path:inset(20% 0 40% 0); transform:translate(-4px,0); }
+  92% { opacity:0.5; clip-path:inset(60% 0 10% 0); transform:translate(4px,0); }
+  94% { opacity:0; }
+}
+@keyframes glitch2 {
+  0%,91%,100% { opacity:0; clip-path:inset(0 0 100% 0); transform:translate(0,0); }
+  92% { opacity:0.6; clip-path:inset(10% 0 55% 0); transform:translate(5px,0); }
+  94% { opacity:0.4; clip-path:inset(50% 0 20% 0); transform:translate(-3px,0); }
+  96% { opacity:0; }
+}
+
+/* ELEKWA PROMISE — holographic gradient */
 .hero-name .last-name {
   display: block;
-  background: linear-gradient(90deg, var(--accent) 0%, #00FFAA 40%, var(--accent2) 80%, var(--accent) 100%);
-  background-size: 200% auto;
+  background: linear-gradient(90deg,
+    var(--accent) 0%,
+    #00FFAA 20%,
+    #fff 38%,
+    var(--accent2) 55%,
+    #8b5cf6 72%,
+    var(--accent) 100%);
+  background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: nameShimmer 4s linear infinite;
+  animation: holoShimmer 5s linear infinite;
+  position: relative;
 }
-@keyframes nameShimmer {
+@keyframes holoShimmer {
   0% { background-position: 0% center; }
-  100% { background-position: 200% center; }
+  100% { background-position: 250% center; }
 }
+
+/* Underscore cursor blink on the last name */
+.hero-name .last-name::after {
+  content: '_';
+  -webkit-text-fill-color: var(--accent);
+  animation: blink 1.1s step-end infinite;
+  margin-left: 4px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+@keyframes blink { 0%,100%{opacity:0.8} 50%{opacity:0} }
+
 .hero-name-rule {
   display: block;
   width: 100%;
@@ -187,47 +248,60 @@ nav {
   50% { left: calc(100% - 6px); opacity: 0.6; }
 }
 
-/* ── JOB TITLE ── */
+/* ── JOB TITLE — REDESIGNED ── */
 .hero-title {
-  font-family: var(--mono);
-  font-size: clamp(0.78rem, 1.2vw, 0.95rem);
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  margin-bottom: 1.6rem;
   display: inline-flex;
   align-items: center;
   gap: 0;
+  margin-bottom: 1.6rem;
+  position: relative;
+}
+
+/* The two pill tags */
+.hero-title .t-pill {
+  font-family: var(--mono);
+  font-size: clamp(0.7rem, 1.05vw, 0.86rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 1.1rem;
+  border-radius: 40px;
+  line-height: 1;
   position: relative;
   overflow: hidden;
-  padding: 0.55rem 1.4rem 0.55rem 1rem;
-  border: 1px solid rgba(0,210,140,0.28);
-  border-radius: 4px;
-  background: linear-gradient(90deg, rgba(0,210,140,0.07) 0%, rgba(59,130,246,0.05) 100%);
-  backdrop-filter: blur(4px);
+  transition: transform 0.2s;
 }
-.hero-title::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent 0%, rgba(0,210,140,0.12) 50%, transparent 100%);
-  background-size: 200% 100%;
-  animation: titleSweep 3.5s ease-in-out infinite;
+.hero-title .t-pill:hover { transform: translateY(-2px); }
+
+.hero-title .t-pill-green {
+  background: rgba(0,210,140,0.1);
+  border: 1px solid rgba(0,210,140,0.35);
+  color: var(--accent);
 }
-@keyframes titleSweep {
-  0%,100% { background-position: -100% 0; }
-  50% { background-position: 100% 0; }
+.hero-title .t-pill-green .t-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
 }
-.hero-title .t-segment { color: var(--accent); }
-.hero-title .t-divider {
-  display: inline-block;
-  width: 1px;
-  height: 1em;
-  background: rgba(0,210,140,0.35);
-  margin: 0 0.9rem;
-  vertical-align: middle;
+
+.hero-title .t-pill-blue {
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.3);
+  color: var(--accent2);
+  margin-left: 0.6rem;
 }
-.hero-title .t-segment2 { color: var(--accent2); }
+.hero-title .t-pill-blue .t-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--accent2);
+  box-shadow: 0 0 6px var(--accent2);
+  flex-shrink: 0;
+}
+
 .hero-desc { max-width: 480px; font-size: 15px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 2rem; border-left: 2px solid var(--border-accent); padding-left: 1rem; }
 
 .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin-bottom: 3rem; }
@@ -254,13 +328,72 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 .tag.accent-tag { color: var(--accent); border-color: rgba(0,210,140,0.2); background: var(--accent-dim); }
 .tag.blue-tag { color: var(--accent2); border-color: rgba(59,130,246,0.2); background: var(--accent2-dim); }
 
-/* ── EXPERTISE ── */
+/* ── EXPERTISE — REDESIGNED ── */
 #expertise { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%); }
-.expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.expertise-card { background: var(--bg-card); padding: 1.5rem 1.75rem; font-family: var(--mono); font-size: 12px; letter-spacing: 0.07em; color: var(--text-secondary); transition: all 0.25s; display: flex; align-items: center; gap: 0.75rem; }
-.expertise-card::before { content: '▸'; color: var(--text-muted); font-size: 10px; flex-shrink: 0; transition: color 0.25s; }
-.expertise-card:hover { background: rgba(0,210,140,0.05); color: var(--accent); }
-.expertise-card:hover::before { color: var(--accent); }
+#expertise .section-subtitle { margin-bottom: 2rem; }
+
+.expertise-ticker-wrap {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0.6rem;
+}
+/* Fade edges */
+.expertise-ticker-wrap::before,
+.expertise-ticker-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+.expertise-ticker-wrap::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+.expertise-ticker-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+
+.expertise-ticker {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  animation: tickerScroll 28s linear infinite;
+}
+.expertise-ticker-wrap:hover .expertise-ticker { animation-play-state: paused; }
+.expertise-ticker:nth-child(2) { animation-direction: reverse; animation-duration: 24s; }
+
+@keyframes tickerScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.expertise-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  transition: all 0.25s;
+  flex-shrink: 0;
+}
+.expertise-pill::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+  flex-shrink: 0;
+}
+.expertise-ticker-wrap:hover .expertise-pill:hover {
+  color: var(--accent);
+  border-color: var(--border-accent);
+  background: var(--accent-dim);
+  box-shadow: var(--glow-green);
+}
 
 /* ── SKILLS ── */
 #skills { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -420,6 +553,8 @@ body.light {
 body.light .hero-photo-ring-mask { background: var(--bg); }
 body.light .theme-toggle { background: rgba(255,255,255,0.97); color: #0a7a55; }
 body.light nav { background: rgba(244,246,251,0.93); }
+body.light .expertise-ticker-wrap::before { background: linear-gradient(90deg, var(--bg), transparent); }
+body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, var(--bg), transparent); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
@@ -449,6 +584,7 @@ body.light nav { background: rgba(244,246,251,0.93); }
   .hero-desc { margin: 0 auto 2rem; border-left: none; padding-left: 0; border-top: 2px solid var(--border-accent); padding-top: 1rem; }
   .hero-actions { justify-content: center; }
   .hero-stats { justify-content: center; gap: 2rem; }
+  .hero-title { justify-content: center; flex-wrap: wrap; }
 
   section { padding: 4rem 1.5rem; }
   .skills-grid, .projects-grid { grid-template-columns: 1fr; }
@@ -523,16 +659,24 @@ body.light nav { background: rgba(244,246,251,0.93); }
 
     <div class="hero-content">
       <div class="hero-badge">Lagos, Nigeria</div>
+
+      <!-- NAME -->
       <h1 class="hero-name">
-        <span class="first-name">CHINEDU</span>
+        <span class="first-name" data-text="CHINEDU">CHINEDU</span>
         <span class="last-name">ELEKWA PROMISE</span>
         <span class="hero-name-rule"></span>
       </h1>
+
+      <!-- JOB TITLE — pill redesign -->
       <p class="hero-title">
-        <span class="t-segment">Data Analyst</span>
-        <span class="t-divider"></span>
-        <span class="t-segment2">Business Intelligence</span>
+        <span class="t-pill t-pill-green">
+          <span class="t-dot"></span>Data Analyst
+        </span>
+        <span class="t-pill t-pill-blue">
+          <span class="t-dot"></span>Business Intelligence
+        </span>
       </p>
+
       <p class="hero-desc">Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Explore My Work →</a>
@@ -554,14 +698,48 @@ body.light nav { background: rgba(244,246,251,0.93); }
   <div class="section-label">Core Strengths</div>
   <h2 class="section-title">My Technical Expertise</h2>
   <p class="section-subtitle reveal">Specialized capabilities that define my impact across data, analytics, and business intelligence.</p>
-  <div class="expertise-grid reveal">
-    <div class="expertise-card">Statistical Analytics</div>
-    <div class="expertise-card">Professional Dashboard Design</div>
-    <div class="expertise-card">Digital Marketing Analytics</div>
-    <div class="expertise-card">FMCG Analytics</div>
-    <div class="expertise-card">Data Modeling</div>
-    <div class="expertise-card">Executive-style PowerPoint Reports</div>
-    <div class="expertise-card">Advanced Data Analytics & Visualisation with Python</div>
+
+  <!-- Row 1 — scrolls left -->
+  <div class="expertise-ticker-wrap reveal">
+    <div class="expertise-ticker">
+      <!-- items duplicated for seamless loop -->
+      <span class="expertise-pill">Statistical Analytics</span>
+      <span class="expertise-pill">Professional Dashboard Design</span>
+      <span class="expertise-pill">Digital Marketing Analytics</span>
+      <span class="expertise-pill">FMCG Analytics</span>
+      <span class="expertise-pill">Data Modeling</span>
+      <span class="expertise-pill">Executive-style PowerPoint Reports</span>
+      <span class="expertise-pill">Advanced Data Analytics & Visualisation with Python</span>
+      <!-- duplicate -->
+      <span class="expertise-pill">Statistical Analytics</span>
+      <span class="expertise-pill">Professional Dashboard Design</span>
+      <span class="expertise-pill">Digital Marketing Analytics</span>
+      <span class="expertise-pill">FMCG Analytics</span>
+      <span class="expertise-pill">Data Modeling</span>
+      <span class="expertise-pill">Executive-style PowerPoint Reports</span>
+      <span class="expertise-pill">Advanced Data Analytics & Visualisation with Python</span>
+    </div>
+  </div>
+
+  <!-- Row 2 — scrolls right (reverse) -->
+  <div class="expertise-ticker-wrap reveal" style="margin-top:0.6rem">
+    <div class="expertise-ticker" style="animation-direction:reverse;animation-duration:22s">
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">SQL &amp; Python Querying</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Power BI &amp; Looker Studio</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">SAP ERP Operations</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Google Cloud &amp; BigQuery</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Data Mentorship &amp; Training</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Stakeholder Communication</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Report Writing</span>
+      <!-- duplicate -->
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">SQL &amp; Python Querying</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Power BI &amp; Looker Studio</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">SAP ERP Operations</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Google Cloud &amp; BigQuery</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Data Mentorship &amp; Training</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Stakeholder Communication</span>
+      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Report Writing</span>
+    </div>
   </div>
 </section>
 
@@ -571,22 +749,11 @@ body.light nav { background: rgba(244,246,251,0.93); }
   <h2 class="section-title">What I Work With</h2>
   <p class="section-subtitle reveal">From spreadsheets to cloud — every layer of the data workflow.</p>
   <div class="skills-grid reveal">
-
-    <!-- Languages & Querying: removed Data Cleaning, Statistical Analysis, Mathematics -->
     <div class="skill-block"><div class="skill-block-icon">⬡</div><div class="skill-block-title">Languages & Querying</div><div class="skill-tags"><span class="tag accent-tag">SQL</span><span class="tag accent-tag">Python</span></div></div>
-
-    <!-- Visualization & BI: removed DAX, Dashboard Design -->
     <div class="skill-block"><div class="skill-block-icon">◎</div><div class="skill-block-title">Visualization & BI</div><div class="skill-tags"><span class="tag accent-tag">Power BI</span><span class="tag accent-tag">Looker Studio</span><span class="tag">MS PowerPoint</span></div></div>
-
-    <!-- Spreadsheets & Productivity: added Power Query -->
     <div class="skill-block"><div class="skill-block-icon">▣</div><div class="skill-block-title">Spreadsheets & Productivity</div><div class="skill-tags"><span class="tag accent-tag">MS Excel</span><span class="tag accent-tag">Google Sheets</span><span class="tag accent-tag">Power Query</span><span class="tag">Google Forms</span><span class="tag">Google Workspace</span></div></div>
-
-    <!-- ERP & Operations: removed Production Planning, Inventory Management, FMCG Supply Chain -->
     <div class="skill-block"><div class="skill-block-icon">◈</div><div class="skill-block-title">ERP & Operations</div><div class="skill-tags"><span class="tag accent-tag">SAP</span></div></div>
-
-    <!-- Cloud & Platforms: removed Looker Studio, Google Drive -->
     <div class="skill-block"><div class="skill-block-icon">◯</div><div class="skill-block-title">Cloud & Platforms</div><div class="skill-tags"><span class="tag accent-tag">Google Cloud</span><span class="tag">BigQuery</span></div></div>
-
     <div class="skill-block"><div class="skill-block-icon">◫</div><div class="skill-block-title">Soft Skills & Leadership</div><div class="skill-tags"><span class="tag">Data Mentorship</span><span class="tag">Report Writing</span><span class="tag">Stakeholder Comms</span><span class="tag">Teaching</span><span class="tag">Growth Mindset</span></div></div>
   </div>
 </section>
