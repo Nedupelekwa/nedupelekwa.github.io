@@ -836,7 +836,6 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
 <section id="recognitions" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="section-label">Recognition</div>
   <h2 class="section-title">Awards &amp; Volunteer Service</h2>
-  <p class="section-subtitle reveal">Giving back to the African data community.</p>
   <div class="rec-grid reveal">
 
 <div class="rec-card">
@@ -849,7 +848,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
         <div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div>
       </div>
       <div class="rec-body">
-        <div class="rec-title">Certificate of Volunteer Service &#8212; NYSC</div>
+        <div class="rec-title">Certificate of Completed Service &#8212; NYSC</div>
         <div class="rec-desc">Completed the one year compulsory national service for Nigerian graduates</div>
         <a href="https://drive.google.com/file/d/11CL2qk2E5tD2hEfotGluMjqMLXON8gKs/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
       </div>
