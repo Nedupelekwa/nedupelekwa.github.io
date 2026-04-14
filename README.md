@@ -298,6 +298,63 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-muted); 
 
 /* LIGHT MODE */
 body.light { --bg: #F4F6FB; --bg-card: #FFFFFF; --text-primary: #0b1220; --text-secondary: #4A5568; --text-muted: #94A3B8; --border: rgba(0,0,0,0.07); --accent-dim: rgba(0,180,120,0.07); --border-accent: rgba(0,180,120,0.4); }
+/* ── LIGHT MODE FIXES (READABILITY BOOST) ── */
+body.light {
+  --bg: #f7f8fc;
+  --bg-card: #ffffff;
+  --text-primary: #0b1220;
+  --text-secondary: #1e293b;
+  --text-muted: #475569;
+  --border: rgba(0,0,0,0.08);
+  --accent: #00b37a;
+  --accent2: #2563eb;
+}
+
+/* Fix all hard white text */
+body.light .hero-name,
+body.light .hero-title,
+body.light .section-title,
+body.light .project-title,
+body.light .timeline-role,
+body.light .cert-title,
+body.light .rec-title {
+  color: var(--text-primary) !important;
+}
+
+/* Improve paragraph readability */
+body.light .hero-desc,
+body.light .section-subtitle,
+body.light .project-desc,
+body.light .timeline-bullets li,
+body.light .rec-desc {
+  color: var(--text-secondary) !important;
+}
+
+/* Fix cards contrast */
+body.light .project-card,
+body.light .skill-block,
+body.light .rec-card,
+body.light .cert-card,
+body.light .expertise-card {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* Improve nav visibility */
+body.light nav {
+  background: rgba(255,255,255,0.9);
+}
+
+/* Fix buttons */
+body.light .btn-secondary {
+  color: var(--text-primary);
+}
+
+/* Fix tags */
+body.light .tag {
+  background: rgba(0,0,0,0.04);
+  color: var(--text-secondary);
+}
 body.light .hero-photo-ring-mask { background: var(--bg); }
 body.light .theme-toggle { background: rgba(255,255,255,0.97); color: #0a7a55; }
 body.light nav { background: rgba(244,246,251,0.93); }
