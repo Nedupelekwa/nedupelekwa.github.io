@@ -731,14 +731,14 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">Associate Data Analyst Certificate</div>
         <div class="cert-issuer">DataCamp</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+        <a href="https://www.datacamp.com/tracks/associate-data-analyst-in-sql?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=trackdetailpage&utm_source=copy" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
     </div>
 
     <div class="cert-card">
       <div class="cert-stripe"></div>
       <div class="cert-preview">
-        <img src="images/ALX-Data-analytics-certificate-chinedu-elekwa.png" alt="DataCamp Data Literacy"
+        <img src="images/ALX-Data-analytics-certificate-chinedu-elekwa.png" alt="ALX Data Analytics"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
           <span class="cert-preview-icon">&#9711;</span>
@@ -797,7 +797,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
     <div class="cert-card">
       <div class="cert-stripe blue"></div>
       <div class="cert-preview">
-        <img src="images/certs/alx-professional-cert.jpg" alt="ALX Professional Foundations"
+        <img src="images/ALX-Professional-foundations-certificate-chinedu-elekwa (1).png" alt="ALX Professional Foundations"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
           <span class="cert-preview-icon">&#9643;</span>
@@ -815,7 +815,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
     <div class="cert-card">
       <div class="cert-stripe blue"></div>
       <div class="cert-preview">
-        <img src="images/certs/jobberman-cert.jpg" alt="Jobberman Soft Skills Training"
+        <img src="images/Jobberman soft skills.jpg" alt="Jobberman Soft Skills Training"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
           <span class="cert-preview-icon">&#x2B21;</span>
@@ -827,6 +827,24 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
         <div class="cert-title">Jobberman Soft Skills Training</div>
         <div class="cert-issuer blue">Jobberman &middot; 2021</div>
         <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-stripe blue"></div>
+      <div class="cert-preview">
+        <img src="images/Data Literacy.jpg" alt="Data Literacy"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-preview-placeholder" style="display:none">
+          <span class="cert-preview-icon">&#x2B21;</span>
+          <span class="cert-preview-label">Certificate Preview</span>
+        </div>
+        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
+      </div>
+      <div class="cert-body">
+        <div class="cert-title">DataCamp</div>
+        <div class="cert-issuer blue">Jobberman &middot; 2021</div>
+        <a href="https://www.datacamp.com/skill-verification/DL0034034405845" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
       </div>
     </div>
 
