@@ -1043,5 +1043,3 @@ document.querySelectorAll('.rec-preview').forEach(preview => {
   });
 });
 </script>
-</body>
-</html>
