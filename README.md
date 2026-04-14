@@ -766,7 +766,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">Google Workspace &#8212; Calendar, Drive, Docs, Sheets, Slides</div>
         <div class="cert-issuer">Google via Coursera</div>
-        <a href="https://drive.google.com/drive/folders/18IuSZrIMqjog-ciCVs8_zuqNfAVdKzfT?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+        <a href="https://drive.google.com/drive/folders/1y6hDZvx9gvkXm_SD9oOWFSPB0vtAkHSb?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
     </div>
 
