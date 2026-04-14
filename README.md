@@ -720,7 +720,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
     <div class="cert-card">
       <div class="cert-stripe"></div>
       <div class="cert-preview">
-        <img src="images/certs/datacamp-associate-cert.jpg" alt="DataCamp Associate Data Analyst"
+        <img src="images/DataCamp Associate Data Analyst certificate pdf.pdf" alt="DataCamp Associate Data Analyst"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
           <span class="cert-preview-icon">&#9678;</span>
