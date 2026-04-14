@@ -429,7 +429,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
 </button>
 
 <nav>
-  <a href="#" class="nav-logo"><div class="nav-logo-dot"></div>[ Welcome To My Portfolio Site ]</a>
+  <a href="#" class="nav-logo"><div class="nav-logo-dot"></div>Hello, Welcome</a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
