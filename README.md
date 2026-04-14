@@ -517,26 +517,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <span class="expertise-pill">Advanced Data Analytics &amp; Visualisation with Python</span>
     </div>
   </div>
-  <div class="expertise-ticker-wrap reveal" style="margin-top:0.6rem">
-    <div class="expertise-ticker" style="animation-direction:reverse;animation-duration:22s">
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">SQL &amp; Python Querying</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Power BI &amp; Looker Studio</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">SAP ERP Operations</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Google Cloud &amp; BigQuery</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Data Mentorship &amp; Training</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Stakeholder Communication</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Report Writing</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">SQL &amp; Python Querying</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Power BI &amp; Looker Studio</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">SAP ERP Operations</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Google Cloud &amp; BigQuery</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Data Mentorship &amp; Training</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Stakeholder Communication</span>
-      <span class="expertise-pill" style="border-color:rgba(59,130,246,0.2);color:var(--accent2)">Report Writing</span>
-    </div>
-  </div>
-</section>
-
+  
 <!-- SKILLS -->
 <section id="skills">
   <div class="section-label">Technical Arsenal</div>
