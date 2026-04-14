@@ -702,7 +702,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
     <div class="cert-card">
       <div class="cert-stripe"></div>
       <div class="cert-preview">
-        <img src="images/certs/alx-cert.jpg" alt="ALX Africa Certificate"
+        <img src="images/ALX Data-science-certificate-chinedu-elekwa (1).png" alt="ALX Africa Certificate"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
           <span class="cert-preview-icon">&#9672;</span>
@@ -711,7 +711,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
         <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
       </div>
       <div class="cert-body">
-        <div class="cert-title">Data Analytics, Python Programming &amp; Data Science</div>
+        <div class="cert-title">ALX Data Science</div>
         <div class="cert-issuer">ALX Africa</div>
         <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
@@ -738,7 +738,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
     <div class="cert-card">
       <div class="cert-stripe"></div>
       <div class="cert-preview">
-        <img src="images/certs/datacamp-literacy-cert.jpg" alt="DataCamp Data Literacy"
+        <img src="images/ALX-Data-analytics-certificate-chinedu-elekwa.png" alt="DataCamp Data Literacy"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
           <span class="cert-preview-icon">&#9711;</span>
@@ -747,12 +747,30 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
         <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
       </div>
       <div class="cert-body">
-        <div class="cert-title">Data Literacy Certificate</div>
-        <div class="cert-issuer">DataCamp</div>
+        <div class="cert-title">ALX Data Analytics</div>
+        <div class="cert-issuer">ALX Africa</div>
         <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
     </div>
-
+    
+<div class="cert-card">
+      <div class="cert-stripe"></div>
+      <div class="cert-preview">
+        <img src="images/ALX Python-programming-certificate-chinedu-elekwa (1).png" alt=">ALX Python Programming"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-preview-placeholder" style="display:none">
+          <span class="cert-preview-icon">&#9711;</span>
+          <span class="cert-preview-label">Certificate Preview</span>
+        </div>
+        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
+      </div>
+      <div class="cert-body">
+        <div class="cert-title">ALX Python Programming</div>
+        <div class="cert-issuer">ALX Africa</div>
+        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+      </div>
+    </div>
+    
     <div class="cert-card">
       <div class="cert-stripe"></div>
       <div class="cert-preview">
