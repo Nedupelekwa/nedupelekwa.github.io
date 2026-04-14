@@ -629,16 +629,14 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       </ul>
     </div>
     <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">Sept 2025 &#8212; Present</div>
-      <div class="timeline-role">DATA Volunteer Mentor</div>
-      <div class="timeline-company">ALX Africa Data Programs &middot; Remote</div>
-      <ul class="timeline-bullets">
-        <li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li>
-        <li>Served as Session Moderator at the Virtual Global Data &amp; AI Tech Conference (GDAI) 2025</li>
-        <li>Recognised as Ambassador by DataGlobal Hub for contributions to the data community</li>
-      </ul>
-    </div>
+  <div class="timeline-dot"></div>
+  <div class="timeline-date">Sept 2025 — Present</div>
+  <div class="timeline-role">DATA Volunteer Mentor</div>
+  <div class="timeline-company">ALX Africa Data Programs · Remote</div>
+  <ul class="timeline-bullets">
+    <li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li>
+  </ul>
+</div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">2023 &#8212; 2025</div>
