@@ -675,7 +675,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="section-label">Credentials</div>
-  <h2 class="section-title">Certifications</h2>
+  <h2 class="section-title">Certifications and Certificates</h2>
   <p class="section-subtitle reveal">Verified expertise across cloud, analytics, and data science.</p>
 
   <div class="cert-group-label green reveal">Career Certifications</div>
@@ -713,7 +713,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">ALX Data Science</div>
         <div class="cert-issuer">ALX Africa</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+        <a href="https://drive.google.com/file/d/1adgB-IFRJ86S7Y9c0JUY3HwL3YGZ3pPl/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
     </div>
 
@@ -749,7 +749,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">ALX Data Analytics</div>
         <div class="cert-issuer">ALX Africa</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+        <a href="https://drive.google.com/file/d/1mIyLDO280vdvNAHHmWQPQPjv8I8J5PaA/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
     </div>
     
@@ -767,7 +767,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">ALX Python Programming</div>
         <div class="cert-issuer">ALX Africa</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+        <a href="https://drive.google.com/file/d/1CGBWo5SJWcrD5WL2-5crNmJzcVIs1qVi/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
     </div>
     
@@ -785,7 +785,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">Google Workspace &#8212; Calendar, Drive, Docs, Sheets, Slides</div>
         <div class="cert-issuer">Google via Coursera</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+        <a href="https://drive.google.com/drive/folders/18IuSZrIMqjog-ciCVs8_zuqNfAVdKzfT?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
     </div>
 
@@ -808,7 +808,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">ALX Professional Foundations</div>
         <div class="cert-issuer blue">ALX Africa</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
+        <a href="https://drive.google.com/file/d/1EulTVxF5SmHwMA63BCH7gDclpdnMFohp/view?usp=drive_link" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
       </div>
     </div>
 
@@ -826,7 +826,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">Jobberman Soft Skills Training</div>
         <div class="cert-issuer blue">Jobberman &middot; 2021</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
+        <a href="https://drive.google.com/file/d/17Y-4ZJxH1PjtGGZVE4GO0IZ8D9zmm6sC/view?usp=drive_link" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
       </div>
     </div>
 
@@ -843,7 +843,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       </div>
       <div class="cert-body">
         <div class="cert-title">Data Literacy Certificate</div>
-        <div class="cert-issuer blue">DataCamp &middot; 2021</div>
+        <div class="cert-issuer blue">DataCamp</div>
         <a href="https://www.datacamp.com/skill-verification/DL0034034405845" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
       </div>
     </div>
@@ -869,8 +869,8 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       </div>
       <div class="rec-body">
         <div class="rec-title">Certificate of Volunteer Service &#8212; NYSC</div>
-        <div class="rec-desc">Completed the compulsory national service year for Nigerian graduates</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
+        <div class="rec-desc">Completed the one year compulsory national service for Nigerian graduates</div>
+        <a href="https://drive.google.com/file/d/11CL2qk2E5tD2hEfotGluMjqMLXON8gKs/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
       </div>
     </div>
     
@@ -902,7 +902,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="rec-body">
         <div class="rec-title">GDAI 2025 Session Moderator</div>
         <div class="rec-desc">Recognised by DataGlobal Hub with a Certificate of Recognition for Volunteer Service as Session Moderator at the Virtual Global Data &amp; AI Tech Conference (GDAI) 2025.</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
+        <a href="https://drive.google.com/file/d/10qfqjgp9Gb0IXXtZyjED8898NETCoEry/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
       </div>
     </div>
 
@@ -918,7 +918,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="rec-body">
         <div class="rec-title">Ambassador &#8212; DataGlobal Hub</div>
         <div class="rec-desc">Appointed as Ambassador at DataGlobal Hub, representing and advocating for the growth of the data and AI community in Nigeria and across Africa.</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
+        <a href="https://drive.google.com/file/d/16gvU8oEHC-lnasKTStIUVshoT37Y4UO0/view?usp=sharing" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
       </div>
     </div>
 
@@ -929,7 +929,6 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
 <section id="recruiter" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="section-label">Why Hire Me</div>
   <h2 class="section-title">I Don&#8217;t Just Analyze Data &#8212;<br>I Drive Decisions</h2>
-  <p class="section-subtitle reveal">Recruiters don&#8217;t hire tools. They hire thinkers, communicators, and impact-makers.</p>
   <div class="rec-grid reveal">
     <div class="rec-card">
       <div class="rec-body" style="padding-top:1.75rem">
