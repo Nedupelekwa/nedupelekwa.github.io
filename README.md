@@ -684,7 +684,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
     <div class="cert-card">
       <div class="cert-stripe"></div>
       <div class="cert-preview">
-        <img src="images/certs/google-cloud-cert.jpg" alt="Google Cloud Data Analyst Certificate"
+        <img src="images/Google Cloud Data Analytics Certificate.jpg" alt="Google Cloud Data Analyst Certificate"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
           <span class="cert-preview-icon">&#9729;</span>
@@ -695,7 +695,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
       <div class="cert-body">
         <div class="cert-title">Google Cloud Data Analyst Certificate</div>
         <div class="cert-issuer">Google Cloud</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+        <a href="https://www.credly.com/badges/8978d604-f416-4365-bfc5-9bc49dc80c8a/public_url" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
       </div>
     </div>
 
