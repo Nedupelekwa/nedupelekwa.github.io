@@ -774,7 +774,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
     <div class="cert-card">
       <div class="cert-stripe"></div>
       <div class="cert-preview">
-        <img src="images/certs/google-workspace-cert.jpg" alt="Google Workspace Certificate"
+        <img src="images/google workspace.jpg" alt="Google Workspace Certificate"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
           <span class="cert-preview-icon">&#9635;</span>
@@ -842,8 +842,8 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
         <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
       </div>
       <div class="cert-body">
-        <div class="cert-title">DataCamp</div>
-        <div class="cert-issuer blue">Jobberman &middot; 2021</div>
+        <div class="cert-title">Data Literacy Certificate</div>
+        <div class="cert-issuer blue">DataCamp &middot; 2021</div>
         <a href="https://www.datacamp.com/skill-verification/DL0034034405845" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
       </div>
     </div>
@@ -858,6 +858,22 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
   <p class="section-subtitle reveal">Giving back to the African data community.</p>
   <div class="rec-grid reveal">
 
+<div class="rec-card">
+      <div class="rec-preview">
+        <img src="images/NYSC certificate.jpg" alt="NYSC certificate"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="rec-preview-placeholder" style="display:none">
+          <span class="rec-preview-emoji">&#127757;</span>
+        </div>
+        <div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div>
+      </div>
+      <div class="rec-body">
+        <div class="rec-title">Certificate of Volunteer Service &#8212; NYSC</div>
+        <div class="rec-desc">Completed the compulsory national service year for Nigerian graduates</div>
+        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
+      </div>
+    </div>
+    
     <div class="rec-card">
       <div class="rec-preview">
         <img src="images/recognitions/alx-mentor.jpg" alt="ALX Africa DATA Volunteer Mentor"
@@ -876,7 +892,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
 
     <div class="rec-card">
       <div class="rec-preview">
-        <img src="images/recognitions/gdai-moderator.jpg" alt="GDAI 2025 Session Moderator"
+        <img src="images/Certificate of Recognition DataGlobalHub @GDAI 2025.jpg" alt="GDAI 2025 Session Moderator"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="rec-preview-placeholder" style="display:none">
           <span class="rec-preview-emoji">&#127897;</span>
@@ -892,7 +908,7 @@ body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, v
 
     <div class="rec-card">
       <div class="rec-preview">
-        <img src="images/recognitions/dataglobal-ambassador.jpg" alt="Ambassador — DataGlobal Hub"
+        <img src="images/Dataglobal Hub Ambassador.jpg" alt="Ambassador — DataGlobal Hub"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="rec-preview-placeholder" style="display:none">
           <span class="rec-preview-emoji">&#9672;</span>
