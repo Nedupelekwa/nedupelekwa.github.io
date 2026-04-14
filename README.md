@@ -297,98 +297,12 @@ footer p { font-family: var(--mono); font-size: 11px; color: var(--text-muted); 
 .mobile-nav-close { position: absolute; top: 1.25rem; right: 1.5rem; font-family: var(--mono); font-size: 22px; color: var(--text-muted); cursor: pointer; background: none; border: none; line-height: 1; }
 
 /* LIGHT MODE */
-body.light {
-  --bg: #F0F4FB;
-  --bg-card: #FFFFFF;
-  --text-primary: #0b1220;
-  --text-secondary: #374151;
-  --text-muted: #6B7280;
-  --border: rgba(0,0,0,0.09);
-  --border-accent: rgba(0,160,100,0.45);
-  --accent: #008A5C;
-  --accent-bright: #00A870;
-  --accent-dim: rgba(0,160,100,0.09);
-  --accent2: #1D62D0;
-  --accent2-dim: rgba(29,98,208,0.08);
-  --glow-green: 0 0 40px rgba(0,160,100,0.14);
-}
+body.light { --bg: #F4F6FB; --bg-card: #FFFFFF; --text-primary: #0b1220; --text-secondary: #4A5568; --text-muted: #94A3B8; --border: rgba(0,0,0,0.07); --accent-dim: rgba(0,180,120,0.07); --border-accent: rgba(0,180,120,0.4); }
 body.light .hero-photo-ring-mask { background: var(--bg); }
-body.light .theme-toggle { background: rgba(255,255,255,0.97); color: #005c3a; border-color: rgba(0,160,100,0.4); }
-body.light nav { background: rgba(240,244,251,0.95); }
-body.light footer { background: #E8EDF6; }
-
-/* Light mode text overrides */
-body.light .hero-name .first-name { color: #0b1220; text-shadow: none; }
-body.light .hero-name .last-name {
-  background: linear-gradient(90deg, #008A5C 0%, #00A870 25%, #1D62D0 55%, #5b21b6 75%, #008A5C 100%);
-  background-size: 250% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-body.light .hero-name .last-name::after { -webkit-text-fill-color: #008A5C; }
-body.light .section-title { color: #0b1220; }
-body.light .timeline-role { color: #0b1220; }
-body.light .project-title { color: #0b1220; }
-body.light .cert-title { color: #0b1220; }
-body.light .rec-title { color: #0b1220; }
-body.light .skill-block-title { color: #0b1220; }
-body.light .stat-val { color: #0b1220; }
-
-/* Light mode card / block backgrounds */
-body.light .skill-block { background: #FFFFFF; }
-body.light .skill-block:hover { background: #F5F9FF; }
-body.light .project-card { background: #FFFFFF; border-color: rgba(0,0,0,0.08); }
-body.light .cert-card { background: #FFFFFF; border-color: rgba(0,0,0,0.08); }
-body.light .rec-card { background: #FFFFFF; border-color: rgba(0,0,0,0.08); }
-body.light .timeline-dot { border-color: #F0F4FB; }
-body.light .expertise-pill { background: #FFFFFF; border-color: rgba(0,0,0,0.09); color: #374151; }
-
-/* Light mode nav, tags, misc */
-body.light .nav-logo { color: #008A5C; }
-body.light .nav-links a { color: #374151; }
-body.light .nav-links a:hover { color: #008A5C; }
-body.light .nav-cta { color: #008A5C !important; background: rgba(0,160,100,0.08) !important; border-color: rgba(0,160,100,0.4) !important; }
-body.light .tag { color: #374151; background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.1); }
-body.light .tag.accent-tag { color: #008A5C; background: rgba(0,160,100,0.09); border-color: rgba(0,160,100,0.25); }
-body.light .tag.blue-tag { color: #1D62D0; background: rgba(29,98,208,0.08); border-color: rgba(29,98,208,0.2); }
-body.light .hero-badge { color: #008A5C; background: rgba(0,160,100,0.09); border-color: rgba(0,160,100,0.3); }
-body.light .hero-badge::before { background: #008A5C; box-shadow: 0 0 8px #008A5C; }
-body.light .hero-photo-badge { background: rgba(255,255,255,0.97); color: #008A5C; border-color: rgba(0,160,100,0.4); }
-body.light .hero-photo-badge::before { background: #008A5C; }
-body.light .hero-desc { border-left-color: rgba(0,160,100,0.5); color: #374151; }
-body.light .t-pill-green { background: rgba(0,160,100,0.1); border-color: rgba(0,160,100,0.35); color: #008A5C; }
-body.light .t-pill-blue { background: rgba(29,98,208,0.1); border-color: rgba(29,98,208,0.3); color: #1D62D0; }
-body.light .section-label { color: #008A5C; }
-body.light .section-label::before { color: #9CA3AF; }
-body.light .timeline-company { color: #008A5C; }
-body.light .timeline-dot { background: #008A5C; box-shadow: 0 0 16px rgba(0,160,100,0.4); }
-body.light .timeline::before { background: linear-gradient(180deg, #008A5C, #1D62D0, transparent); }
-body.light .cert-issuer { color: #008A5C; }
-body.light .cert-issuer.blue { color: #1D62D0; }
-body.light .cert-group-label.green { color: #008A5C; }
-body.light .cert-group-label.blue { color: #1D62D0; }
-body.light .cert-stripe { background: linear-gradient(90deg, #008A5C, #1D62D0); }
-body.light .cert-stripe.blue { background: linear-gradient(90deg, #1D62D0, #5b21b6); }
-body.light .cert-view-link.green-link { color: #008A5C; border-color: rgba(0,160,100,0.25); background: rgba(0,160,100,0.07); }
-body.light .rec-view-link { color: #008A5C; border-color: rgba(0,160,100,0.25); background: rgba(0,160,100,0.07); }
-body.light .project-link { color: #1D62D0; border-color: rgba(29,98,208,0.25); background: rgba(29,98,208,0.07); }
-body.light .project-type { color: #008A5C; border-color: rgba(0,160,100,0.25); background: rgba(0,160,100,0.09); }
-body.light .hero-name-rule { background: linear-gradient(90deg, #008A5C, #1D62D0, transparent); }
-body.light .hero-name-rule::after { background: #008A5C; box-shadow: 0 0 8px #008A5C; }
-body.light .scroll-progress { background: linear-gradient(90deg, #008A5C, #1D62D0); }
-body.light .nav-logo-dot { background: #008A5C; }
-body.light .sticky-cta { background: rgba(255,255,255,0.97); border-color: rgba(0,0,0,0.1); }
-body.light .sticky-cta .secondary { color: #374151; }
-body.light .sticky-cta .primary { background: #008A5C; }
-body.light .cert-preview-placeholder::before { opacity: 0.25; }
-body.light .rec-preview-placeholder::before { opacity: 0.25; }
+body.light .theme-toggle { background: rgba(255,255,255,0.97); color: #0a7a55; }
+body.light nav { background: rgba(244,246,251,0.93); }
 body.light .expertise-ticker-wrap::before { background: linear-gradient(90deg, var(--bg), transparent); }
 body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, var(--bg), transparent); }
-body.light .mobile-nav { background: rgba(240,244,251,0.99); }
-body.light .mobile-nav-link { color: #374151; }
-body.light .skills-grid { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.08); }
-body.light .hero-grid-bg { background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px); }
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
@@ -647,6 +561,8 @@ body.light .hero-grid-bg { background-image: linear-gradient(rgba(0,0,0,0.05) 1p
       <div class="timeline-company">ALX Africa Data Programs &middot; Remote</div>
       <ul class="timeline-bullets">
         <li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li>
+        <li>Served as Session Moderator at the Virtual Global Data &amp; AI Tech Conference (GDAI) 2025</li>
+        <li>Recognised as Ambassador by DataGlobal Hub for contributions to the data community</li>
       </ul>
     </div>
     <div class="timeline-item">
@@ -918,7 +834,7 @@ body.light .hero-grid-bg { background-image: linear-gradient(rgba(0,0,0,0.05) 1p
     <div class="section-label" style="justify-content:center">Let&#8217;s Talk</div>
     <h2 class="section-title reveal">Open to the Right<br>Opportunity</h2>
     <p class="section-subtitle reveal" style="margin:0 auto 1rem;text-align:center;max-width:440px">Whether it&#8217;s a full-time role, a freelance project, or just a conversation about data &#8212; I&#8217;d love to hear from you.</p>
-    <a href="/cdn-cgi/l/email-protection#90f3f8f9fef5f4e5e0f5fcf5fbe7f1d0f7fdf1f9fcbef3fffd" class="contact-email reveal">
+    <a href="mailto:chinedupelekwa@gmail.com" class="contact-email reveal">
       <span class="mail-icon">&#9993;</span>
       Send Me a Mail
     </a>
@@ -941,7 +857,7 @@ body.light .hero-grid-bg { background-image: linear-gradient(rgba(0,0,0,0.05) 1p
   <a href="#contact" class="primary">Hire Me &#8594;</a>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* CURSOR */
 const dot = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
@@ -1006,4 +922,10 @@ document.querySelectorAll('.cert-preview').forEach(preview => {
 /* REC preview click navigates to rec link */
 document.querySelectorAll('.rec-preview').forEach(preview => {
   preview.addEventListener('click', () => {
-    cons
+    const link = preview.closest('.rec-card').querySelector('.rec-view-link');
+    if (link) window.open(link.href, '_blank');
+  });
+});
+</script>
+</body>
+</html>
