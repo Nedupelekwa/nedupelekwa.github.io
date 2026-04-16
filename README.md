@@ -139,7 +139,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 /* First name: slightly smaller than before so both lines feel balanced */
 .hero-name .first-name {
   display: block;
-  font-size: clamp(3.5rem, 8vw, 7rem); /* BIGGER + more fluid */
+  font-size: clamp(2.2rem, 3.5vw, 4.5rem);
   font-weight: 900;
   letter-spacing: -0.02em; /* tighter = fills width better */
   line-height: 0.95;
@@ -395,8 +395,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
   .hero { padding: 0 1.5rem; align-items: flex-start; min-height: auto; }
   .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; padding-top: 2rem; padding-bottom: 4rem; }
   .hero-photo-col { order: 0; }
-  .hero-content { order: 1; width: 100%; } .hero-content {
-  max-width: 650px;
+  .hero-content { order: 1; width: 100%; }
 }
   .hero-photo-wrap { width: 220px; height: 220px; }
   .hero-photo-badge { bottom: 4px; right: -4px; font-size: 10px; padding: 0.3rem 0.65rem; }
