@@ -120,7 +120,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 }
 .hero-name .first-name {
   display: block;
-  font-size: clamp(2.6rem, 4.2vw, 4.8rem);
+  font-size: clamp(1.5rem, 3.5vw, 4.0rem);
   font-weight: 800;
   color: var(--text-primary);
   text-shadow: 0 0 60px rgba(255,255,255,0.08);
