@@ -395,7 +395,9 @@ body.light .hero-intro-line { color: var(--text-muted); }
   .hero { padding: 0 1.5rem; align-items: flex-start; min-height: auto; }
   .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; padding-top: 2rem; padding-bottom: 4rem; }
   .hero-photo-col { order: 0; }
-  .hero-content { order: 1; width: 100%; }
+  .hero-content { order: 1; width: 100%; } .hero-content {
+  max-width: 650px;
+}
   .hero-photo-wrap { width: 220px; height: 220px; }
   .hero-photo-badge { bottom: 4px; right: -4px; font-size: 10px; padding: 0.3rem 0.65rem; }
   .hero-badge { justify-content: center; }
