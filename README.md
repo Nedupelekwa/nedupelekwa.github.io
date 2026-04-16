@@ -112,13 +112,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
   align-items: center;
   gap: 0.5rem;
 }
-.hero-intro-line .wave {
-  font-style: normal;
-  font-size: 1.1rem;
-  animation: waveHand 2.5s ease-in-out infinite;
-  display: inline-block;
-  transform-origin: 70% 80%;
-}
+
 @keyframes waveHand {
   0%,100% { transform: rotate(0deg); }
   20%      { transform: rotate(-18deg); }
@@ -204,13 +198,48 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 /* EXPERTISE */
 #expertise { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%); }
 #expertise .section-subtitle { margin-bottom: 2rem; }
-.expertise-ticker-wrap { overflow: hidden; position: relative; margin-bottom: 0.6rem; }
-.expertise-ticker-wrap::before, .expertise-ticker-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none; }
-.expertise-ticker-wrap::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
-.expertise-ticker-wrap::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
-.expertise-ticker { display: flex; gap: 0.75rem; width: max-content; animation: tickerScroll 28s linear infinite; }
-.expertise-ticker-wrap:hover .expertise-ticker { animation-play-state: paused; }
-@keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.expertise-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-accent);
+  background: rgba(255,255,255,0.03);
+}
+
+.expertise-card:hover::before {
+  transform: scaleX(1);
+}
 .expertise-pill { display: inline-flex; align-items: center; gap: 0.55rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 40px; padding: 0.6rem 1.2rem; font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; color: var(--text-secondary); white-space: nowrap; transition: all 0.25s; flex-shrink: 0; }
 .expertise-pill::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 5px var(--accent); flex-shrink: 0; }
 .expertise-ticker-wrap:hover .expertise-pill:hover { color: var(--accent); border-color: var(--border-accent); background: var(--accent-dim); box-shadow: var(--glow-green); }
@@ -416,7 +445,22 @@ body.light .hero-intro-line { color: var(--text-muted); }
 @media (max-width: 480px) {
   .hero-stats { flex-direction: column; align-items: center; gap: 1.5rem; }
   .stat-val { font-size: 2rem; }
-  .hero-name .first-name { font-size: clamp(2.2rem, 11vw, 3rem); }
+  .hero-name .first-name {
+  display: block;
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  white-space: nowrap; /* 🔥 prevents breaking */
+}
+@media (max-width: 600px) {
+  .hero-name .first-name {
+    font-size: 11vw;
+  }
+}
+.hero-name {
+  overflow-x: hidden;
+}
   .hero-name .last-name { font-size: clamp(1.5rem, 7.5vw, 2rem); }
   .cursor-dot, .cursor-ring { display: none; }
   body { cursor: auto; }
@@ -498,7 +542,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
 
       <!-- ④ Name redesign: "I'm" intro + CHINEDU large + ELEKWA PROMISE shimmer, both slightly reduced -->
       <h1 class="hero-name">
-        <span class="hero-intro-line"><em class="wave">👋</em> I'm</span>
+        <span class="hero-intro-line">I'm</span>
         <span class="first-name" data-text="CHINEDU">CHINEDU</span>
         <span class="last-name">ELEKWA PROMISE</span>
         <span class="hero-name-rule"></span>
@@ -528,24 +572,17 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <div class="section-label">Core Strengths</div>
   <h2 class="section-title">My Technical Expertise</h2>
   <p class="section-subtitle reveal">Specialized capabilities that define my impact across data, analytics, and business intelligence.</p>
-  <div class="expertise-ticker-wrap reveal">
-    <div class="expertise-ticker">
-      <span class="expertise-pill">Statistical Analytics</span>
-      <span class="expertise-pill">Professional Dashboard Design</span>
-      <span class="expertise-pill">Digital Marketing Analytics</span>
-      <span class="expertise-pill">FMCG Analytics</span>
-      <span class="expertise-pill">Data Modeling</span>
-      <span class="expertise-pill">Executive-style PowerPoint Reports</span>
-      <span class="expertise-pill">Advanced Data Analytics &amp; Visualisation with Python</span>
-      <span class="expertise-pill">Statistical Analytics</span>
-      <span class="expertise-pill">Professional Dashboard Design</span>
-      <span class="expertise-pill">Digital Marketing Analytics</span>
-      <span class="expertise-pill">FMCG Analytics</span>
-      <span class="expertise-pill">Data Modeling</span>
-      <span class="expertise-pill">Executive-style PowerPoint Reports</span>
-      <span class="expertise-pill">Advanced Data Analytics &amp; Visualisation with Python</span>
-    </div>
-  </div>
+ <div class="expertise-grid reveal">
+
+  <div class="expertise-card">Statistical Analytics</div>
+  <div class="expertise-card">Professional Dashboard Design</div>
+  <div class="expertise-card">Digital Marketing Analytics</div>
+  <div class="expertise-card">FMCG Analytics</div>
+  <div class="expertise-card">Data Modeling</div>
+  <div class="expertise-card">Executive-style PowerPoint Reports</div>
+  <div class="expertise-card">Advanced Data Analytics & Visualisation with Python</div>
+</div>
+
 </section>
 
 <!-- SKILLS -->
