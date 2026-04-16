@@ -139,7 +139,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 /* First name: slightly smaller than before so both lines feel balanced */
 .hero-name .first-name {
   display: block;
-  font-size: clamp(2.2rem, 3.5vw, 4.5rem);
+  font-size: clamp(1.8rem, 3.0vw, 4.1rem);
   font-weight: 900;
   letter-spacing: -0.02em; /* tighter = fills width better */
   line-height: 0.95;
