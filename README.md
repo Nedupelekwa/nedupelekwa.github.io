@@ -183,7 +183,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 .hero-stats { display: flex; gap: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
 .stat-val { font-family: var(--display); font-size: 2.4rem; font-weight: 800; color: var(--text-primary); display: block; letter-spacing: -0.02em; }
 .stat-label { font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; }
-
 /* SECTIONS */
 section { padding: 7rem 6rem; position: relative; z-index: 1; }
 .section-label { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
@@ -195,63 +194,99 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 .tag.accent-tag { color: var(--accent); border-color: rgba(0,210,140,0.25); background: var(--accent-dim); }
 .tag.blue-tag { color: var(--accent2); border-color: rgba(59,130,246,0.25); background: var(--accent2-dim); }
 
-/* EXPERTISE */
+/* ══════════════════════════════════════════════
+   EXPERTISE — elegant card grid (replaces ticker)
+   ══════════════════════════════════════════════ */
 #expertise { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-card) 100%); }
-#expertise .section-subtitle { margin-bottom: 2rem; }
+#expertise .section-subtitle { margin-bottom: 2.5rem; }
+
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* smaller cards */
-  gap: 0.6rem; /* tighter spacing */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
 }
 
 .expertise-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 0.7rem 0.9rem; /* reduced padding */
-  border-radius: 8px;
-  font-family: var(--mono);
-  font-size: 12px; /* slightly smaller text */
-  letter-spacing: 0.06em;
-  color: var(--text-secondary);
-  transition: all 0.2s ease;
+  border-radius: var(--radius);
+  padding: 1.6rem 1.75rem;
   position: relative;
   overflow: hidden;
+  transition: all 0.35s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
+/* left accent bar */
 .expertise-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
- height: 1px;
-  width: 100%;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), var(--accent2));
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s ease;
+}
+.expertise-card:hover { border-color: rgba(0,210,140,0.25); transform: translateY(-4px); box-shadow: var(--glow-green); }
+.expertise-card:hover::before { transform: scaleY(1); }
+
+.expertise-card-icon {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  background: var(--accent-dim);
+  border: 1px solid rgba(0,210,140,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
 }
 
-.expertise-card:hover {
-  transform: translateY(-2px); /* more subtle */
-  border-color: var(--border-accent);
-  background: rgba(255,255,255,0.03);
+.expertise-card-title {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
-.expertise-card:hover::before {
-  transform: scaleX(1);
+.expertise-card-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  flex: 1;
 }
 
-.expertise-pill::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 5px var(--accent); flex-shrink: 0; }
-
-.expertise-card {
-  backdrop-filter: blur(6px);
+.expertise-card-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(0,210,140,0.18);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  align-self: flex-start;
+}
+.expertise-card-tag::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 4px var(--accent);
 }
 
 /* SKILLS */
 #skills { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 .skill-block { background: var(--bg-card); padding: 1.1rem 1.25rem; transition: background 0.25s; position: relative; overflow: hidden; }
-.skill-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+.skill-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
 .skill-block:hover { background: rgba(255,255,255,0.04); }
 .skill-block:hover::before { transform: scaleX(1); }
 .skill-block-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
@@ -398,8 +433,6 @@ body.light {
 body.light nav { background: rgba(245,247,252,0.95); }
 body.light .hero-photo-ring-mask { background: var(--bg); }
 body.light .theme-toggle { background: rgba(255,255,255,0.98); color: #00614A; }
-body.light .expertise-ticker-wrap::before { background: linear-gradient(90deg, var(--bg), transparent); }
-body.light .expertise-ticker-wrap::after { background: linear-gradient(-90deg, var(--bg), transparent); }
 body.light .sticky-cta { background: rgba(255,255,255,0.95); border-color: rgba(0,0,0,0.1); }
 body.light .sticky-cta .secondary { color: var(--text-primary); border-color: var(--border); }
 body.light .sticky-cta .primary { color: #ffffff; }
@@ -408,6 +441,8 @@ body.light .contact-email:hover { color: #ffffff; }
 body.light .btn-secondary { color: var(--text-primary); }
 body.light .hero-name .last-name { background: linear-gradient(90deg, var(--accent) 0%, #00B876 20%, #0b4da8 45%, #6d28d9 65%, var(--accent) 100%); background-size: 250% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: holoShimmer 5s linear infinite; }
 body.light .hero-intro-line { color: var(--text-muted); }
+body.light .expertise-card { background: #ffffff; border-color: rgba(0,0,0,0.08); }
+body.light .expertise-card-icon { background: rgba(0,147,95,0.07); border-color: rgba(0,147,95,0.15); }
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
@@ -415,9 +450,9 @@ body.light .hero-intro-line { color: var(--text-muted); }
   .hero { padding: 0 3rem; } footer { padding: 2rem 3rem; }
   .hero-inner { gap: 4rem; grid-template-columns: 1fr 280px; }
   .hero-photo-wrap { width: 280px; height: 280px; }
+  .expertise-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 }
 @media (max-width: 960px) {
-  /* hide CV link in nav on smaller screens — it's still in mobile menu */
   .nav-cv { display: none !important; }
 }
 @media (max-width: 860px) {
@@ -428,7 +463,6 @@ body.light .hero-intro-line { color: var(--text-muted); }
   .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; padding-top: 2rem; padding-bottom: 4rem; }
   .hero-photo-col { order: 0; }
   .hero-content { order: 1; width: 100%; }
-}
   .hero-photo-wrap { width: 220px; height: 220px; }
   .hero-photo-badge { bottom: 4px; right: -4px; font-size: 10px; padding: 0.3rem 0.65rem; }
   .hero-badge { justify-content: center; }
@@ -442,28 +476,17 @@ body.light .hero-intro-line { color: var(--text-muted); }
   .projects-grid { grid-template-columns: 1fr; }
   .cert-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
   .rec-grid { grid-template-columns: 1fr; }
+  .expertise-grid { grid-template-columns: 1fr 1fr; }
   footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.5rem; }
   .theme-toggle { top: auto; bottom: 80px; right: 16px; }
+}
+@media (max-width: 560px) {
+  .expertise-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .hero-stats { flex-direction: column; align-items: center; gap: 1.5rem; }
   .stat-val { font-size: 2rem; }
-  .hero-name .first-name {
-  display: block;
-  font-size: clamp(3rem, 9vw, 6.5rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  white-space: nowrap; /* 🔥 prevents breaking */
-}
-@media (max-width: 600px) {
-  .hero-name .first-name {
-    font-size: 11vw;
-  }
-}
-.hero-name {
-  overflow-x: hidden;
-}
+  .hero-name .first-name { font-size: clamp(2.2rem, 11vw, 3rem); }
   .hero-name .last-name { font-size: clamp(1.5rem, 7.5vw, 2rem); }
   .cursor-dot, .cursor-ring { display: none; }
   body { cursor: auto; }
@@ -481,7 +504,6 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <span id="themeLabel">Light Mode</span>
 </button>
 
-<!-- ① Emoji on logo  ② CV link after logo  ③ "Let's Connect" CTA -->
 <nav>
   <a href="#" class="nav-logo">
     <div class="nav-logo-dot"></div>
@@ -494,15 +516,8 @@ body.light .hero-intro-line { color: var(--text-muted); }
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#recognitions">Recognition</a></li>
     <li>
-      <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing"
-         target="_blank" class="nav-cv">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="12" y1="18" x2="12" y2="12"/>
-          <line x1="9" y1="15" x2="15" y2="15"/>
-        </svg>
+      <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing" target="_blank" class="nav-cv">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
         My CV
       </a>
     </li>
@@ -518,8 +533,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <a href="#experience" class="mobile-nav-link">Experience</a>
   <a href="#certifications" class="mobile-nav-link">Certifications</a>
   <a href="#recognitions" class="mobile-nav-link">Recognition</a>
-  <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing"
-     target="_blank" class="mobile-nav-link">Download CV</a>
+  <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing" target="_blank" class="mobile-nav-link">Download CV</a>
   <a href="#contact" class="mobile-nav-link" style="color:var(--accent)">Let's Connect</a>
 </div>
 
@@ -542,15 +556,13 @@ body.light .hero-intro-line { color: var(--text-muted); }
     </div>
     <div class="hero-content">
       <div class="hero-badge">Lagos, Nigeria</div>
-
-      <!-- ④ Name redesign: "I'm" intro + CHINEDU large + ELEKWA PROMISE shimmer, both slightly reduced -->
       <h1 class="hero-name">
+        <!-- No emoji on "I'm" — clean typographic line -->
         <span class="hero-intro-line">I'm</span>
         <span class="first-name" data-text="CHINEDU">CHINEDU</span>
         <span class="last-name">ELEKWA PROMISE</span>
         <span class="hero-name-rule"></span>
       </h1>
-
       <p class="hero-title">
         <span class="t-pill t-pill-green"><span class="t-dot"></span>Data Analyst</span>
         <span class="t-pill t-pill-blue"><span class="t-dot"></span>Business Intelligence</span>
@@ -570,22 +582,71 @@ body.light .hero-intro-line { color: var(--text-muted); }
   </div>
 </section>
 
-<!-- EXPERTISE -->
+<!-- EXPERTISE — elegant card grid -->
 <section id="expertise">
   <div class="section-label">Core Strengths</div>
   <h2 class="section-title">My Technical Expertise</h2>
   <p class="section-subtitle reveal">Specialized capabilities that define my impact across data, analytics, and business intelligence.</p>
- <div class="expertise-grid reveal">
 
-  <div class="expertise-card">Statistical Analytics</div>
-  <div class="expertise-card">Professional Dashboard Design</div>
-  <div class="expertise-card">Digital Marketing Analytics</div>
-  <div class="expertise-card">FMCG Analytics</div>
-  <div class="expertise-card">Data Modeling</div>
-  <div class="expertise-card">Executive-style PowerPoint Reports</div>
-  <div class="expertise-card">Advanced Data Analytics & Visualisation with Python</div>
-</div>
+  <div class="expertise-grid reveal">
 
+    <div class="expertise-card">
+      <div class="expertise-card-icon">📊</div>
+      <div class="expertise-card-title">Statistical Analytics</div>
+      <div class="expertise-card-desc">Applying statistical methods to uncover patterns, trends, and actionable insights from complex datasets across business domains.</div>
+      <span class="expertise-card-tag">Core Competency</span>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-card-icon">🖥️</div>
+      <div class="expertise-card-title">Professional Dashboard Design</div>
+      <div class="expertise-card-desc">Building executive-grade Power BI and Looker Studio dashboards that communicate business performance at a glance.</div>
+      <span class="expertise-card-tag">Power BI · Looker</span>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-card-icon">📈</div>
+      <div class="expertise-card-title">Digital Marketing Analytics</div>
+      <div class="expertise-card-desc">Measuring campaign performance, funnel efficiency, and audience behavior to drive data-backed marketing decisions.</div>
+      <span class="expertise-card-tag">Growth Analytics</span>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-card-icon">🏭</div>
+      <div class="expertise-card-title">FMCG Analytics</div>
+      <div class="expertise-card-desc">End-to-end production and supply chain data tracking — output, downtime, waste, and inventory — in fast-moving consumer goods environments.</div>
+      <span class="expertise-card-tag">SAP · Google Sheets</span>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-card-icon">🗂️</div>
+      <div class="expertise-card-title">Data Modeling</div>
+      <div class="expertise-card-desc">Structuring clean, scalable data models using SQL and Power Query to enable fast, reliable reporting across teams.</div>
+      <span class="expertise-card-tag">SQL · Power Query</span>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-card-icon">📑</div>
+      <div class="expertise-card-title">Executive-Style Reporting</div>
+      <div class="expertise-card-desc">Translating complex analysis into polished, decision-ready PowerPoint reports tailored for senior stakeholders and leadership.</div>
+      <span class="expertise-card-tag">PowerPoint · Narrative</span>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-card-icon">🐍</div>
+      <div class="expertise-card-title">Advanced Analytics with Python</div>
+      <div class="expertise-card-desc">Leveraging Python — pandas, matplotlib, seaborn — for data wrangling, exploratory analysis, and rich visual storytelling.</div>
+      <span class="expertise-card-tag">Python · Data Science</span>
+    </div>
+
+    <div class="expertise-card">
+      <div class="expertise-card-icon">☁️</div>
+      <div class="expertise-card-title">Cloud Data Analytics</div>
+      <div class="expertise-card-desc">Working with Google Cloud Platform and BigQuery to build scalable, cloud-native analytics pipelines and data infrastructure.</div>
+      <span class="expertise-card-tag">GCP · BigQuery</span>
+    </div>
+
+  </div>
 </section>
 
 <!-- SKILLS -->
@@ -669,13 +730,32 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <h2 class="section-title">Experience</h2>
   <p class="section-subtitle reveal">Where I've built things that matter.</p>
   <div class="timeline reveal">
+
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      
+      <div class="timeline-date">Sept 2025 &#8212; Present</div>
+      <div class="timeline-role">Data Analyst Intern</div>
+      <div class="timeline-company">edMotion Technologies &middot; Remote</div>
+      <ul class="timeline-bullets">
+        <li>Working on data analytics projects in the edtech space, applying SQL and spreadsheet skills to derive insights</li>
+        <li>Contributing to data-driven product decisions and reporting workflows</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Sept 2025 &#8212; Present</div>
+      <div class="timeline-role">DATA Volunteer Mentor</div>
+      <div class="timeline-company">ALX Africa Data Programs &middot; Remote</div>
+      <ul class="timeline-bullets">
+        <li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li>
+      </ul>
+    </div>
+
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">Sept 2024 &#8212; Feb 2026</div>
-      <div class="timeline-role">Production Data Analyst/Production Planner</div>
+      <div class="timeline-role">Production Data Analyst / Production Planner</div>
       <div class="timeline-company">Frutta Juice and Services Limited &middot; Lagos, Nigeria</div>
       <ul class="timeline-bullets">
         <li>Built a Google Forms &amp; Sheets pipeline tracking output, downtime, waste and material usage &#8212; increasing analytics efficiency to 95%</li>
@@ -685,24 +765,6 @@ body.light .hero-intro-line { color: var(--text-muted); }
       </ul>
     </div>
 
-    <div class="timeline-date">Sept 2025 &#8212; Present</div>
-      <div class="timeline-role">Data Analyst Intern</div>
-      <div class="timeline-company">edMotion Technologies &middot; Remote</div>
-      <ul class="timeline-bullets">
-        <li>Working on data analytics projects in the edtech space, applying SQL and spreadsheet skills to derive insights</li>
-        <li>Contributing to data-driven product decisions and reporting workflows</li>
-      </ul>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-date">Sept 2025 — Present</div>
-      <div class="timeline-role">DATA Volunteer Mentor</div>
-      <div class="timeline-company">ALX Africa Data Programs · Remote</div>
-      <ul class="timeline-bullets">
-        <li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li>
-      </ul>
-    </div>
-    
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">Jan 2023 &#8212; Sept 2024</div>
@@ -714,6 +776,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
         <li>Managed customer relationships and provided mentorship to students</li>
       </ul>
     </div>
+
     <div class="timeline-item">
       <div class="timeline-dot" style="background:var(--text-muted);box-shadow:none"></div>
       <div class="timeline-date">2020 &#8212; 2021 &middot; 2013 &#8212; 2014</div>
@@ -723,6 +786,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
         <li>Taught Mathematics at secondary school level &#8212; building the analytical foundations that underpin my data career</li>
       </ul>
     </div>
+
   </div>
 </section>
 
