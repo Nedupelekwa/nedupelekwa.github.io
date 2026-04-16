@@ -703,6 +703,42 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
     <div class="cert-card">
       <div class="cert-stripe"></div>
       <div class="cert-preview">
+        <img src="images/Microsoft Business Analyst.jpg" alt="Microsoft Business Analyst"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-preview-placeholder" style="display:none">
+          <span class="cert-preview-icon">&#9711;</span>
+          <span class="cert-preview-label">Certificate Preview</span>
+        </div>
+        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
+      </div>
+      <div class="cert-body">
+        <div class="cert-title">Microsoft Business Analyst Professional Certificate</div>
+        <div class="cert-issuer">Microsoft Via Coursera</div>
+        <a href="https://coursera.org/share/c6567e811cee90cb8fc4cfa63c8aad9c" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-stripe"></div>
+      <div class="cert-preview">
+        <img src="images/SQL for Business analysts.jpg" alt="SQL for Business Analyst"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-preview-placeholder" style="display:none">
+          <span class="cert-preview-icon">&#9711;</span>
+          <span class="cert-preview-label">Certificate Preview</span>
+        </div>
+        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
+      </div>
+      <div class="cert-body">
+        <div class="cert-title">SQL for Business Analyst</div>
+        <div class="cert-issuer">DataCamp</div>
+        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/750b783b48ed45a69debb82aa1741067210f145f" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-stripe"></div>
+      <div class="cert-preview">
         <img src="images/google workspace.jpg" alt="Google Workspace Certificate"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="cert-preview-placeholder" style="display:none">
