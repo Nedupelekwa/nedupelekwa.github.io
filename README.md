@@ -48,22 +48,24 @@ body::before {
   pointer-events: none; z-index: 0;
 }
 
-/* CURSOR */
 .cursor-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); }
 .cursor-ring { width: 32px; height: 32px; border: 1px solid rgba(0,210,140,0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width 0.3s, height 0.3s, border-color 0.3s; }
-
-/* SCROLL PROGRESS */
 .scroll-progress { position: fixed; top: 0; left: 0; height: 2px; z-index: 200; background: linear-gradient(90deg, var(--accent), var(--accent2)); width: 0%; }
 
 /* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 0 4rem; border-bottom: 1px solid var(--border); background: rgba(6,8,12,0.92); backdrop-filter: blur(24px); }
-.nav-logo { font-family: var(--mono); font-size: 14px; color: var(--accent); letter-spacing: 0.1em; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; }
+.nav-logo { font-family: var(--mono); font-size: 14px; color: var(--accent); letter-spacing: 0.08em; text-decoration: none; font-weight: 500; display: flex; align-items: center; gap: 0.5rem; }
 .nav-logo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
-.nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
 .nav-links a { font-family: var(--mono); font-size: 12px; color: var(--text-secondary); text-decoration: none; letter-spacing: 0.14em; text-transform: uppercase; transition: color 0.2s; position: relative; }
 .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.25s; }
 .nav-links a:hover { color: var(--accent); }
 .nav-links a:hover::after { width: 100%; }
+/* CV pill in nav */
+.nav-cv { color: var(--text-secondary) !important; border: 1px solid var(--border) !important; padding: 0.42rem 0.9rem !important; border-radius: var(--radius-sm) !important; display: inline-flex !important; align-items: center !important; gap: 0.35rem !important; transition: all 0.25s !important; font-size: 11px !important; letter-spacing: 0.1em !important; white-space: nowrap; }
+.nav-cv::after { display: none !important; }
+.nav-cv:hover { color: var(--accent) !important; border-color: var(--border-accent) !important; background: var(--accent-dim) !important; }
+/* CTA pill in nav */
 .nav-cta { color: var(--accent) !important; border: 1px solid var(--border-accent) !important; padding: 0.45rem 1.1rem; border-radius: var(--radius-sm); background: var(--accent-dim) !important; transition: all 0.25s !important; }
 .nav-cta:hover { background: rgba(0,210,140,0.18) !important; box-shadow: var(--glow-green) !important; }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
@@ -97,15 +99,72 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity:1; box-shadow:0 0 8px var(--accent); } 50% { opacity:0.5; box-shadow:0 0 3px var(--accent); } }
 
-/* NAME */
-.hero-name { font-family: var(--display); font-size: clamp(3.5rem, 5.5vw, 6rem); font-weight: 800; line-height: 0.92; letter-spacing: 0.04em; margin-bottom: 0.2rem; color: var(--text-primary); text-transform: uppercase; position: relative; }
-.hero-name .first-name { display: block; color: var(--text-primary); text-shadow: 0 0 60px rgba(255,255,255,0.08); position: relative; }
+/* ── HERO NAME — redesigned ── */
+/* "I'm" greeting line above the name */
+.hero-intro-line {
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.hero-intro-line .wave {
+  font-style: normal;
+  font-size: 1.1rem;
+  animation: waveHand 2.5s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: 70% 80%;
+}
+@keyframes waveHand {
+  0%,100% { transform: rotate(0deg); }
+  20%      { transform: rotate(-18deg); }
+  40%      { transform: rotate(16deg); }
+  60%      { transform: rotate(-10deg); }
+  80%      { transform: rotate(8deg); }
+}
+
+.hero-name {
+  font-family: var(--display);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.2rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  position: relative;
+}
+/* First name: slightly smaller than before so both lines feel balanced */
+.hero-name .first-name {
+  display: block;
+  font-size: clamp(2.6rem, 4.2vw, 4.8rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  text-shadow: 0 0 60px rgba(255,255,255,0.08);
+  position: relative;
+}
 .hero-name .first-name::before, .hero-name .first-name::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-family: var(--display); font-size: inherit; font-weight: 800; letter-spacing: inherit; text-transform: uppercase; overflow: hidden; clip-path: inset(0 0 0 0); }
 .hero-name .first-name::before { color: var(--accent); animation: glitch1 6s infinite; opacity: 0; }
 .hero-name .first-name::after { color: var(--accent2); animation: glitch2 6s infinite; opacity: 0; }
 @keyframes glitch1 { 0%,89%,100% { opacity:0; clip-path:inset(0 0 100% 0); transform:translate(0,0); } 90% { opacity:0.7; clip-path:inset(20% 0 40% 0); transform:translate(-4px,0); } 92% { opacity:0.5; clip-path:inset(60% 0 10% 0); transform:translate(4px,0); } 94% { opacity:0; } }
 @keyframes glitch2 { 0%,91%,100% { opacity:0; clip-path:inset(0 0 100% 0); transform:translate(0,0); } 92% { opacity:0.6; clip-path:inset(10% 0 55% 0); transform:translate(5px,0); } 94% { opacity:0.4; clip-path:inset(50% 0 20% 0); transform:translate(-3px,0); } 96% { opacity:0; } }
-.hero-name .last-name { display: block; background: linear-gradient(90deg, var(--accent) 0%, #00FFAA 20%, #fff 38%, var(--accent2) 55%, #8b5cf6 72%, var(--accent) 100%); background-size: 250% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: holoShimmer 5s linear infinite; position: relative; }
+
+/* Last name: shimmer gradient, slightly smaller weight for contrast */
+.hero-name .last-name {
+  display: block;
+  font-size: clamp(1.8rem, 3vw, 3.4rem);
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--accent) 0%, #00FFAA 20%, #fff 38%, var(--accent2) 55%, #8b5cf6 72%, var(--accent) 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: holoShimmer 5s linear infinite;
+  position: relative;
+  letter-spacing: 0.05em;
+}
 @keyframes holoShimmer { 0% { background-position: 0% center; } 100% { background-position: 250% center; } }
 .hero-name .last-name::after { content: '_'; -webkit-text-fill-color: var(--accent); animation: blink 1.1s step-end infinite; margin-left: 4px; font-weight: 300; opacity: 0.8; }
 @keyframes blink { 0%,100%{opacity:0.8} 50%{opacity:0} }
@@ -113,7 +172,6 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 .hero-name-rule::after { content: ''; position: absolute; left: 0; top: -2px; width: 6px; height: 5px; background: var(--accent); border-radius: 1px; box-shadow: 0 0 8px var(--accent); animation: ruleDot 3s ease-in-out infinite; }
 @keyframes ruleDot { 0%,100% { left: 0; opacity:1; } 50% { left: calc(100% - 6px); opacity: 0.6; } }
 
-/* JOB TITLE */
 .hero-title { display: inline-flex; align-items: center; gap: 0; margin-bottom: 1.6rem; position: relative; }
 .hero-title .t-pill { font-family: var(--mono); font-size: clamp(0.75rem, 1.1vw, 0.92rem); font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.2rem; border-radius: 40px; line-height: 1; position: relative; overflow: hidden; transition: transform 0.2s; }
 .hero-title .t-pill:hover { transform: translateY(-2px); }
@@ -210,13 +268,10 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 .cert-group-label.green { color: var(--accent); }
 .cert-group-label.blue { color: var(--accent2); }
 .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.25rem; margin-bottom: 3rem; }
-
 .cert-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.25s; display: flex; flex-direction: column; }
 .cert-card:hover { transform: translateY(-4px); border-color: rgba(0,210,140,0.25); box-shadow: var(--glow-green); }
-
 .cert-stripe { height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); flex-shrink: 0; }
 .cert-stripe.blue { background: linear-gradient(90deg, var(--accent2), #8b5cf6); }
-
 .cert-preview { position: relative; width: 100%; height: 118px; overflow: hidden; background: linear-gradient(135deg, rgba(0,210,140,0.04), rgba(59,130,246,0.04)); border-bottom: 1px solid var(--border); flex-shrink: 0; cursor: pointer; }
 .cert-preview img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
 .cert-card:hover .cert-preview img { transform: scale(1.05); }
@@ -227,7 +282,6 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 .cert-preview-overlay { position: absolute; inset: 0; background: rgba(0,210,140,0.12); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s; z-index: 3; backdrop-filter: blur(2px); }
 .cert-card:hover .cert-preview-overlay { opacity: 1; }
 .cert-preview-overlay span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); background: rgba(6,8,12,0.9); border: 1px solid var(--border-accent); padding: 0.35rem 0.85rem; border-radius: 20px; }
-
 .cert-body { padding: 1rem 1.1rem; flex: 1; display: flex; flex-direction: column; gap: 0.4rem; }
 .cert-title { font-family: var(--display); font-size: 0.86rem; font-weight: 700; line-height: 1.4; color: var(--text-primary); flex: 1; }
 .cert-issuer { font-family: var(--mono); font-size: 11px; color: var(--accent); letter-spacing: 0.08em; }
@@ -242,7 +296,6 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 .rec-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; position: relative; transition: all 0.3s; display: flex; flex-direction: column; }
 .rec-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); z-index: 1; }
 .rec-card:hover { transform: translateY(-5px); border-color: rgba(0,210,140,0.25); box-shadow: var(--glow-green); }
-
 .rec-preview { position: relative; width: 100%; height: 130px; overflow: hidden; background: linear-gradient(135deg, rgba(0,210,140,0.04), rgba(59,130,246,0.04)); border-bottom: 1px solid var(--border); flex-shrink: 0; cursor: pointer; }
 .rec-preview img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
 .rec-card:hover .rec-preview img { transform: scale(1.05); }
@@ -252,7 +305,6 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 .rec-preview-overlay { position: absolute; inset: 0; background: rgba(0,210,140,0.12); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s; z-index: 3; backdrop-filter: blur(2px); }
 .rec-card:hover .rec-preview-overlay { opacity: 1; }
 .rec-preview-overlay span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); background: rgba(6,8,12,0.9); border: 1px solid var(--border-accent); padding: 0.35rem 0.85rem; border-radius: 20px; }
-
 .rec-body { padding: 1.5rem 1.7rem 1.7rem; flex: 1; display: flex; flex-direction: column; }
 .rec-title { font-family: var(--display); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.65rem; color: var(--text-primary); }
 .rec-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.8; flex: 1; }
@@ -324,6 +376,7 @@ body.light .contact-email { color: #ffffff; }
 body.light .contact-email:hover { color: #ffffff; }
 body.light .btn-secondary { color: var(--text-primary); }
 body.light .hero-name .last-name { background: linear-gradient(90deg, var(--accent) 0%, #00B876 20%, #0b4da8 45%, #6d28d9 65%, var(--accent) 100%); background-size: 250% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: holoShimmer 5s linear infinite; }
+body.light .hero-intro-line { color: var(--text-muted); }
 
 /* RESPONSIVE */
 @media (max-width: 1100px) {
@@ -331,6 +384,10 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
   .hero { padding: 0 3rem; } footer { padding: 2rem 3rem; }
   .hero-inner { gap: 4rem; grid-template-columns: 1fr 280px; }
   .hero-photo-wrap { width: 280px; height: 280px; }
+}
+@media (max-width: 960px) {
+  /* hide CV link in nav on smaller screens — it's still in mobile menu */
+  .nav-cv { display: none !important; }
 }
 @media (max-width: 860px) {
   nav { padding: 1rem 1.5rem; }
@@ -343,6 +400,7 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
   .hero-photo-wrap { width: 220px; height: 220px; }
   .hero-photo-badge { bottom: 4px; right: -4px; font-size: 10px; padding: 0.3rem 0.65rem; }
   .hero-badge { justify-content: center; }
+  .hero-intro-line { justify-content: center; }
   .hero-desc { margin: 0 auto 2rem; border-left: none; padding-left: 0; border-top: 2px solid var(--border-accent); padding-top: 1rem; }
   .hero-actions { justify-content: center; }
   .hero-stats { justify-content: center; gap: 2rem; }
@@ -358,7 +416,8 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
 @media (max-width: 480px) {
   .hero-stats { flex-direction: column; align-items: center; gap: 1.5rem; }
   .stat-val { font-size: 2rem; }
-  .hero-name { font-size: clamp(2.8rem, 14vw, 4rem); }
+  .hero-name .first-name { font-size: clamp(2.2rem, 11vw, 3rem); }
+  .hero-name .last-name { font-size: clamp(1.5rem, 7.5vw, 2rem); }
   .cursor-dot, .cursor-ring { display: none; }
   body { cursor: auto; }
 }
@@ -375,15 +434,32 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
   <span id="themeLabel">Light Mode</span>
 </button>
 
+<!-- ① Emoji on logo  ② CV link after logo  ③ "Let's Connect" CTA -->
 <nav>
-  <a href="#" class="nav-logo"><div class="nav-logo-dot"></div>Hello, Welcome</a>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-dot"></div>
+    👋 Hello, Welcome
+  </a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#recognitions">Recognition</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    <li>
+      <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing"
+         target="_blank" class="nav-cv">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="12" y1="18" x2="12" y2="12"/>
+          <line x1="9" y1="15" x2="15" y2="15"/>
+        </svg>
+        My CV
+      </a>
+    </li>
+    <li><a href="#contact" class="nav-cta">Let's Connect</a></li>
   </ul>
   <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </nav>
@@ -395,7 +471,9 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
   <a href="#experience" class="mobile-nav-link">Experience</a>
   <a href="#certifications" class="mobile-nav-link">Certifications</a>
   <a href="#recognitions" class="mobile-nav-link">Recognition</a>
-  <a href="#contact" class="mobile-nav-link" style="color:var(--accent)">Hire Me</a>
+  <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing"
+     target="_blank" class="mobile-nav-link">Download CV</a>
+  <a href="#contact" class="mobile-nav-link" style="color:var(--accent)">Let's Connect</a>
 </div>
 
 <!-- HERO -->
@@ -417,11 +495,15 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
     </div>
     <div class="hero-content">
       <div class="hero-badge">Lagos, Nigeria</div>
+
+      <!-- ④ Name redesign: "I'm" intro + CHINEDU large + ELEKWA PROMISE shimmer, both slightly reduced -->
       <h1 class="hero-name">
+        <span class="hero-intro-line"><em class="wave">👋</em> I'm</span>
         <span class="first-name" data-text="CHINEDU">CHINEDU</span>
         <span class="last-name">ELEKWA PROMISE</span>
         <span class="hero-name-rule"></span>
       </h1>
+
       <p class="hero-title">
         <span class="t-pill t-pill-green"><span class="t-dot"></span>Data Analyst</span>
         <span class="t-pill t-pill-blue"><span class="t-dot"></span>Business Intelligence</span>
@@ -429,7 +511,7 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
       <p class="hero-desc">Building scalable data solutions and turning raw data into strategic insights. I bring the precision of a mathematician, the clarity of an educator, and the impact-focus of a business analyst to every problem I solve.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">Explore My Work &#8594;</a>
-        <a href="#contact" class="btn-secondary">Get in touch &#8599;</a>
+        <a href="#contact" class="btn-secondary">Let's Connect &#8599;</a>
       </div>
       <div class="hero-stats">
         <div><span class="stat-val" data-target="5" data-suffix="+">0</span><span class="stat-label">Years in Data</span></div>
@@ -609,210 +691,21 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
 
   <div class="cert-group-label green reveal">Career Certifications</div>
   <div class="cert-grid reveal">
-
-    <div class="cert-card">
-      <div class="cert-stripe"></div>
-      <div class="cert-preview">
-        <img src="images/Google Cloud Data Analytics Certificate.jpg" alt="Google Cloud Data Analyst Certificate"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9729;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">Google Cloud Data Analyst Certificate</div>
-        <div class="cert-issuer">Google Cloud</div>
-        <a href="https://www.credly.com/badges/8978d604-f416-4365-bfc5-9bc49dc80c8a/public_url" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe"></div>
-      <div class="cert-preview">
-        <img src="images/ALX Data-science-certificate-chinedu-elekwa (1).png" alt="ALX Africa Certificate"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9672;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">ALX Data Science</div>
-        <div class="cert-issuer">ALX Africa</div>
-        <a href="https://drive.google.com/file/d/1adgB-IFRJ86S7Y9c0JUY3HwL3YGZ3pPl/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe"></div>
-      <div class="cert-preview">
-        <img src="images/Associate Data Analyst .jpg" alt="DataCamp Associate Data Analyst"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9678;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">Associate Data Analyst Certificate</div>
-        <div class="cert-issuer">DataCamp</div>
-        <a href="https://www.datacamp.com/tracks/associate-data-analyst-in-sql?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=trackdetailpage&utm_source=copy" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe"></div>
-      <div class="cert-preview">
-        <img src="images/ALX-Data-analytics-certificate-chinedu-elekwa.png" alt="ALX Data Analytics"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9711;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">ALX Data Analytics</div>
-        <div class="cert-issuer">ALX Africa</div>
-        <a href="https://drive.google.com/file/d/1mIyLDO280vdvNAHHmWQPQPjv8I8J5PaA/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe"></div>
-      <div class="cert-preview">
-        <img src="images/ALX Python-programming-certificate-chinedu-elekwa (1).png" alt="ALX Python Programming"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9711;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">ALX Python Programming</div>
-        <div class="cert-issuer">ALX Africa</div>
-        <a href="https://drive.google.com/file/d/1CGBWo5SJWcrD5WL2-5crNmJzcVIs1qVi/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe"></div>
-      <div class="cert-preview">
-        <img src="images/Microsoft Business Analyst.jpg" alt="Microsoft Business Analyst"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9711;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">Microsoft Business Analyst Professional Certificate</div>
-        <div class="cert-issuer">Microsoft Via Coursera</div>
-        <a href="https://coursera.org/share/c6567e811cee90cb8fc4cfa63c8aad9c" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe"></div>
-      <div class="cert-preview">
-        <img src="images/SQL for Business analysts.jpg" alt="SQL for Business Analysts"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9711;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">SQL for Business Analysts</div>
-        <div class="cert-issuer">DataCamp</div>
-        <a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/750b783b48ed45a69debb82aa1741067210f145f" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe"></div>
-      <div class="cert-preview">
-        <img src="images/google workspace.jpg" alt="Google Workspace Certificate"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9635;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">Google Workspace &#8212; Calendar, Drive, Docs, Sheets, Slides</div>
-        <div class="cert-issuer">Google via Coursera</div>
-        <a href="https://drive.google.com/drive/folders/1y6hDZvx9gvkXm_SD9oOWFSPB0vtAkHSb?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Google Cloud Data Analytics Certificate.jpg" alt="Google Cloud Data Analyst Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9729;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Google Cloud Data Analyst Certificate</div><div class="cert-issuer">Google Cloud</div><a href="https://www.credly.com/badges/8978d604-f416-4365-bfc5-9bc49dc80c8a/public_url" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX Data-science-certificate-chinedu-elekwa (1).png" alt="ALX Data Science" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9672;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Data Science</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1adgB-IFRJ86S7Y9c0JUY3HwL3YGZ3pPl/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Associate Data Analyst .jpg" alt="DataCamp Associate Data Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9678;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Associate Data Analyst Certificate</div><div class="cert-issuer">DataCamp</div><a href="https://www.datacamp.com/tracks/associate-data-analyst-in-sql?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=trackdetailpage&utm_source=copy" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX-Data-analytics-certificate-chinedu-elekwa.png" alt="ALX Data Analytics" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Data Analytics</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1mIyLDO280vdvNAHHmWQPQPjv8I8J5PaA/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX Python-programming-certificate-chinedu-elekwa (1).png" alt="ALX Python Programming" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Python Programming</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1CGBWo5SJWcrD5WL2-5crNmJzcVIs1qVi/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Microsoft Business Analyst.jpg" alt="Microsoft Business Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Microsoft Business Analyst Professional Certificate</div><div class="cert-issuer">Microsoft via Coursera</div><a href="https://coursera.org/share/c6567e811cee90cb8fc4cfa63c8aad9c" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/SQL for Business analysts.jpg" alt="SQL for Business Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">SQL for Business Analyst</div><div class="cert-issuer">DataCamp</div><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/750b783b48ed45a69debb82aa1741067210f145f" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/google workspace.jpg" alt="Google Workspace Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9635;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Google Workspace &#8212; Calendar, Drive, Docs, Sheets, Slides</div><div class="cert-issuer">Google via Coursera</div><a href="https://drive.google.com/drive/folders/1y6hDZvx9gvkXm_SD9oOWFSPB0vtAkHSb?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
   </div>
 
   <div class="cert-group-label blue reveal">Professional &amp; Soft Skills</div>
   <div class="cert-grid reveal">
-
-    <div class="cert-card">
-      <div class="cert-stripe blue"></div>
-      <div class="cert-preview">
-        <img src="images/ALX-Professional-foundations-certificate-chinedu-elekwa (1).png" alt="ALX Professional Foundations"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#9643;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">ALX Professional Foundations</div>
-        <div class="cert-issuer blue">ALX Africa</div>
-        <a href="https://drive.google.com/file/d/1EulTVxF5SmHwMA63BCH7gDclpdnMFohp/view?usp=drive_link" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe blue"></div>
-      <div class="cert-preview">
-        <img src="images/Jobberman soft skills.jpg" alt="Jobberman Soft Skills Training"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#x2B21;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">Jobberman Soft Skills Training</div>
-        <div class="cert-issuer blue">Jobberman &middot; 2021</div>
-        <a href="https://drive.google.com/file/d/17Y-4ZJxH1PjtGGZVE4GO0IZ8D9zmm6sC/view?usp=drive_link" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <div class="cert-stripe blue"></div>
-      <div class="cert-preview">
-        <img src="images/Data Literacy.jpg" alt="Data Literacy"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-preview-placeholder" style="display:none">
-          <span class="cert-preview-icon">&#x2B21;</span>
-          <span class="cert-preview-label">Certificate Preview</span>
-        </div>
-        <div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div>
-      </div>
-      <div class="cert-body">
-        <div class="cert-title">Data Literacy Certificate</div>
-        <div class="cert-issuer blue">DataCamp</div>
-        <a href="https://www.datacamp.com/skill-verification/DL0034034405845" target="_blank" class="cert-view-link">View Certificate &#8599;</a>
-      </div>
-    </div>
-
+    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/ALX-Professional-foundations-certificate-chinedu-elekwa (1).png" alt="ALX Professional Foundations" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9643;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Professional Foundations</div><div class="cert-issuer blue">ALX Africa</div><a href="https://drive.google.com/file/d/1EulTVxF5SmHwMA63BCH7gDclpdnMFohp/view?usp=drive_link" target="_blank" class="cert-view-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/Jobberman soft skills.jpg" alt="Jobberman Soft Skills Training" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#x2B21;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Jobberman Soft Skills Training</div><div class="cert-issuer blue">Jobberman &middot; 2021</div><a href="https://drive.google.com/file/d/17Y-4ZJxH1PjtGGZVE4GO0IZ8D9zmm6sC/view?usp=drive_link" target="_blank" class="cert-view-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/Data Literacy.jpg" alt="Data Literacy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#x2B21;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Data Literacy Certificate</div><div class="cert-issuer blue">DataCamp</div><a href="https://www.datacamp.com/skill-verification/DL0034034405845" target="_blank" class="cert-view-link">View Certificate &#8599;</a></div></div>
   </div>
 </section>
 
@@ -821,71 +714,10 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
   <div class="section-label">Recognition</div>
   <h2 class="section-title">Awards &amp; Volunteer Service</h2>
   <div class="rec-grid reveal">
-
-    <div class="rec-card">
-      <div class="rec-preview">
-        <img src="images/NYSC certificate.jpg" alt="NYSC certificate"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="rec-preview-placeholder" style="display:none">
-          <span class="rec-preview-emoji">&#127757;</span>
-        </div>
-        <div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div>
-      </div>
-      <div class="rec-body">
-        <div class="rec-title">Certificate of Completed Service &#8212; NYSC</div>
-        <div class="rec-desc">Completed the one year compulsory national service for Nigerian graduates</div>
-        <a href="https://drive.google.com/file/d/11CL2qk2E5tD2hEfotGluMjqMLXON8gKs/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
-      </div>
-    </div>
-
-    <div class="rec-card">
-      <div class="rec-preview">
-        <img src="images/recognitions/alx-mentor.jpg" alt="ALX Africa DATA Volunteer Mentor"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="rec-preview-placeholder" style="display:none">
-          <span class="rec-preview-emoji">&#127757;</span>
-        </div>
-        <div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div>
-      </div>
-      <div class="rec-body">
-        <div class="rec-title">DATA Volunteer Mentor &#8212; ALX Africa</div>
-        <div class="rec-desc">Supporting the next generation of data professionals across Africa through hands-on mentorship in analytics, Python programming, and data science since September 2025.</div>
-        <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
-      </div>
-    </div>
-
-    <div class="rec-card">
-      <div class="rec-preview">
-        <img src="images/Certificate of Recognition DataGlobalHub @GDAI 2025.jpg" alt="GDAI 2025 Session Moderator"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="rec-preview-placeholder" style="display:none">
-          <span class="rec-preview-emoji">&#127897;</span>
-        </div>
-        <div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div>
-      </div>
-      <div class="rec-body">
-        <div class="rec-title">GDAI 2025 Session Moderator</div>
-        <div class="rec-desc">Recognised by DataGlobal Hub with a Certificate of Recognition for Volunteer Service as Session Moderator at the Virtual Global Data &amp; AI Tech Conference (GDAI) 2025.</div>
-        <a href="https://drive.google.com/file/d/10qfqjgp9Gb0IXXtZyjED8898NETCoEry/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
-      </div>
-    </div>
-
-    <div class="rec-card">
-      <div class="rec-preview">
-        <img src="images/Dataglobal Hub Ambassador.jpg" alt="Ambassador — DataGlobal Hub"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="rec-preview-placeholder" style="display:none">
-          <span class="rec-preview-emoji">&#9672;</span>
-        </div>
-        <div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div>
-      </div>
-      <div class="rec-body">
-        <div class="rec-title">Ambassador &#8212; DataGlobal Hub</div>
-        <div class="rec-desc">Appointed as Ambassador at DataGlobal Hub, representing and advocating for the growth of the data and AI community in Nigeria and across Africa.</div>
-        <a href="https://drive.google.com/file/d/16gvU8oEHC-lnasKTStIUVshoT37Y4UO0/view?usp=sharing" target="_blank" class="rec-view-link">View Recognition &#8599;</a>
-      </div>
-    </div>
-
+    <div class="rec-card"><div class="rec-preview"><img src="images/NYSC certificate.jpg" alt="NYSC certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127757;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">Certificate of Completed Service &#8212; NYSC</div><div class="rec-desc">Completed the one year compulsory national service for Nigerian graduates</div><a href="https://drive.google.com/file/d/11CL2qk2E5tD2hEfotGluMjqMLXON8gKs/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a></div></div>
+    <div class="rec-card"><div class="rec-preview"><img src="images/recognitions/alx-mentor.jpg" alt="ALX Africa DATA Volunteer Mentor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127757;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">DATA Volunteer Mentor &#8212; ALX Africa</div><div class="rec-desc">Supporting the next generation of data professionals across Africa through hands-on mentorship in analytics, Python programming, and data science since September 2025.</div><a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="rec-view-link">View Recognition &#8599;</a></div></div>
+    <div class="rec-card"><div class="rec-preview"><img src="images/Certificate of Recognition DataGlobalHub @GDAI 2025.jpg" alt="GDAI 2025 Session Moderator" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127897;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">GDAI 2025 Session Moderator</div><div class="rec-desc">Recognised by DataGlobal Hub with a Certificate of Recognition for Volunteer Service as Session Moderator at the Virtual Global Data &amp; AI Tech Conference (GDAI) 2025.</div><a href="https://drive.google.com/file/d/10qfqjgp9Gb0IXXtZyjED8898NETCoEry/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a></div></div>
+    <div class="rec-card"><div class="rec-preview"><img src="images/Dataglobal Hub Ambassador.jpg" alt="Ambassador — DataGlobal Hub" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#9672;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">Ambassador &#8212; DataGlobal Hub</div><div class="rec-desc">Appointed as Ambassador at DataGlobal Hub, representing and advocating for the growth of the data and AI community in Nigeria and across Africa.</div><a href="https://drive.google.com/file/d/16gvU8oEHC-lnasKTStIUVshoT37Y4UO0/view?usp=sharing" target="_blank" class="rec-view-link">View Recognition &#8599;</a></div></div>
   </div>
 </section>
 
@@ -894,24 +726,9 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
   <div class="section-label">Why Hire Me</div>
   <h2 class="section-title">I Don&#8217;t Just Analyze Data &#8212;<br>I Drive Decisions</h2>
   <div class="rec-grid reveal">
-    <div class="rec-card">
-      <div class="rec-body" style="padding-top:1.75rem">
-        <div class="rec-title">&#128202; Business-First Analyst</div>
-        <div class="rec-desc">I translate raw data into decisions executives can act on immediately &#8212; not just charts, but clear, actionable intelligence.</div>
-      </div>
-    </div>
-    <div class="rec-card">
-      <div class="rec-body" style="padding-top:1.75rem">
-        <div class="rec-title">&#9881;&#65039; End-to-End Problem Solver</div>
-        <div class="rec-desc">From data collection &#8594; cleaning &#8594; modeling &#8594; visualization &#8594; insight delivery. I own the full pipeline.</div>
-      </div>
-    </div>
-    <div class="rec-card">
-      <div class="rec-body" style="padding-top:1.75rem">
-        <div class="rec-title">&#128640; Impact-Oriented Work</div>
-        <div class="rec-desc">Every project is tied to measurable business improvement or operational efficiency &#8212; 95% analytics uplift as proof.</div>
-      </div>
-    </div>
+    <div class="rec-card"><div class="rec-body" style="padding-top:1.75rem"><div class="rec-title">&#128202; Business-First Analyst</div><div class="rec-desc">I translate raw data into decisions executives can act on immediately &#8212; not just charts, but clear, actionable intelligence.</div></div></div>
+    <div class="rec-card"><div class="rec-body" style="padding-top:1.75rem"><div class="rec-title">&#9881;&#65039; End-to-End Problem Solver</div><div class="rec-desc">From data collection &#8594; cleaning &#8594; modeling &#8594; visualization &#8594; insight delivery. I own the full pipeline.</div></div></div>
+    <div class="rec-card"><div class="rec-body" style="padding-top:1.75rem"><div class="rec-title">&#128640; Impact-Oriented Work</div><div class="rec-desc">Every project is tied to measurable business improvement or operational efficiency &#8212; 95% analytics uplift as proof.</div></div></div>
   </div>
 </section>
 
@@ -953,7 +770,7 @@ body.light .hero-name .last-name { background: linear-gradient(90deg, var(--acce
 
 <div class="sticky-cta" id="stickyCTA">
   <a href="#projects" class="secondary">View Work</a>
-  <a href="#contact" class="primary">Hire Me &#8594;</a>
+  <a href="#contact" class="primary">Let's Connect &#8594;</a>
 </div>
 
 <script>
@@ -967,7 +784,6 @@ document.querySelectorAll('a,button').forEach(el => {
   el.addEventListener('mouseenter', () => { ring.style.width='48px'; ring.style.height='48px'; ring.style.borderColor='var(--accent)'; });
   el.addEventListener('mouseleave', () => { ring.style.width='32px'; ring.style.height='32px'; ring.style.borderColor='rgba(0,210,140,0.5)'; });
 });
-
 window.addEventListener('scroll', () => {
   const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
   document.getElementById('scrollProgress').style.width = pct + '%';
@@ -975,14 +791,10 @@ window.addEventListener('scroll', () => {
   document.querySelector('.hero-glow').style.transform = 'translateY(' + (window.scrollY * 0.15) + 'px)';
   document.querySelector('.hero-glow-2').style.transform = 'translateY(' + (-window.scrollY * 0.1) + 'px)';
 });
-
 const obs = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); obs.unobserve(e.target); }
-  });
+  entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 80); obs.unobserve(e.target); } });
 }, { threshold: 0.07 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
 const runCounter = el => {
   const target = +el.getAttribute('data-target');
   const suffix = el.getAttribute('data-suffix') || '+';
@@ -994,28 +806,18 @@ const cObs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { runCounter(e.target); cObs.unobserve(e.target); } });
 }, { threshold: 0.8 });
 document.querySelectorAll('.stat-val').forEach(el => cObs.observe(el));
-
 document.getElementById('themeToggle').addEventListener('click', () => {
   document.body.classList.toggle('light');
   document.getElementById('themeLabel').textContent = document.body.classList.contains('light') ? 'Dark Mode' : 'Light Mode';
 });
-
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileNav').classList.add('open'));
 document.getElementById('mobileNavClose').addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open'));
 document.querySelectorAll('.mobile-nav-link').forEach(l => l.addEventListener('click', () => document.getElementById('mobileNav').classList.remove('open')));
-
 document.querySelectorAll('.cert-preview').forEach(preview => {
-  preview.addEventListener('click', () => {
-    const link = preview.closest('.cert-card').querySelector('.cert-view-link');
-    if (link) window.open(link.href, '_blank');
-  });
+  preview.addEventListener('click', () => { const link = preview.closest('.cert-card').querySelector('.cert-view-link'); if (link) window.open(link.href, '_blank'); });
 });
-
 document.querySelectorAll('.rec-preview').forEach(preview => {
-  preview.addEventListener('click', () => {
-    const link = preview.closest('.rec-card').querySelector('.rec-view-link');
-    if (link) window.open(link.href, '_blank');
-  });
+  preview.addEventListener('click', () => { const link = preview.closest('.rec-card').querySelector('.rec-view-link'); if (link) window.open(link.href, '_blank'); });
 });
 </script>
 </body>
