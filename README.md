@@ -133,10 +133,19 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 /* First name: slightly smaller than before so both lines feel balanced */
 .hero-name .first-name {
   display: block;
-  font-size: clamp(1.8rem, 3.0vw, 4.1rem);
+  font-size: clamp(3rem, 9vw, 6.5rem);
   font-weight: 900;
-  letter-spacing: -0.02em; /* tighter = fills width better */
+  letter-spacing: -0.03em;
   line-height: 0.95;
+  white-space: nowrap; /* 🔥 prevents breaking */
+}
+@media (max-width: 600px) {
+  .hero-name .first-name {
+    font-size: 11vw;
+  }
+}
+.hero-name {
+  overflow-x: hidden;
 }
 .hero-name .first-name::before, .hero-name .first-name::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-family: var(--display); font-size: inherit; font-weight: 800; letter-spacing: inherit; text-transform: uppercase; overflow: hidden; clip-path: inset(0 0 0 0); }
 .hero-name .first-name::before { color: var(--accent); animation: glitch1 6s infinite; opacity: 0; }
