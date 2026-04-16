@@ -133,15 +133,15 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 /* First name: slightly smaller than before so both lines feel balanced */
 .hero-name .first-name {
   display: block;
-  font-size: clamp(3rem, 9vw, 6.5rem);
-  font-weight: 900;
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
+  font-weight: 500;
   letter-spacing: -0.03em;
   line-height: 0.95;
   white-space: nowrap; /* 🔥 prevents breaking */
 }
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .hero-name .first-name {
-    font-size: 11vw;
+    font-size: 8vw;
   }
 }
 .hero-name {
