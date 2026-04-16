@@ -635,7 +635,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">Sept 2024 &#8212; Feb 2026</div>
-      <div class="timeline-role">Production Planner / Production Data Analyst</div>
+      <div class="timeline-role">Production Data Analyst/Production Planner</div>
       <div class="timeline-company">Frutta Juice and Services Limited &middot; Lagos, Nigeria</div>
       <ul class="timeline-bullets">
         <li>Built a Google Forms &amp; Sheets pipeline tracking output, downtime, waste and material usage &#8212; increasing analytics efficiency to 95%</li>
