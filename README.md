@@ -200,20 +200,20 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 #expertise .section-subtitle { margin-bottom: 2rem; }
 .expertise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* smaller cards */
+  gap: 0.6rem; /* tighter spacing */
 }
 
 .expertise-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
+  padding: 0.7rem 0.9rem; /* reduced padding */
+  border-radius: 8px;
   font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: 12px; /* slightly smaller text */
+  letter-spacing: 0.06em;
   color: var(--text-secondary);
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
 }
@@ -223,7 +223,7 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
   position: absolute;
   top: 0;
   left: 0;
-  height: 2px;
+ height: 1px;
   width: 100%;
   background: linear-gradient(90deg, var(--accent), var(--accent2));
   transform: scaleX(0);
@@ -232,7 +232,7 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 }
 
 .expertise-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px); /* more subtle */
   border-color: var(--border-accent);
   background: rgba(255,255,255,0.03);
 }
@@ -240,15 +240,18 @@ section { padding: 7rem 6rem; position: relative; z-index: 1; }
 .expertise-card:hover::before {
   transform: scaleX(1);
 }
-.expertise-pill { display: inline-flex; align-items: center; gap: 0.55rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 40px; padding: 0.6rem 1.2rem; font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; color: var(--text-secondary); white-space: nowrap; transition: all 0.25s; flex-shrink: 0; }
+
 .expertise-pill::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 5px var(--accent); flex-shrink: 0; }
-.expertise-ticker-wrap:hover .expertise-pill:hover { color: var(--accent); border-color: var(--border-accent); background: var(--accent-dim); box-shadow: var(--glow-green); }
+
+.expertise-card {
+  backdrop-filter: blur(6px);
+}
 
 /* SKILLS */
 #skills { background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 .skill-block { background: var(--bg-card); padding: 1.1rem 1.25rem; transition: background 0.25s; position: relative; overflow: hidden; }
-.skill-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
+.skill-block::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s; }
 .skill-block:hover { background: rgba(255,255,255,0.04); }
 .skill-block:hover::before { transform: scaleX(1); }
 .skill-block-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
