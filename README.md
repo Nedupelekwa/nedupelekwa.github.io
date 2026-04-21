@@ -657,7 +657,6 @@ body.light .hero-intro-line { color: var(--text-muted); }
         <a href="https://github.com/Nedupelekwa/Marketing-Call-dashboard" target="_blank" class="project-link">View Portfolio &#8599;</a>
       </div>
     </div>
-</section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
