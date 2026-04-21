@@ -590,7 +590,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
     
      <div class="project-card reveal">
       <div class="project-card-top-bar"></div>
-      <img src="images/Flight operations looker dashboard.jpg" alt="Flight Operations" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="images/flight.jpg" alt="Flight Operations" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="project-img-placeholder" style="display:none">[ Flight Operations ]</div>
       <div class="project-body">
         <div class="project-number"><span>02</span><span class="project-type">Logistics Analytics</span></div>
