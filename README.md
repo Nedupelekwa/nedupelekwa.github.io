@@ -535,7 +535,6 @@ body.light .hero-intro-line { color: var(--text-muted); }
 <section id="projects">
   <div class="section-label">Selected Work</div>
   <h2 class="section-title">Projects</h2>
-  <p class="section-subtitle reveal">Real analytics work across FMCG, education, and edtech.</p>
   <div class="projects-grid">
 
     <!-- Project 1: Flight Operations -->
