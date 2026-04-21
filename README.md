@@ -618,8 +618,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
     </div>
     <div class="project-title">Recency Frequency Monetary (RFM) ANALYSIS</div>
     <div class="project-desc">
-      End-to-end analytics using Google Bigquery, SQL and PowerBi to reveal RFM Segments for a large company.
-      Key finding: over 50% of the customers are still at the potential stage of becoming loyalists
+      This project is a comprehensive RFM (Recency, Frequency, Monetary) Customer Segmentation Analysis implemented in BigQuery. It transforms raw monthly transactional data into actionable marketing segments to help a business identify its most valuable customers and those at risk of churning.
     </div>
     <div class="project-stack">
       <span class="tag accent-tag">Google Big Query</span>
