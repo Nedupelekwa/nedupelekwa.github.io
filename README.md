@@ -616,7 +616,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
       <span>02</span>
       <span class="project-type">Business Intelligence</span>
     </div>
-    <div class="project-title">RFM ANALYSIS</div>
+    <div class="project-title">Recency Frequency Monetary (RFM) ANALYSIS</div>
     <div class="project-desc">
       End-to-end analytics using Google Bigquery, SQL and PowerBi to reveal RFM Segments for a large company.
       Key finding: over 50% of the customers are still at the potential stage of becoming loyalists
