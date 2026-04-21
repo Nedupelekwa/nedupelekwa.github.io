@@ -645,15 +645,17 @@ body.light .hero-intro-line { color: var(--text-muted); }
         <a href="https://github.com/Nedupelekwa/POWERBI-BUSINESS-DASHBOARD" target="_blank" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
+    
     <div class="project-card reveal">
       <div class="project-card-top-bar"></div>
-      <div class="project-img-placeholder">[ Student Performance Analysis ]</div>
+      <img src="images/Marketing calls dashboard.jpg" alt="Marketing Call dashboard" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="project-img-placeholder"style="display:none">[ Marketing Call dashboard ]</div>
       <div class="project-body">
-        <div class="project-number"><span>03</span><span class="project-type">Education Analytics</span></div>
-        <div class="project-title">Student Performance Analysis System</div>
-        <div class="project-desc">Built and maintained a student performance database. Used Excel to analyse results, identify at-risk students, and produce data-backed reports for school leadership and parents.</div>
-        <div class="project-stack"><span class="tag accent-tag">MS Excel</span><span class="tag">Google Sheets</span><span class="tag">Data Reporting</span></div>
-        <a href="https://nedupelekwa.github.io" target="_blank" class="project-link">View Portfolio &#8599;</a>
+        <div class="project-number"><span>03</span><span class="project-type">Marketing Analytics</span></div>
+        <div class="project-title">Google Sheet dashboard</div>
+        <div class="project-desc">Built and maintained a marketing call dashboard using Google sheets. The dashboard includes dynamic filters for Start date, End date and Programme type. The charts reveals different response segments of customers, identifying their interest levels</div>
+        <div class="project-stack"><span class="tag accent-tag">Dynamic filters</span><span class="tag">Google Sheets Dashboard</span><span class="tag">Data Reporting</span></div>
+        <a href="https://github.com/Nedupelekwa/Marketing-Call-dashboard" target="_blank" class="project-link">View Portfolio &#8599;</a>
       </div>
     </div>
   </div>
