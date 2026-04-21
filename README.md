@@ -587,17 +587,20 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <h2 class="section-title">Projects</h2>
   <p class="section-subtitle reveal">Real analytics work across FMCG, education, and edtech.</p>
   <div class="projects-grid">
-    <div class="project-card reveal">
+    
+     <div class="project-card reveal">
       <div class="project-card-top-bar"></div>
-      <div class="project-img-placeholder">[ FMCG Production Analytics ]</div>
+      <img src="Flight operations.jpg" alt="Flight Operations" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="project-img-placeholder" style="display:none">[ Flight Operations ]</div>
       <div class="project-body">
-        <div class="project-number"><span>01</span><span class="project-type">Case Study</span></div>
-        <div class="project-title">FMCG Production Analytics System</div>
-        <div class="project-desc"><strong style="color:var(--text-primary)">Problem:</strong> No visibility into production inefficiencies.<br><br><strong style="color:var(--text-primary)">Approach:</strong> Built a Google Forms + Sheets pipeline tracking output, downtime, and waste.<br><br><strong style="color:var(--text-primary)">Impact:</strong> Analytics efficiency lifted to 95% &#8212; enabling faster operational decisions.</div>
-        <div class="project-stack"><span class="tag accent-tag">Google Sheets</span><span class="tag accent-tag">SAP</span><span class="tag">Reporting</span></div>
+        <div class="project-number"><span>02</span><span class="project-type">Logistics Analytics</span></div>
+        <div class="project-title">Flight Planning & Operations Dashboard (Looker Studio)</div>
+        <div class="project-desc">This Looker Studio project provides a dynamic interface for analyzing global flight telemetry. It integrates raw aircraft specifications with live flight data to visualize operator performance and spatial aircraft distribution.</div>
+        <div class="project-stack"><span class="tag accent-tag">Google Sheets</span><span class="tag accent-tag">Looker Studio</span><span
+        <a href="https://github.com/Nedupelekwa/Flight-Operations-projects" target="_blank" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
-
+    
     <div class="project-card reveal">
   <div class="project-card-top-bar"></div>
 
