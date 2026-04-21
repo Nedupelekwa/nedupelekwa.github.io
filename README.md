@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -61,11 +62,9 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.25s; }
 .nav-links a:hover { color: var(--accent); }
 .nav-links a:hover::after { width: 100%; }
-/* CV pill in nav */
 .nav-cv { color: var(--text-secondary) !important; border: 1px solid var(--border) !important; padding: 0.42rem 0.9rem !important; border-radius: var(--radius-sm) !important; display: inline-flex !important; align-items: center !important; gap: 0.35rem !important; transition: all 0.25s !important; font-size: 11px !important; letter-spacing: 0.1em !important; white-space: nowrap; }
 .nav-cv::after { display: none !important; }
 .nav-cv:hover { color: var(--accent) !important; border-color: var(--border-accent) !important; background: var(--accent-dim) !important; }
-/* CTA pill in nav */
 .nav-cta { color: var(--accent) !important; border: 1px solid var(--border-accent) !important; padding: 0.45rem 1.1rem; border-radius: var(--radius-sm); background: var(--accent-dim) !important; transition: all 0.25s !important; }
 .nav-cta:hover { background: rgba(0,210,140,0.18) !important; box-shadow: var(--glow-green) !important; }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
@@ -99,71 +98,19 @@ nav { position: fixed; top: 0; left: 0; right: 0; height: 80px; z-index: 100; di
 .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity:1; box-shadow:0 0 8px var(--accent); } 50% { opacity:0.5; box-shadow:0 0 3px var(--accent); } }
 
-/* ── HERO NAME — redesigned ── */
-/* "I'm" greeting line above the name */
-.hero-intro-line {
-  font-family: var(--mono);
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.hero-intro-line .wave {
-  font-style: normal;
-  font-size: 1.1rem;
-  animation: waveHand 2.5s ease-in-out infinite;
-  display: inline-block;
-  transform-origin: 70% 80%;
-}
-@keyframes waveHand {
-  0%,100% { transform: rotate(0deg); }
-  20%      { transform: rotate(-18deg); }
-  40%      { transform: rotate(16deg); }
-  60%      { transform: rotate(-10deg); }
-  80%      { transform: rotate(8deg); }
-}
+.hero-intro-line { font-family: var(--mono); font-size: 0.95rem; color: var(--text-muted); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem; }
+.hero-intro-line .wave { font-style: normal; font-size: 1.1rem; animation: waveHand 2.5s ease-in-out infinite; display: inline-block; transform-origin: 70% 80%; }
+@keyframes waveHand { 0%,100% { transform: rotate(0deg); } 20% { transform: rotate(-18deg); } 40% { transform: rotate(16deg); } 60% { transform: rotate(-10deg); } 80% { transform: rotate(8deg); } }
 
-.hero-name {
-  font-family: var(--display);
-  line-height: 1;
-  letter-spacing: 0.02em;
-  margin-bottom: 0.2rem;
-  color: var(--text-primary);
-  text-transform: uppercase;
-  position: relative;
-}
-/* First name: slightly smaller than before so both lines feel balanced */
-.hero-name .first-name {
-  display: block;
-  font-size: clamp(1.8rem, 3.0vw, 4.1rem);
-  font-weight: 900;
-  letter-spacing: -0.02em; /* tighter = fills width better */
-  line-height: 0.95;
-}
+.hero-name { font-family: var(--display); line-height: 1; letter-spacing: 0.02em; margin-bottom: 0.2rem; color: var(--text-primary); text-transform: uppercase; position: relative; }
+.hero-name .first-name { display: block; font-size: clamp(1.8rem, 3.0vw, 4.1rem); font-weight: 900; letter-spacing: -0.02em; line-height: 0.95; }
 .hero-name .first-name::before, .hero-name .first-name::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-family: var(--display); font-size: inherit; font-weight: 800; letter-spacing: inherit; text-transform: uppercase; overflow: hidden; clip-path: inset(0 0 0 0); }
 .hero-name .first-name::before { color: var(--accent); animation: glitch1 6s infinite; opacity: 0; }
 .hero-name .first-name::after { color: var(--accent2); animation: glitch2 6s infinite; opacity: 0; }
 @keyframes glitch1 { 0%,89%,100% { opacity:0; clip-path:inset(0 0 100% 0); transform:translate(0,0); } 90% { opacity:0.7; clip-path:inset(20% 0 40% 0); transform:translate(-4px,0); } 92% { opacity:0.5; clip-path:inset(60% 0 10% 0); transform:translate(4px,0); } 94% { opacity:0; } }
 @keyframes glitch2 { 0%,91%,100% { opacity:0; clip-path:inset(0 0 100% 0); transform:translate(0,0); } 92% { opacity:0.6; clip-path:inset(10% 0 55% 0); transform:translate(5px,0); } 94% { opacity:0.4; clip-path:inset(50% 0 20% 0); transform:translate(-3px,0); } 96% { opacity:0; } }
 
-/* Last name: shimmer gradient, slightly smaller weight for contrast */
-.hero-name .last-name {
-  display: block;
-  font-size: clamp(1.8rem, 3vw, 3.4rem);
-  font-weight: 700;
-  background: linear-gradient(90deg, var(--accent) 0%, #00FFAA 20%, #fff 38%, var(--accent2) 55%, #8b5cf6 72%, var(--accent) 100%);
-  background-size: 250% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: holoShimmer 5s linear infinite;
-  position: relative;
-  letter-spacing: 0.05em;
-}
+.hero-name .last-name { display: block; font-size: clamp(1.8rem, 3vw, 3.4rem); font-weight: 700; background: linear-gradient(90deg, var(--accent) 0%, #00FFAA 20%, #fff 38%, var(--accent2) 55%, #8b5cf6 72%, var(--accent) 100%); background-size: 250% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: holoShimmer 5s linear infinite; position: relative; letter-spacing: 0.05em; }
 @keyframes holoShimmer { 0% { background-position: 0% center; } 100% { background-position: 250% center; } }
 .hero-name .last-name::after { content: '_'; -webkit-text-fill-color: var(--accent); animation: blink 1.1s step-end infinite; margin-left: 4px; font-weight: 300; opacity: 0.8; }
 @keyframes blink { 0%,100%{opacity:0.8} 50%{opacity:0} }
@@ -377,17 +324,20 @@ body.light .btn-secondary { color: var(--text-primary); }
 body.light .hero-name .last-name { background: linear-gradient(90deg, var(--accent) 0%, #00B876 20%, #0b4da8 45%, #6d28d9 65%, var(--accent) 100%); background-size: 250% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: holoShimmer 5s linear infinite; }
 body.light .hero-intro-line { color: var(--text-muted); }
 
-/* RESPONSIVE */
+/* ===================== RESPONSIVE ===================== */
 @media (max-width: 1100px) {
-  section { padding: 6rem 3rem; } nav { padding: 1rem 3rem; }
-  .hero { padding: 0 3rem; } footer { padding: 2rem 3rem; }
+  section { padding: 6rem 3rem; }
+  nav { padding: 1rem 3rem; }
+  .hero { padding: 0 3rem; }
+  footer { padding: 2rem 3rem; }
   .hero-inner { gap: 4rem; grid-template-columns: 1fr 280px; }
   .hero-photo-wrap { width: 280px; height: 280px; }
 }
+
 @media (max-width: 960px) {
-  /* hide CV link in nav on smaller screens — it's still in mobile menu */
   .nav-cv { display: none !important; }
 }
+
 @media (max-width: 860px) {
   nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
@@ -396,7 +346,6 @@ body.light .hero-intro-line { color: var(--text-muted); }
   .hero-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2.5rem; padding-top: 2rem; padding-bottom: 4rem; }
   .hero-photo-col { order: 0; }
   .hero-content { order: 1; width: 100%; }
-}
   .hero-photo-wrap { width: 220px; height: 220px; }
   .hero-photo-badge { bottom: 4px; right: -4px; font-size: 10px; padding: 0.3rem 0.65rem; }
   .hero-badge { justify-content: center; }
@@ -413,6 +362,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
   footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.5rem; }
   .theme-toggle { top: auto; bottom: 80px; right: 16px; }
 }
+
 @media (max-width: 480px) {
   .hero-stats { flex-direction: column; align-items: center; gap: 1.5rem; }
   .stat-val { font-size: 2rem; }
@@ -420,6 +370,10 @@ body.light .hero-intro-line { color: var(--text-muted); }
   .hero-name .last-name { font-size: clamp(1.5rem, 7.5vw, 2rem); }
   .cursor-dot, .cursor-ring { display: none; }
   body { cursor: auto; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: 1fr; }
+  section { padding: 3rem 1rem; }
+  .contact-email { padding: 0.9rem 1.4rem; font-size: 0.78rem; letter-spacing: 0.1em; }
 }
 </style>
 </head>
@@ -434,11 +388,10 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <span id="themeLabel">Light Mode</span>
 </button>
 
-<!-- ① Emoji on logo  ② CV link after logo  ③ "Let's Connect" CTA -->
 <nav>
   <a href="#" class="nav-logo">
     <div class="nav-logo-dot"></div>
-    👋 Hello, Welcome
+    &#128075; Hello, Welcome
   </a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
@@ -495,15 +448,12 @@ body.light .hero-intro-line { color: var(--text-muted); }
     </div>
     <div class="hero-content">
       <div class="hero-badge">Lagos, Nigeria</div>
-
-      <!-- ④ Name redesign: "I'm" intro + CHINEDU large + ELEKWA PROMISE shimmer, both slightly reduced -->
       <h1 class="hero-name">
-        <span class="hero-intro-line"><em class="wave">👋</em> I'm</span>
+        <span class="hero-intro-line"><em class="wave">&#128075;</em> I'm</span>
         <span class="first-name" data-text="CHINEDU">CHINEDU</span>
         <span class="last-name">ELEKWA PROMISE</span>
         <span class="hero-name-rule"></span>
       </h1>
-
       <p class="hero-title">
         <span class="t-pill t-pill-green"><span class="t-dot"></span>Data Analyst</span>
         <span class="t-pill t-pill-blue"><span class="t-dot"></span>Business Intelligence</span>
@@ -587,78 +537,86 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <h2 class="section-title">Projects</h2>
   <p class="section-subtitle reveal">Real analytics work across FMCG, education, and edtech.</p>
   <div class="projects-grid">
-    
-     <div class="project-card reveal">
+
+    <!-- Project 1: Flight Operations -->
+    <div class="project-card reveal">
       <div class="project-card-top-bar"></div>
-      <img src="images/flight.jpg" alt="Flight Operations" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="images/flight.jpg" alt="Flight Operations" class="project-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="project-img-placeholder" style="display:none">[ Flight Operations ]</div>
       <div class="project-body">
-        <div class="project-number"><span>02</span><span class="project-type">Logistics Analytics</span></div>
-        <div class="project-title">Flight Planning & Operations Dashboard (Looker Studio)</div>
+        <div class="project-number"><span>01</span><span class="project-type">Logistics Analytics</span></div>
+        <div class="project-title">Flight Planning &amp; Operations Dashboard (Looker Studio)</div>
         <div class="project-desc">This Looker Studio project provides a dynamic interface for analyzing global flight telemetry. It integrates raw aircraft specifications with live flight data to visualize operator performance and spatial aircraft distribution.</div>
-        <div class="project-stack"><span class="tag accent-tag">Google Sheets</span><span class="tag accent-tag">Looker Studio</span><span
+        <div class="project-stack">
+          <span class="tag accent-tag">Google Sheets</span>
+          <span class="tag accent-tag">Looker Studio</span>
+        </div>
         <a href="https://github.com/Nedupelekwa/Flight-Operations-projects" target="_blank" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
-    
-    <div class="project-card reveal">
-  <div class="project-card-top-bar"></div>
 
-  <img src="images/image.png" alt="RFM Queries" class="project-img"
-       onerror="this.style.display='none'">
-
-  <img src="images/RFM Dashboard.jpg" alt="RFM Dashboard" class="project-img"
-       onerror="this.style.display='none'">
-
-  <div class="project-img-placeholder" style="display:none">
-    [ RFM ANALYSIS (Using SQL and PowerBi) ]
-  </div>
-
-  <div class="project-body">
-    <div class="project-number">
-      <span>02</span>
-      <span class="project-type">Business Intelligence</span>
-    </div>
-    <div class="project-title">Recency Frequency Monetary (RFM) ANALYSIS</div>
-    <div class="project-desc">
-      This project is a comprehensive RFM (Recency, Frequency, Monetary) Customer Segmentation Analysis implemented in BigQuery. It transforms raw monthly transactional data into actionable marketing segments to help a business identify its most valuable customers and those at risk of churning.
-    </div>
-    <div class="project-stack">
-      <span class="tag accent-tag">Google Big Query</span>
-      <span class="tag accent-tag">SQL</span>
-      <span class="tag">Window Functions</span>
-      <span class="tag">PowerBi</span>
-    </div>
-    <a href="https://github.com/Nedupelekwa/RFM-ANALYSIS" target="_blank" class="project-link">
-      View on GitHub &#8599;
-    </a>
-  </div>
-</div>
-    
+    <!-- Project 2: RFM Analysis -->
     <div class="project-card reveal">
       <div class="project-card-top-bar"></div>
-      <img src="images/Business-dashboard.jpg" alt="Power BI Business Dashboard" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="project-img-placeholder" style="display:none">[ Power BI Business Dashboard ]</div>
+      <img src="images/image.png" alt="RFM Queries" class="project-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="project-img-placeholder" style="display:none">[ RFM Analysis ]</div>
       <div class="project-body">
         <div class="project-number"><span>02</span><span class="project-type">Business Intelligence</span></div>
+        <div class="project-title">Recency Frequency Monetary (RFM) Analysis</div>
+        <div class="project-desc">A comprehensive RFM Customer Segmentation Analysis implemented in BigQuery. It transforms raw monthly transactional data into actionable marketing segments to help a business identify its most valuable customers and those at risk of churning.</div>
+        <div class="project-stack">
+          <span class="tag accent-tag">Google BigQuery</span>
+          <span class="tag accent-tag">SQL</span>
+          <span class="tag">Window Functions</span>
+          <span class="tag">Power BI</span>
+        </div>
+        <a href="https://github.com/Nedupelekwa/RFM-ANALYSIS" target="_blank" class="project-link">View on GitHub &#8599;</a>
+      </div>
+    </div>
+
+    <!-- Project 3: Power BI Business Dashboard -->
+    <div class="project-card reveal">
+      <div class="project-card-top-bar"></div>
+      <img src="images/Business-dashboard.jpg" alt="Power BI Business Dashboard" class="project-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="project-img-placeholder" style="display:none">[ Power BI Business Dashboard ]</div>
+      <div class="project-body">
+        <div class="project-number"><span>03</span><span class="project-type">Business Intelligence</span></div>
         <div class="project-title">Power BI Business Dashboard</div>
         <div class="project-desc">End-to-end sales analytics dashboard revealing key business trends. Key finding: +24.5% YoY Sales growth from 2021&#8211;2022, enabling strategic leadership decisions.</div>
-        <div class="project-stack"><span class="tag accent-tag">Power BI</span><span class="tag accent-tag">DAX</span><span class="tag">Power Query</span><span class="tag">MS Excel</span></div>
+        <div class="project-stack">
+          <span class="tag accent-tag">Power BI</span>
+          <span class="tag accent-tag">DAX</span>
+          <span class="tag">Power Query</span>
+          <span class="tag">MS Excel</span>
+        </div>
         <a href="https://github.com/Nedupelekwa/POWERBI-BUSINESS-DASHBOARD" target="_blank" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
-    
+
+    <!-- Project 4: Marketing Call Dashboard -->
     <div class="project-card reveal">
       <div class="project-card-top-bar"></div>
-      <img src="images/Marketing call dashboard.jpg" alt="Marketing Call dashboard" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <img src="images/Marketing call dashboard.jpg" alt="Marketing Call Dashboard" class="project-img"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="project-img-placeholder" style="display:none">[ Marketing Call Dashboard ]</div>
       <div class="project-body">
-        <div class="project-number"><span>03</span><span class="project-type">Marketing Analytics</span></div>
+        <div class="project-number"><span>04</span><span class="project-type">Marketing Analytics</span></div>
         <div class="project-title">Marketing Call Dashboard</div>
-        <div class="project-desc">Developed a comprehensive data tracking system and dashboard to monitor the efficiency of marketing call campaigns across multiple program verticals. This project manages and analyzes a dataset of over 14,000 records to identify conversion trends, communication barriers, and program-specific performance</div>
-        <div class="project-stack"><span class="tag accent-tag">Dynamic filters</span><span class="tag">Google Sheets Dashboard</span><span class="tag">Data Reporting</span></div>
-        <a href="https://github.com/Nedupelekwa/Marketing-Call-dashboard" target="_blank" class="project-link">View Portfolio &#8599;</a>
+        <div class="project-desc">Developed a comprehensive data tracking system and dashboard to monitor the efficiency of marketing call campaigns across multiple program verticals. Manages and analyzes a dataset of over 14,000 records to identify conversion trends, communication barriers, and program-specific performance.</div>
+        <div class="project-stack">
+          <span class="tag accent-tag">Dynamic Filters</span>
+          <span class="tag">Google Sheets Dashboard</span>
+          <span class="tag">Data Reporting</span>
+        </div>
+        <a href="https://github.com/Nedupelekwa/Marketing-Call-dashboard" target="_blank" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
+
+  </div><!-- /projects-grid -->
+</section><!-- /projects -->
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -666,9 +624,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <h2 class="section-title">Experience</h2>
   <p class="section-subtitle reveal">Where I've built things that matter.</p>
   <div class="timeline reveal">
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      
+
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">Sept 2024 &#8212; Feb 2026</div>
@@ -682,7 +638,9 @@ body.light .hero-intro-line { color: var(--text-muted); }
       </ul>
     </div>
 
-    <div class="timeline-date">Sept 2025 &#8212; Present</div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">Sept 2025 &#8212; Present</div>
       <div class="timeline-role">Data Analyst Intern</div>
       <div class="timeline-company">edMotion Technologies &middot; Remote</div>
       <ul class="timeline-bullets">
@@ -690,16 +648,17 @@ body.light .hero-intro-line { color: var(--text-muted); }
         <li>Contributing to data-driven product decisions and reporting workflows</li>
       </ul>
     </div>
+
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-date">Sept 2025 — Present</div>
+      <div class="timeline-date">Sept 2025 &#8212; Present</div>
       <div class="timeline-role">DATA Volunteer Mentor</div>
-      <div class="timeline-company">ALX Africa Data Programs · Remote</div>
+      <div class="timeline-company">ALX Africa Data Programs &middot; Remote</div>
       <ul class="timeline-bullets">
         <li>Mentoring aspiring data professionals across Africa in analytics, Python, and data science</li>
       </ul>
     </div>
-    
+
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">Jan 2023 &#8212; Sept 2024</div>
@@ -711,6 +670,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
         <li>Managed customer relationships and provided mentorship to students</li>
       </ul>
     </div>
+
     <div class="timeline-item">
       <div class="timeline-dot" style="background:var(--text-muted);box-shadow:none"></div>
       <div class="timeline-date">2020 &#8212; 2021 &middot; 2013 &#8212; 2014</div>
@@ -720,6 +680,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
         <li>Taught Mathematics at secondary school level &#8212; building the analytical foundations that underpin my data career</li>
       </ul>
     </div>
+
   </div>
 </section>
 
@@ -733,7 +694,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <div class="cert-grid reveal">
     <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Google Cloud Data Analytics Certificate.jpg" alt="Google Cloud Data Analyst Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9729;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Google Cloud Data Analyst Certificate</div><div class="cert-issuer">Google Cloud</div><a href="https://www.credly.com/badges/8978d604-f416-4365-bfc5-9bc49dc80c8a/public_url" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
     <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX Data-science-certificate-chinedu-elekwa (1).png" alt="ALX Data Science" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9672;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Data Science</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1adgB-IFRJ86S7Y9c0JUY3HwL3YGZ3pPl/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Associate Data Analyst .jpg" alt="DataCamp Associate Data Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9678;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Associate Data Analyst Certificate</div><div class="cert-issuer">DataCamp</div><a href="https://www.datacamp.com/tracks/associate-data-analyst-in-sql?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=trackdetailpage&utm_source=copy" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Associate Data Analyst .jpg" alt="DataCamp Associate Data Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9678;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Associate Data Analyst Certificate</div><div class="cert-issuer">DataCamp</div><a href="https://www.datacamp.com/tracks/associate-data-analyst-in-sql" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
     <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX-Data-analytics-certificate-chinedu-elekwa.png" alt="ALX Data Analytics" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Data Analytics</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1mIyLDO280vdvNAHHmWQPQPjv8I8J5PaA/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
     <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX Python-programming-certificate-chinedu-elekwa (1).png" alt="ALX Python Programming" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Python Programming</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1CGBWo5SJWcrD5WL2-5crNmJzcVIs1qVi/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
     <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Microsoft Business Analyst.jpg" alt="Microsoft Business Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Microsoft Business Analyst Professional Certificate</div><div class="cert-issuer">Microsoft via Coursera</div><a href="https://coursera.org/share/c6567e811cee90cb8fc4cfa63c8aad9c" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
