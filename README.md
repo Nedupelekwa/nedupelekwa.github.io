@@ -601,7 +601,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
     <div class="project-card reveal">
   <div class="project-card-top-bar"></div>
 
-  <img src="images/RFM queries.jpg" alt="RFM Queries" class="project-img"
+  <img src="images/image.png" alt="RFM Queries" class="project-img"
        onerror="this.style.display='none'">
 
   <img src="images/RFM Dashboard.jpg" alt="RFM Dashboard" class="project-img"
