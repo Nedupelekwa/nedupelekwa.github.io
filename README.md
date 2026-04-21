@@ -648,8 +648,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
     
     <div class="project-card reveal">
       <div class="project-card-top-bar"></div>
-      <img src="images/Marketing calls dashboard.jpg" alt="Marketing Call dashboard" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="project-img-placeholder"style="display:none">[ Marketing Call dashboard ]</div>
+      <img src="images/Marketing call dashboard.jpg" alt="Marketing Call dashboard" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <div class="project-body">
         <div class="project-number"><span>03</span><span class="project-type">Marketing Analytics</span></div>
         <div class="project-title">Google Sheet dashboard</div>
@@ -658,7 +657,6 @@ body.light .hero-intro-line { color: var(--text-muted); }
         <a href="https://github.com/Nedupelekwa/Marketing-Call-dashboard" target="_blank" class="project-link">View Portfolio &#8599;</a>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- EXPERIENCE -->
