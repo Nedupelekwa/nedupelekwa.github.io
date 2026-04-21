@@ -651,7 +651,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
       <div class="project-body">
         <div class="project-number"><span>03</span><span class="project-type">Marketing Analytics</span></div>
         <div class="project-title">Marketing Call Dashboard</div>
-        <div class="project-desc">Built and maintained a marketing call dashboard using Google sheets. The dashboard includes dynamic filters for Start date, End date and Programme type. The charts reveals different response segments of customers, identifying their interest levels</div>
+        <div class="project-desc">Developed a comprehensive data tracking system and dashboard to monitor the efficiency of marketing call campaigns across multiple program verticals. This project manages and analyzes a dataset of over 14,000 records to identify conversion trends, communication barriers, and program-specific performance</div>
         <div class="project-stack"><span class="tag accent-tag">Dynamic filters</span><span class="tag">Google Sheets Dashboard</span><span class="tag">Data Reporting</span></div>
         <a href="https://github.com/Nedupelekwa/Marketing-Call-dashboard" target="_blank" class="project-link">View Portfolio &#8599;</a>
       </div>
