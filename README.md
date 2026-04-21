@@ -599,17 +599,39 @@ body.light .hero-intro-line { color: var(--text-muted); }
     </div>
 
     <div class="project-card reveal">
-      <div class="project-card-top-bar"></div>
-      <img src="images/RFM queries.jpg + images/RFM Dashboard.jpg" alt="RFM ANALYSIS" class="project-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="project-img-placeholder" style="display:none">[ RFM ANALYSIS (Using SQL and PowerBi ]</div>
-      <div class="project-body">
-        <div class="project-number"><span>02</span><span class="project-type">Business Intelligence</span></div>
-        <div class="project-title">RFM ANALYSIS</div>
-        <div class="project-desc">End-to-end analytics using Google Bigquery, SQL and PowerBi to reveal RFM Segments for a large company. Key finding:over 50% of the customers are still at the potential stage of becoming loyalists</div>
-        <div class="project-stack"><span class="tag accent-tag">Google Big Query</span><span class="tag accent-tag">SQL</span><span class="tag">Window Functions</span><span class="tag">PowerBi</span></div>
-        <a href="https://github.com/Nedupelekwa/RFM-ANALYSIS" target="_blank" class="project-link">View on GitHub &#8599;</a>
-      </div>
+  <div class="project-card-top-bar"></div>
+
+  <img src="images/RFM queries.jpg" alt="RFM Queries" class="project-img"
+       onerror="this.style.display='none'">
+
+  <img src="images/RFM Dashboard.jpg" alt="RFM Dashboard" class="project-img"
+       onerror="this.style.display='none'">
+
+  <div class="project-img-placeholder" style="display:none">
+    [ RFM ANALYSIS (Using SQL and PowerBi) ]
+  </div>
+
+  <div class="project-body">
+    <div class="project-number">
+      <span>02</span>
+      <span class="project-type">Business Intelligence</span>
     </div>
+    <div class="project-title">RFM ANALYSIS</div>
+    <div class="project-desc">
+      End-to-end analytics using Google Bigquery, SQL and PowerBi to reveal RFM Segments for a large company.
+      Key finding: over 50% of the customers are still at the potential stage of becoming loyalists
+    </div>
+    <div class="project-stack">
+      <span class="tag accent-tag">Google Big Query</span>
+      <span class="tag accent-tag">SQL</span>
+      <span class="tag">Window Functions</span>
+      <span class="tag">PowerBi</span>
+    </div>
+    <a href="https://github.com/Nedupelekwa/RFM-ANALYSIS" target="_blank" class="project-link">
+      View on GitHub &#8599;
+    </a>
+  </div>
+</div>
     
     <div class="project-card reveal">
       <div class="project-card-top-bar"></div>
