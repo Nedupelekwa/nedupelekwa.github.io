@@ -366,7 +366,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
 @media (max-width: 480px) {
   .hero-stats { flex-direction: column; align-items: center; gap: 1.5rem; }
   .stat-val { font-size: 2rem; }
-  .hero-name .first-name { font-size: clamp(1.8rem, 8vw, 1.5rem); }
+  .hero-name .first-name { font-size: clamp(1.0rem, 5vw, 1.0rem); }
   .hero-name .last-name { font-size: clamp(1.5rem, 7.5vw, 2rem); }
   .cursor-dot, .cursor-ring { display: none; }
   body { cursor: auto; }
