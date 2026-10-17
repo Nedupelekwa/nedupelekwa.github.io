@@ -887,6 +887,213 @@ body.light .nav-logo-dot, body.light .hero-badge::before, body.light .hero-photo
   section:not(.hero)::before, section:not(.hero)::after { animation: none !important; }
 }
 
+
+
+/* === MONOCHROME EDITORIAL FOLD SYSTEM — refined texture pass === */
+:root {
+  --mono-ink: #050505;
+  --mono-charcoal: #101010;
+  --mono-graphite: #1B1B1B;
+  --mono-slate: #303030;
+  --mono-silver: #BEBEBE;
+  --mono-pearl: #F2F2F2;
+  --mono-white: #FFFFFF;
+  --fold-line: rgba(255,255,255,.13);
+  --fold-glint: rgba(255,255,255,.075);
+  --motif-dot: rgba(255,255,255,.13);
+}
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--mono-ink) !important;
+  background-image:
+    radial-gradient(ellipse at 12% 8%, rgba(255,255,255,.055), transparent 32%),
+    radial-gradient(ellipse at 88% 42%, rgba(255,255,255,.035), transparent 28%),
+    linear-gradient(145deg, #050505 0%, #111111 36%, #080808 68%, #151515 100%) !important;
+}
+/* Architectural drafting marks: fine diagonals, tiny dots and low-contrast grain. */
+body::before {
+  opacity: .26 !important;
+  background-image:
+    radial-gradient(circle, var(--motif-dot) .7px, transparent .9px),
+    repeating-linear-gradient(135deg, transparent 0 38px, rgba(255,255,255,.025) 38px 39px, transparent 39px 78px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.14'/%3E%3C/svg%3E") !important;
+  background-size: 17px 17px, auto, 180px 180px !important;
+}
+body::after {
+  opacity: .24 !important;
+  background-image:
+    linear-gradient(135deg, transparent 0 49.7%, rgba(255,255,255,.055) 49.8% 50%, transparent 50.1%),
+    repeating-linear-gradient(135deg, transparent 0 92px, rgba(255,255,255,.028) 92px 93px, transparent 93px 186px) !important;
+}
+/* Each section gets its own quiet folded-paper geometry, not just a flat gradient. */
+section:not(.hero) {
+  background-blend-mode: normal, screen, normal;
+  border-top: 1px solid rgba(255,255,255,.065);
+  border-bottom: 1px solid rgba(0,0,0,.7);
+}
+section:not(.hero)::before {
+  background-image:
+    linear-gradient(135deg, transparent 0 13.7%, rgba(255,255,255,.045) 13.8% 13.95%, transparent 14.05% 62%, rgba(255,255,255,.03) 62.1% 62.22%, transparent 62.32%),
+    repeating-linear-gradient(135deg, transparent 0 73px, rgba(255,255,255,.018) 73px 74px, transparent 74px 146px) !important;
+  opacity: .95 !important;
+}
+section:not(.hero)::after {
+  background-image:
+    linear-gradient(135deg, transparent 0 67%, rgba(255,255,255,.025) 67.1% 67.25%, transparent 67.35%),
+    linear-gradient(135deg, transparent 0 72%, rgba(255,255,255,.065) 72.1% 72.25%, transparent 72.35%),
+    linear-gradient(135deg, transparent 0 73%, rgba(0,0,0,.6) 73.1% 83%, transparent 83.1%),
+    radial-gradient(ellipse at 95% 8%, rgba(255,255,255,.035), transparent 35%) !important;
+}
+.hero {
+  background-image:
+    linear-gradient(132deg, transparent 0 59%, rgba(255,255,255,.035) 59.1% 59.25%, transparent 59.35%),
+    linear-gradient(132deg, transparent 0 61%, rgba(255,255,255,.025) 61.1% 72%, transparent 72.1%),
+    radial-gradient(ellipse at 82% 18%, rgba(255,255,255,.09), transparent 34%),
+    linear-gradient(128deg, #050505 0%, #141414 47%, #060606 100%) !important;
+}
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 49.8%, rgba(255,255,255,.045) 50%, transparent 50.2%) !important;
+  mask-image: linear-gradient(to bottom, black, transparent 92%);
+}
+/* Folded cards: a clipped corner, a secondary seam, and a pearl-like edge highlight. */
+.hero-stats > div, .expertise-pill, #skills .skill-block, #experience .timeline-item,
+.project-card, .cert-card, .rec-card, #contact .contact-wrapper {
+  border-radius: 2px !important;
+  border: 1px solid rgba(255,255,255,.17) !important;
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.095), transparent 19%),
+    linear-gradient(315deg, transparent 0 82%, rgba(255,255,255,.09) 82.1% 82.3%, transparent 82.4%),
+    linear-gradient(145deg, #202020 0%, #111111 52%, #080808 100%) !important;
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,.075), inset -1px -1px 0 rgba(255,255,255,.02), 0 18px 42px rgba(0,0,0,.34) !important;
+}
+.project-card::after, .cert-card::after, .rec-card::after {
+  background-image:
+    linear-gradient(135deg, transparent 0 78%, rgba(255,255,255,.11) 78.1% 78.35%, transparent 78.45%),
+    linear-gradient(135deg, transparent 0 81%, rgba(255,255,255,.035) 81.1% 88%, transparent 88.1%),
+    repeating-linear-gradient(135deg, transparent 0 28px, rgba(255,255,255,.012) 28px 29px, transparent 29px 56px) !important;
+}
+.project-card:hover, .cert-card:hover, .rec-card:hover, #skills .skill-block:hover,
+#experience .timeline-item:hover, .hero-stats > div:hover, .expertise-pill:hover {
+  border-color: rgba(255,255,255,.48) !important;
+  box-shadow: 0 24px 55px rgba(0,0,0,.46), inset 1px 1px 0 rgba(255,255,255,.12), 0 0 0 1px rgba(255,255,255,.035) !important;
+}
+#projects .project-img, .cert-preview, .rec-preview, .project-img-placeholder {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 1px, transparent 1px 13px),
+    linear-gradient(135deg, transparent 0 48%, rgba(255,255,255,.06) 48.1% 48.4%, transparent 48.5%),
+    radial-gradient(ellipse at 15% 15%, rgba(255,255,255,.09), transparent 42%),
+    linear-gradient(135deg, #292929, #090909 75%) !important;
+}
+/* Silver hairlines and subtle editorial ornaments around section headings. */
+.section-label { letter-spacing: .19em !important; }
+.section-label::before { text-shadow: 0 0 12px rgba(255,255,255,.12); }
+.section-label::after { height: 1px !important; opacity: .85; }
+.section-title { text-wrap: balance; }
+footer {
+  background-image:
+    linear-gradient(135deg, transparent 0 63%, rgba(255,255,255,.055) 63.1% 63.25%, transparent 63.35%),
+    repeating-linear-gradient(135deg, transparent 0 56px, rgba(255,255,255,.018) 56px 57px, transparent 57px 114px),
+    linear-gradient(125deg, #202020, #050505 58%, #191919) !important;
+}
+/* LIGHT MODE: chalk, porcelain, warm paper and graphite folds with dark ink seams. */
+body.light {
+  --fold-line: rgba(0,0,0,.13);
+  --fold-glint: rgba(255,255,255,.7);
+  --motif-dot: rgba(0,0,0,.12);
+  background-color: #F5F5F5 !important;
+  background-image:
+    radial-gradient(ellipse at 12% 8%, rgba(255,255,255,.95), transparent 34%),
+    radial-gradient(ellipse at 88% 42%, rgba(0,0,0,.045), transparent 30%),
+    linear-gradient(135deg, #FAFAFA 0%, #E7E7E7 38%, #F6F6F6 67%, #E2E2E2 100%) !important;
+}
+body.light::before {
+  opacity: .22 !important;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle, rgba(0,0,0,.13) .65px, transparent .9px),
+    repeating-linear-gradient(135deg, transparent 0 38px, rgba(0,0,0,.035) 38px 39px, transparent 39px 78px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.1'/%3E%3C/svg%3E") !important;
+  background-size: 17px 17px, auto, 180px 180px !important;
+}
+body.light::after {
+  opacity: .28 !important;
+  background-image:
+    linear-gradient(135deg, transparent 0 49.7%, rgba(0,0,0,.065) 49.8% 50%, transparent 50.1%),
+    repeating-linear-gradient(135deg, transparent 0 92px, rgba(0,0,0,.03) 92px 93px, transparent 93px 186px) !important;
+}
+body.light section:not(.hero) {
+  border-top-color: rgba(255,255,255,.8);
+  border-bottom-color: rgba(0,0,0,.09);
+}
+body.light section:not(.hero)::before {
+  background-image:
+    linear-gradient(135deg, transparent 0 13.7%, rgba(0,0,0,.075) 13.8% 13.95%, transparent 14.05% 62%, rgba(0,0,0,.045) 62.1% 62.22%, transparent 62.32%),
+    repeating-linear-gradient(135deg, transparent 0 73px, rgba(0,0,0,.022) 73px 74px, transparent 74px 146px) !important;
+}
+body.light section:not(.hero)::after {
+  background-image:
+    linear-gradient(135deg, transparent 0 67%, rgba(0,0,0,.035) 67.1% 67.25%, transparent 67.35%),
+    linear-gradient(135deg, transparent 0 72%, rgba(0,0,0,.075) 72.1% 72.25%, transparent 72.35%),
+    linear-gradient(135deg, transparent 0 73%, rgba(255,255,255,.8) 73.1% 83%, transparent 83.1%),
+    radial-gradient(ellipse at 95% 8%, rgba(0,0,0,.04), transparent 35%) !important;
+}
+body.light .hero {
+  background-image:
+    linear-gradient(132deg, transparent 0 59%, rgba(0,0,0,.055) 59.1% 59.25%, transparent 59.35%),
+    linear-gradient(132deg, transparent 0 61%, rgba(0,0,0,.025) 61.1% 72%, transparent 72.1%),
+    radial-gradient(ellipse at 82% 18%, rgba(255,255,255,.95), transparent 34%),
+    linear-gradient(128deg, #FAFAFA 0%, #E7E7E7 47%, #FFFFFF 100%) !important;
+}
+body.light .hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(0,0,0,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.045) 1px, transparent 1px),
+    linear-gradient(135deg, transparent 49.8%, rgba(0,0,0,.045) 50%, transparent 50.2%) !important;
+}
+body.light .hero-stats > div, body.light .expertise-pill, body.light #skills .skill-block,
+body.light #experience .timeline-item, body.light .project-card, body.light .cert-card,
+body.light .rec-card, body.light #contact .contact-wrapper {
+  background-image:
+    linear-gradient(135deg, rgba(255,255,255,.98), transparent 19%),
+    linear-gradient(315deg, transparent 0 82%, rgba(0,0,0,.075) 82.1% 82.3%, transparent 82.4%),
+    linear-gradient(145deg, #FFFFFF 0%, #F0F0F0 52%, #E4E4E4 100%) !important;
+  border-color: rgba(0,0,0,.16) !important;
+  box-shadow: inset 1px 1px 0 rgba(255,255,255,.98), inset -1px -1px 0 rgba(0,0,0,.035), 0 17px 38px rgba(0,0,0,.085) !important;
+}
+body.light .project-card::after, body.light .cert-card::after, body.light .rec-card::after {
+  background-image:
+    linear-gradient(135deg, transparent 0 78%, rgba(0,0,0,.1) 78.1% 78.35%, transparent 78.45%),
+    linear-gradient(135deg, transparent 0 81%, rgba(255,255,255,.8) 81.1% 88%, transparent 88.1%),
+    repeating-linear-gradient(135deg, transparent 0 28px, rgba(0,0,0,.016) 28px 29px, transparent 29px 56px) !important;
+}
+body.light #projects .project-img, body.light .cert-preview, body.light .rec-preview,
+body.light .project-img-placeholder {
+  background-image:
+    repeating-linear-gradient(135deg, rgba(0,0,0,.045) 0 1px, transparent 1px 13px),
+    linear-gradient(135deg, transparent 0 48%, rgba(0,0,0,.065) 48.1% 48.4%, transparent 48.5%),
+    radial-gradient(ellipse at 15% 15%, rgba(255,255,255,.95), transparent 42%),
+    linear-gradient(135deg, #F5F5F5, #D8D8D8 75%) !important;
+}
+body.light footer {
+  background-image:
+    linear-gradient(135deg, transparent 0 63%, rgba(0,0,0,.055) 63.1% 63.25%, transparent 63.35%),
+    repeating-linear-gradient(135deg, transparent 0 56px, rgba(0,0,0,.025) 56px 57px, transparent 57px 114px),
+    linear-gradient(125deg, #DADADA, #F8F8F8 58%, #E5E5E5) !important;
+}
+/* Keep the decorative geometry quiet and performant on smaller devices. */
+@media (max-width: 700px) {
+  body::before { opacity: .16 !important; }
+  body::after { opacity: .13 !important; }
+  section:not(.hero)::before, section:not(.hero)::after { opacity: .62 !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+
 </style>
 </head>
 <body>
