@@ -375,6 +375,52 @@ body.light .hero-intro-line { color: var(--text-muted); }
   section { padding: 3rem 1rem; }
   .contact-email { padding: 0.9rem 1.4rem; font-size: 0.78rem; letter-spacing: 0.1em; }
 }
+
+/* === 2026 portfolio polish: editorial spacing, glass surfaces, focus & motion === */
+:root { --violet:#9b87ff; --cyan:#54d7ff; --surface-glass:rgba(15,20,31,.72); }
+::selection { background:rgba(0,210,140,.28); color:var(--text-primary); }
+html { scroll-padding-top: 96px; }
+body { background-image: radial-gradient(ellipse at 85% 8%, rgba(59,130,246,.07), transparent 32%), radial-gradient(ellipse at 8% 35%, rgba(139,92,246,.06), transparent 30%); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid var(--cyan); outline-offset:4px; }
+section { scroll-margin-top:80px; }
+.section-title { text-wrap:balance; }
+.section-subtitle { text-wrap:pretty; }
+.hero-inner { max-width:1280px; }
+.hero-content { position:relative; }
+.hero-content::before { content:"DATA × DECISIONS × IMPACT"; display:block; font:10px var(--mono); letter-spacing:.2em; color:var(--cyan); margin:0 0 1rem; opacity:.8; }
+.hero-photo-wrap { filter: drop-shadow(0 20px 55px rgba(0,210,140,.10)); }
+.project-card, .cert-card, .rec-card, .skill-block { isolation:isolate; }
+.project-card::after, .cert-card::after, .rec-card::after { content:""; position:absolute; inset:0; pointer-events:none; opacity:0; background:linear-gradient(135deg,rgba(84,215,255,.06),transparent 42%,rgba(155,135,255,.05)); transition:opacity .3s; z-index:0; }
+.project-card:hover::after, .cert-card:hover::after, .rec-card:hover::after { opacity:1; }
+.project-body, .cert-body, .rec-body { position:relative; z-index:1; }
+.project-img { transition:transform .6s cubic-bezier(.2,.7,.2,1), filter .4s; }
+.project-card:hover .project-img { transform:scale(1.025); filter:saturate(1.12); }
+.project-card { background:linear-gradient(145deg,rgba(17,23,35,.98),var(--bg-card) 65%); }
+.project-link, .btn-primary, .contact-email { box-shadow:0 8px 25px rgba(0,210,140,.08); }
+.tag { backdrop-filter:blur(8px); }
+.expertise-pill { border-color:rgba(255,255,255,.1); }
+.expertise-pill:nth-child(3n) { --accent:#54d7ff; }
+.skills-grid { box-shadow:0 24px 80px rgba(0,0,0,.12); }
+.skill-block-title { font-size:.88rem; }
+#projects .section-subtitle { margin-bottom:1.5rem; }
+.project-tools { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; margin:0 0 2rem; }
+.project-search { flex:1 1 220px; max-width:360px; min-height:46px; border:1px solid var(--border); border-radius:8px; padding:.75rem 1rem; background:var(--bg-card); color:var(--text-primary); font:13px var(--mono); }
+.project-search::placeholder { color:var(--text-muted); }
+.project-filters { display:flex; flex-wrap:wrap; gap:.5rem; }
+.project-filter { border:1px solid var(--border); color:var(--text-secondary); background:var(--bg-card); border-radius:30px; padding:.55rem .9rem; font:11px var(--mono); letter-spacing:.06em; cursor:pointer; transition:all .2s; }
+.project-filter:hover, .project-filter[aria-pressed="true"] { color:var(--accent); border-color:var(--border-accent); background:var(--accent-dim); }
+.project-empty { display:none; padding:2rem; border:1px dashed var(--border); border-radius:10px; color:var(--text-secondary); text-align:center; font-family:var(--mono); }
+.section-index { position:absolute; top:2.5rem; right:6rem; font:11px var(--mono); letter-spacing:.15em; color:var(--text-muted); }
+.footer-top { display:inline-flex; align-items:center; gap:.5rem; color:var(--accent); text-decoration:none; font:11px var(--mono); }
+body.light { background-image:radial-gradient(ellipse at 85% 8%,rgba(59,130,246,.07),transparent 32%),radial-gradient(ellipse at 8% 35%,rgba(139,92,246,.04),transparent 30%); }
+body.light .project-card { background:linear-gradient(145deg,#fff,#f8fafc); }
+body.light .project-search, body.light .project-filter { background:#fff; }
+@media (max-width:860px) { .hero-content::before { text-align:center; } .project-tools { align-items:stretch; } .project-search { max-width:none; } .section-index { display:none; } }
+@media (prefers-reduced-motion:reduce) {
+ *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
+ .reveal { opacity:1; transform:none; }
+}
+
 </style>
 </head>
 <body>
@@ -401,7 +447,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
     <li><a href="#recognitions">Recognition</a></li>
     <li>
       <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing"
-         target="_blank" class="nav-cv">
+         target="_blank" rel="noopener noreferrer" class="nav-cv">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round">
           <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
@@ -425,7 +471,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <a href="#certifications" class="mobile-nav-link">Certifications</a>
   <a href="#recognitions" class="mobile-nav-link">Recognition</a>
   <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing"
-     target="_blank" class="mobile-nav-link">Download CV</a>
+     target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Download CV</a>
   <a href="#contact" class="mobile-nav-link" style="color:var(--accent)">Let's Connect</a>
 </div>
 
@@ -535,6 +581,16 @@ body.light .hero-intro-line { color: var(--text-muted); }
 <section id="projects">
   <div class="section-label">Selected Work</div>
   <h2 class="section-title">Projects</h2>
+  <div class="project-tools reveal" aria-label="Project search and filters">
+    <input id="projectSearch" class="project-search" type="search" placeholder="⌕  Search projects or tools…" aria-label="Search projects by title, category, or technology">
+    <div class="project-filters" role="group" aria-label="Filter projects">
+      <button class="project-filter" type="button" aria-pressed="true" data-filter="all">All work</button>
+      <button class="project-filter" type="button" aria-pressed="false" data-filter="Business Intelligence">BI &amp; Dashboards</button>
+      <button class="project-filter" type="button" aria-pressed="false" data-filter="Marketing Analytics">Marketing</button>
+      <button class="project-filter" type="button" aria-pressed="false" data-filter="Logistics Analytics">Operations</button>
+    </div>
+  </div>
+  <div class="project-empty" id="projectEmpty" role="status">No matching projects. Try another keyword or category.</div>
   <div class="projects-grid">
 
     <!-- Project 1: Flight Operations -->
@@ -551,7 +607,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
           <span class="tag accent-tag">Google Sheets</span>
           <span class="tag accent-tag">Looker Studio</span>
         </div>
-        <a href="https://github.com/Nedupelekwa/Flight-Operations-projects" target="_blank" class="project-link">View on GitHub &#8599;</a>
+        <a href="https://github.com/Nedupelekwa/Flight-Operations-projects" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
 
@@ -571,7 +627,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
           <span class="tag">Window Functions</span>
           <span class="tag">Power BI</span>
         </div>
-        <a href="https://github.com/Nedupelekwa/RFM-ANALYSIS" target="_blank" class="project-link">View on GitHub &#8599;</a>
+        <a href="https://github.com/Nedupelekwa/RFM-ANALYSIS" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
 
@@ -591,7 +647,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
           <span class="tag">Power Query</span>
           <span class="tag">MS Excel</span>
         </div>
-        <a href="https://github.com/Nedupelekwa/POWERBI-BUSINESS-DASHBOARD" target="_blank" class="project-link">View on GitHub &#8599;</a>
+        <a href="https://github.com/Nedupelekwa/POWERBI-BUSINESS-DASHBOARD" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
 
@@ -610,7 +666,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
           <span class="tag">Google Sheets Dashboard</span>
           <span class="tag">Data Reporting</span>
         </div>
-        <a href="https://github.com/Nedupelekwa/Marketing-Call-dashboard" target="_blank" class="project-link">View on GitHub &#8599;</a>
+        <a href="https://github.com/Nedupelekwa/Marketing-Call-dashboard" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub &#8599;</a>
       </div>
     </div>
 
@@ -706,21 +762,21 @@ body.light .hero-intro-line { color: var(--text-muted); }
 
   <div class="cert-group-label green reveal">Career Certifications</div>
   <div class="cert-grid reveal">
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Google Cloud Data Analytics Certificate.jpg" alt="Google Cloud Data Analyst Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9729;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Google Cloud Data Analyst Certificate</div><div class="cert-issuer">Google Cloud</div><a href="https://www.credly.com/badges/8978d604-f416-4365-bfc5-9bc49dc80c8a/public_url" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX Data-science-certificate-chinedu-elekwa (1).png" alt="ALX Data Science" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9672;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Data Science</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1adgB-IFRJ86S7Y9c0JUY3HwL3YGZ3pPl/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Associate Data Analyst .jpg" alt="DataCamp Associate Data Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9678;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Associate Data Analyst Certificate</div><div class="cert-issuer">DataCamp</div><a href="https://www.datacamp.com/tracks/associate-data-analyst-in-sql" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX-Data-analytics-certificate-chinedu-elekwa.png" alt="ALX Data Analytics" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Data Analytics</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1mIyLDO280vdvNAHHmWQPQPjv8I8J5PaA/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX Python-programming-certificate-chinedu-elekwa (1).png" alt="ALX Python Programming" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Python Programming</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1CGBWo5SJWcrD5WL2-5crNmJzcVIs1qVi/view?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Microsoft Business Analyst.jpg" alt="Microsoft Business Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Microsoft Business Analyst Professional Certificate</div><div class="cert-issuer">Microsoft via Coursera</div><a href="https://coursera.org/share/c6567e811cee90cb8fc4cfa63c8aad9c" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/SQL for Business analysts.jpg" alt="SQL for Business Analysts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">SQL for Business Analysts</div><div class="cert-issuer">DataCamp</div><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/750b783b48ed45a69debb82aa1741067210f145f" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/google workspace.jpg" alt="Google Workspace Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9635;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Google Workspace &#8212; Calendar, Drive, Docs, Sheets, Slides</div><div class="cert-issuer">Google via Coursera</div><a href="https://drive.google.com/drive/folders/1y6hDZvx9gvkXm_SD9oOWFSPB0vtAkHSb?usp=drive_link" target="_blank" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Google Cloud Data Analytics Certificate.jpg" alt="Google Cloud Data Analyst Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9729;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Google Cloud Data Analyst Certificate</div><div class="cert-issuer">Google Cloud</div><a href="https://www.credly.com/badges/8978d604-f416-4365-bfc5-9bc49dc80c8a/public_url" target="_blank" rel="noopener noreferrer" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX Data-science-certificate-chinedu-elekwa (1).png" alt="ALX Data Science" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9672;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Data Science</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1adgB-IFRJ86S7Y9c0JUY3HwL3YGZ3pPl/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Associate Data Analyst .jpg" alt="DataCamp Associate Data Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9678;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Associate Data Analyst Certificate</div><div class="cert-issuer">DataCamp</div><a href="https://www.datacamp.com/tracks/associate-data-analyst-in-sql" target="_blank" rel="noopener noreferrer" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX-Data-analytics-certificate-chinedu-elekwa.png" alt="ALX Data Analytics" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Data Analytics</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1mIyLDO280vdvNAHHmWQPQPjv8I8J5PaA/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/ALX Python-programming-certificate-chinedu-elekwa (1).png" alt="ALX Python Programming" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Python Programming</div><div class="cert-issuer">ALX Africa</div><a href="https://drive.google.com/file/d/1CGBWo5SJWcrD5WL2-5crNmJzcVIs1qVi/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/Microsoft Business Analyst.jpg" alt="Microsoft Business Analyst" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Microsoft Business Analyst Professional Certificate</div><div class="cert-issuer">Microsoft via Coursera</div><a href="https://coursera.org/share/c6567e811cee90cb8fc4cfa63c8aad9c" target="_blank" rel="noopener noreferrer" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/SQL for Business analysts.jpg" alt="SQL for Business Analysts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9711;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">SQL for Business Analysts</div><div class="cert-issuer">DataCamp</div><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/750b783b48ed45a69debb82aa1741067210f145f" target="_blank" rel="noopener noreferrer" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe"></div><div class="cert-preview"><img src="images/google workspace.jpg" alt="Google Workspace Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9635;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Google Workspace &#8212; Calendar, Drive, Docs, Sheets, Slides</div><div class="cert-issuer">Google via Coursera</div><a href="https://drive.google.com/drive/folders/1y6hDZvx9gvkXm_SD9oOWFSPB0vtAkHSb?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-view-link green-link">View Certificate &#8599;</a></div></div>
   </div>
 
   <div class="cert-group-label blue reveal">Professional &amp; Soft Skills</div>
   <div class="cert-grid reveal">
-    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/ALX-Professional-foundations-certificate-chinedu-elekwa (1).png" alt="ALX Professional Foundations" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9643;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Professional Foundations</div><div class="cert-issuer blue">ALX Africa</div><a href="https://drive.google.com/file/d/1EulTVxF5SmHwMA63BCH7gDclpdnMFohp/view?usp=drive_link" target="_blank" class="cert-view-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/Jobberman soft skills.jpg" alt="Jobberman Soft Skills Training" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#x2B21;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Jobberman Soft Skills Training</div><div class="cert-issuer blue">Jobberman &middot; 2021</div><a href="https://drive.google.com/file/d/17Y-4ZJxH1PjtGGZVE4GO0IZ8D9zmm6sC/view?usp=drive_link" target="_blank" class="cert-view-link">View Certificate &#8599;</a></div></div>
-    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/Data Literacy.jpg" alt="Data Literacy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#x2B21;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Data Literacy Certificate</div><div class="cert-issuer blue">DataCamp</div><a href="https://www.datacamp.com/skill-verification/DL0034034405845" target="_blank" class="cert-view-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/ALX-Professional-foundations-certificate-chinedu-elekwa (1).png" alt="ALX Professional Foundations" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#9643;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">ALX Professional Foundations</div><div class="cert-issuer blue">ALX Africa</div><a href="https://drive.google.com/file/d/1EulTVxF5SmHwMA63BCH7gDclpdnMFohp/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-view-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/Jobberman soft skills.jpg" alt="Jobberman Soft Skills Training" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#x2B21;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Jobberman Soft Skills Training</div><div class="cert-issuer blue">Jobberman &middot; 2021</div><a href="https://drive.google.com/file/d/17Y-4ZJxH1PjtGGZVE4GO0IZ8D9zmm6sC/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-view-link">View Certificate &#8599;</a></div></div>
+    <div class="cert-card"><div class="cert-stripe blue"></div><div class="cert-preview"><img src="images/Data Literacy.jpg" alt="Data Literacy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="cert-preview-placeholder" style="display:none"><span class="cert-preview-icon">&#x2B21;</span><span class="cert-preview-label">Certificate Preview</span></div><div class="cert-preview-overlay"><span>View Certificate &#8599;</span></div></div><div class="cert-body"><div class="cert-title">Data Literacy Certificate</div><div class="cert-issuer blue">DataCamp</div><a href="https://www.datacamp.com/skill-verification/DL0034034405845" target="_blank" rel="noopener noreferrer" class="cert-view-link">View Certificate &#8599;</a></div></div>
   </div>
 </section>
 
@@ -729,10 +785,10 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <div class="section-label">Recognition</div>
   <h2 class="section-title">Awards &amp; Volunteer Service</h2>
   <div class="rec-grid reveal">
-    <div class="rec-card"><div class="rec-preview"><img src="images/NYSC certificate.jpg" alt="NYSC certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127757;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">Certificate of Completed Service &#8212; NYSC</div><div class="rec-desc">Completed the one year compulsory national service for Nigerian graduates</div><a href="https://drive.google.com/file/d/11CL2qk2E5tD2hEfotGluMjqMLXON8gKs/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a></div></div>
-    <div class="rec-card"><div class="rec-preview"><img src="images/recognitions/alx-mentor.jpg" alt="ALX Africa DATA Volunteer Mentor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127757;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">DATA Volunteer Mentor &#8212; ALX Africa</div><div class="rec-desc">Supporting the next generation of data professionals across Africa through hands-on mentorship in analytics, Python programming, and data science since September 2025.</div><a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="rec-view-link">View Recognition &#8599;</a></div></div>
-    <div class="rec-card"><div class="rec-preview"><img src="images/Certificate of Recognition DataGlobalHub @GDAI 2025.jpg" alt="GDAI 2025 Session Moderator" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127897;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">GDAI 2025 Session Moderator</div><div class="rec-desc">Recognised by DataGlobal Hub with a Certificate of Recognition for Volunteer Service as Session Moderator at the Virtual Global Data &amp; AI Tech Conference (GDAI) 2025.</div><a href="https://drive.google.com/file/d/10qfqjgp9Gb0IXXtZyjED8898NETCoEry/view?usp=drive_link" target="_blank" class="rec-view-link">View Recognition &#8599;</a></div></div>
-    <div class="rec-card"><div class="rec-preview"><img src="images/Dataglobal Hub Ambassador.jpg" alt="Ambassador — DataGlobal Hub" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#9672;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">Ambassador &#8212; DataGlobal Hub</div><div class="rec-desc">Appointed as Ambassador at DataGlobal Hub, representing and advocating for the growth of the data and AI community in Nigeria and across Africa.</div><a href="https://drive.google.com/file/d/16gvU8oEHC-lnasKTStIUVshoT37Y4UO0/view?usp=sharing" target="_blank" class="rec-view-link">View Recognition &#8599;</a></div></div>
+    <div class="rec-card"><div class="rec-preview"><img src="images/NYSC certificate.jpg" alt="NYSC certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127757;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">Certificate of Completed Service &#8212; NYSC</div><div class="rec-desc">Completed the one year compulsory national service for Nigerian graduates</div><a href="https://drive.google.com/file/d/11CL2qk2E5tD2hEfotGluMjqMLXON8gKs/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="rec-view-link">View Recognition &#8599;</a></div></div>
+    <div class="rec-card"><div class="rec-preview"><img src="images/recognitions/alx-mentor.jpg" alt="ALX Africa DATA Volunteer Mentor" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127757;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">DATA Volunteer Mentor &#8212; ALX Africa</div><div class="rec-desc">Supporting the next generation of data professionals across Africa through hands-on mentorship in analytics, Python programming, and data science since September 2025.</div><a href="https://tinyurl.com/bdhbn9zt" target="_blank" rel="noopener noreferrer" class="rec-view-link">View Recognition &#8599;</a></div></div>
+    <div class="rec-card"><div class="rec-preview"><img src="images/Certificate of Recognition DataGlobalHub @GDAI 2025.jpg" alt="GDAI 2025 Session Moderator" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#127897;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">GDAI 2025 Session Moderator</div><div class="rec-desc">Recognised by DataGlobal Hub with a Certificate of Recognition for Volunteer Service as Session Moderator at the Virtual Global Data &amp; AI Tech Conference (GDAI) 2025.</div><a href="https://drive.google.com/file/d/10qfqjgp9Gb0IXXtZyjED8898NETCoEry/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="rec-view-link">View Recognition &#8599;</a></div></div>
+    <div class="rec-card"><div class="rec-preview"><img src="images/Dataglobal Hub Ambassador.jpg" alt="Ambassador — DataGlobal Hub" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="rec-preview-placeholder" style="display:none"><span class="rec-preview-emoji">&#9672;</span></div><div class="rec-preview-overlay"><span>View Recognition &#8599;</span></div></div><div class="rec-body"><div class="rec-title">Ambassador &#8212; DataGlobal Hub</div><div class="rec-desc">Appointed as Ambassador at DataGlobal Hub, representing and advocating for the growth of the data and AI community in Nigeria and across Africa.</div><a href="https://drive.google.com/file/d/16gvU8oEHC-lnasKTStIUVshoT37Y4UO0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="rec-view-link">View Recognition &#8599;</a></div></div>
   </div>
 </section>
 
@@ -758,15 +814,15 @@ body.light .hero-intro-line { color: var(--text-muted); }
       Send Me a Mail
     </a>
     <div class="socials reveal">
-      <a href="https://www.linkedin.com/in/chinedu-elekwa/" target="_blank" class="social-link">
+      <a href="https://www.linkedin.com/in/chinedu-elekwa/" target="_blank" rel="noopener noreferrer" class="social-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         LinkedIn
       </a>
-      <a href="https://tinyurl.com/bdhbn9zt" target="_blank" class="social-link">
+      <a href="https://tinyurl.com/bdhbn9zt" target="_blank" rel="noopener noreferrer" class="social-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
         View My Credentials
       </a>
-      <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing" target="_blank" class="social-link">
+      <a href="https://drive.google.com/file/d/1IFWvI5BjqUNMbXyBTHfTBnDJVfLt5us7/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="social-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
         Download My CV
       </a>
@@ -781,6 +837,7 @@ body.light .hero-intro-line { color: var(--text-muted); }
 <footer>
   <p>&#169; 2026 <span class="footer-accent">Chinedu Elekwa Promise</span>. All rights reserved.</p>
   <p>Built like a <span class="footer-accent">Data Product</span> &middot; Lagos, Nigeria</p>
+<a class="footer-top" href="#hero" aria-label="Back to top">↑ BACK TO TOP</a>
 </footer>
 
 <div class="sticky-cta" id="stickyCTA">
@@ -791,16 +848,23 @@ body.light .hero-intro-line { color: var(--text-muted); }
 <script>
 const dot = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
-document.addEventListener('mousemove', e => {
-  dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
-  ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
-});
+const finePointer = window.matchMedia('(pointer:fine)').matches;
+if (finePointer && dot && ring) {
+  document.addEventListener('mousemove', e => {
+    dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+    ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
+  }, { passive:true });
+} else {
+  if (dot) dot.style.display='none';
+  if (ring) ring.style.display='none';
+}
 document.querySelectorAll('a,button').forEach(el => {
   el.addEventListener('mouseenter', () => { ring.style.width='48px'; ring.style.height='48px'; ring.style.borderColor='var(--accent)'; });
   el.addEventListener('mouseleave', () => { ring.style.width='32px'; ring.style.height='32px'; ring.style.borderColor='rgba(0,210,140,0.5)'; });
 });
 window.addEventListener('scroll', () => {
-  const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  const scrollable = document.body.scrollHeight - window.innerHeight;
+  const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
   document.getElementById('scrollProgress').style.width = pct + '%';
   document.getElementById('stickyCTA').classList.toggle('show', window.scrollY > 400);
   document.querySelector('.hero-glow').style.transform = 'translateY(' + (window.scrollY * 0.15) + 'px)';
@@ -834,6 +898,47 @@ document.querySelectorAll('.cert-preview').forEach(preview => {
 document.querySelectorAll('.rec-preview').forEach(preview => {
   preview.addEventListener('click', () => { const link = preview.closest('.rec-card').querySelector('.rec-view-link'); if (link) window.open(link.href, '_blank'); });
 });
+
+// Project finder: search across project copy and filter by category.
+const projectCards = [...document.querySelectorAll('.project-card')];
+const projectSearch = document.getElementById('projectSearch');
+const projectFilters = [...document.querySelectorAll('.project-filter')];
+const projectEmpty = document.getElementById('projectEmpty');
+let activeProjectFilter = 'all';
+function filterProjects() {
+  const term = (projectSearch?.value || '').trim().toLowerCase();
+  let visible = 0;
+  projectCards.forEach(card => {
+    const category = card.querySelector('.project-type')?.textContent.trim() || '';
+    const matchesCategory = activeProjectFilter === 'all' || category === activeProjectFilter;
+    const matchesTerm = !term || card.textContent.toLowerCase().includes(term);
+    const show = matchesCategory && matchesTerm;
+    card.hidden = !show;
+    if (show) visible++;
+  });
+  if (projectEmpty) projectEmpty.style.display = visible ? 'none' : 'block';
+}
+projectSearch?.addEventListener('input', filterProjects);
+projectFilters.forEach(button => button.addEventListener('click', () => {
+  activeProjectFilter = button.dataset.filter || 'all';
+  projectFilters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+  filterProjects();
+}));
+// Remember the reader's theme choice on this device.
+const themeToggle = document.getElementById('themeToggle');
+const themeLabel = document.getElementById('themeLabel');
+try {
+  if (localStorage.getItem('portfolio-theme') === 'light') document.body.classList.add('light');
+  if (themeLabel) themeLabel.textContent = document.body.classList.contains('light') ? 'Dark Mode' : 'Light Mode';
+} catch (_) {}
+themeToggle?.addEventListener('click', () => {
+  try { localStorage.setItem('portfolio-theme', document.body.classList.contains('light') ? 'light' : 'dark'); } catch (_) {}
+});
+// Keep keyboard users informed when the mobile menu is open.
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') document.getElementById('mobileNav')?.classList.remove('open');
+});
+
 </script>
 </body>
 </html>
