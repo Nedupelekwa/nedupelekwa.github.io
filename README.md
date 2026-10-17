@@ -633,8 +633,8 @@ body.light .hero-intro-line { color: var(--text-muted); }
       <ul class="timeline-bullets">
         <li>Performing Data Analysis and Manipulation using SQL</li>
         <li>Using Excel and PowerBi For Professional Business Intelligence and Visualisation </li>
-        <li>Using Microsoft Excel To Perform data Cleaning and Analysis including prepartaion of Business Reports</li>
-        <li>Adhering to and Engaging International Data Regulatory Practices</li>
+        <li>Using Microsoft Excel To Perform Data Cleaning and Analysis Including Prepartaion of Business Reports</li>
+        <li>Adhering to and Engaging International Standard Data Regulatory Practices</li>
       </ul>
     </div>
 
