@@ -624,6 +624,21 @@ body.light .hero-intro-line { color: var(--text-muted); }
   <p class="section-subtitle reveal">Where I've built things that matter.</p>
   <div class="timeline reveal">
 
+
+<div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">June 2026 &#8212; Till Date</div>
+      <div class="timeline-role">Data/Business Intelligence Analyst</div>
+      <div class="timeline-company">Airtel SmartCash PSB (FINTECH)&middot; Lagos, Nigeria</div>
+      <ul class="timeline-bullets">
+        <li>Performing Data Analysis and Manipulation using SQL</li>
+        <li>Using Excel and PowerBi For Professional Business Intelligence and Visualisation </li>
+        <li>Using Microsoft Excel To Perform data Cleaning and Analysis including prepartaion of Business Reports</li>
+        <li>Adhering to and Engaging International Data Regulatory Practices</li>
+      </ul>
+    </div>
+
+    
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">Sept 2024 &#8212; Feb 2026</div>
